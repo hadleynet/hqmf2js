@@ -38,13 +38,35 @@ class DocumentTest  < Test::Unit::TestCase
   end
   
   def test_population_criteria
-    population_criteria = @doc.all_population_criteria
-    assert_equal 4, population_criteria.length
+    all_population_criteria = @doc.all_population_criteria
+    assert_equal 4, all_population_criteria.length
     
-    codes = population_criteria.collect {|p| p.code}
+    codes = all_population_criteria.collect {|p| p.code}
     %w(IPP DENOM NUMER EXCL).each do |c|
       assert codes.include?(c)
     end
+    
+    ipp = @doc.population_criteria_for_code('IPP')
+    assert_equal 1, ipp.preconditions.length
+    assert_equal 0, ipp.preconditions[0].preconditions.length
+    assert_equal 'AND', ipp.preconditions[0].conjunction
+    
+    den = @doc.population_criteria_for_code('DENOM')
+    assert_equal 2, den.preconditions.length
+    assert_equal 'AND', den.preconditions[0].conjunction
+    assert_equal 'AND', den.preconditions[1].conjunction
+    
+    num = @doc.population_criteria_for_code('NUMER')
+    assert_equal 1, num.preconditions.length
+    assert_equal 'AND', num.preconditions[0].conjunction
+    assert_equal 2, num.preconditions[0].preconditions.length
+    assert_equal 0, num.preconditions[0].preconditions[0].preconditions.length
+    assert_equal 'OR', num.preconditions[0].preconditions[0].conjunction
+    assert_equal 0, num.preconditions[0].preconditions[1].preconditions.length
+    assert_equal 'OR', num.preconditions[0].preconditions[1].conjunction
+    
+    excl = @doc.population_criteria_for_code('EXCL')
+    assert_equal 0, excl.preconditions.length
   end
   
   def test_data_criteria

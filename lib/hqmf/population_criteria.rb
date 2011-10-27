@@ -8,6 +8,9 @@ module HQMF
     # @param [Nokogiri::XML::Element] the HQMF entry
     def initialize(entry)
       @entry = entry
+      @preconditions = @entry.xpath('./*/cda:sourceOf[@typeCode="PRCN"]').collect do |entry|
+        Precondition.new(entry)
+      end
     end
     
     # Get the code for the population criteria
@@ -27,6 +30,13 @@ module HQMF
     # @return [String] the id
     def id
       attr_val('cda:observation/cda:id/@root')
+    end
+    
+    # Get the top-level preconditions for this population criteria. Note that
+    # preconditions may be nested to an arbitrary depth
+    # @return [Array] the top level preconditions as an Array of HQMF::Precondition
+    def preconditions
+      @preconditions
     end
   end
 end
