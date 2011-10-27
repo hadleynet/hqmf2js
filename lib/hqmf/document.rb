@@ -11,6 +11,9 @@ module HQMF
       @attributes = @doc.xpath('//cda:subjectOf/cda:measureAttribute').collect do |attr|
         Attribute.new(attr)
       end
+      @population_criteria = @doc.xpath('//cda:section[cda:code/@code="57026-7"]/cda:entry').collect do |attr|
+        PopulationCriteria.new(attr)
+      end
     end
     
     # Get the title of the measure
@@ -35,24 +38,34 @@ module HQMF
     # @param [String] id the attribute identifier
     # @return [HQMF::Attribute] the matching attribute, raises an Exception if not found
     def attribute(id)
-      attr = @attributes.find {|c| c.id==id}
-      if attr
-        attr
-      else
-        raise "Attribute not found: #{id}"
-      end
+      find(@attributes, :id, id)
     end
     
     # Get a specific attribute by code.
     # @param [String] code the attribute code
     # @return [HQMF::Attribute] the matching attribute, raises an Exception if not found
     def attribute_for_code(code)
-      attr = @attributes.find {|c| c.code==code}
-      if attr
-        attr
-      else
-        raise "Attribute not found: #{code}"
-      end
+      find(@attributes, :code, code)
+    end
+
+    # Get all the population criteria defined by the measure
+    # @return [Array] an array of HQMF::PopulationCriteria
+    def all_population_criteria
+      @population_criteria
+    end
+    
+    # Get a specific population criteria by id.
+    # @param [String] id the population identifier
+    # @return [HQMF::PopulationCriteria] the matching criteria, raises an Exception if not found
+    def population_criteria(id)
+      find(@population_criteria, :id, id)
+    end
+    
+    # Get a specific population criteria by code.
+    # @param [String] code the population criteria code
+    # @return [HQMF::PopulationCriteria] the matching criteria, raises an Exception if not found
+    def population_criteria_for_code(code)
+      find(@population_criteria, :code, code)
     end
 
     # Get all the data criteria defined by the measure
@@ -65,12 +78,7 @@ module HQMF
     # @param [String] id the data criteria identifier
     # @return [HQMF::DataCriteria] the matching data criteria, raises an Exception if not found
     def data_criteria(id)
-      criteria = @data_criteria.find {|c| c.id==id}
-      if criteria
-        criteria
-      else
-        raise "Data criteria not found: #{id}"
-      end
+      find(@data_criteria, :id, id)
     end
     
     # Parse an XML document at the supplied path
@@ -79,6 +87,17 @@ module HQMF
       doc = Nokogiri::XML(File.new(path))
       doc.root.add_namespace_definition('cda', 'urn:hl7-org:v3')
       doc
+    end
+    
+    private
+    
+    def find(collection, attribute, value)
+      entry = collection.find {|e| e.send(attribute)==value}
+      if entry
+        entry
+      else
+        raise "Entry with #{attribute}==#{value} not found"
+      end
     end
   end
 end

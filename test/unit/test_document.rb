@@ -37,6 +37,16 @@ class DocumentTest  < Test::Unit::TestCase
     assert_equal '12 month(s)', attr.value
   end
   
+  def test_population_criteria
+    population_criteria = @doc.all_population_criteria
+    assert_equal 4, population_criteria.length
+    
+    codes = population_criteria.collect {|p| p.code}
+    %w(IPP DENOM NUMER EXCL).each do |c|
+      assert codes.include?(c)
+    end
+  end
+  
   def test_data_criteria
     data_criteria = @doc.all_data_criteria
     assert_equal 4, data_criteria.length
