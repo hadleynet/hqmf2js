@@ -12,6 +12,11 @@ class DocumentTest  < Test::Unit::TestCase
     assert_equal 'urn:hl7-org:v3', doc.root.namespace.href 
   end
   
+  def test_metadata
+    assert_equal "Pneumonia Vaccination Status for Older Adults (NQF 0043)", @doc.title
+    assert_equal "The percentage of patients 65 years of age and older who have ever received a pneumococcal vaccine.", @doc.description
+  end
+  
   def test_data_criteria
     data_criteria = @doc.all_data_criteria
     assert_equal 4, data_criteria.length

@@ -9,6 +9,18 @@ module HQMF
         DataCriteria.new(entry)
       end
     end
+    
+    # Get the title of the measure
+    # @return [String] the title
+    def title
+      @doc.at_xpath('cda:QualityMeasureDocument/cda:title').inner_text
+    end
+    
+    # Get the description of the measure
+    # @return [String] the description
+    def description
+      @doc.at_xpath('cda:QualityMeasureDocument/cda:text').inner_text
+    end
   
     # Get all the data criteria defined by the measure
     # @return [Array] an array of HQMF::DataCriteria describing the data elements used by the measure
