@@ -1,3 +1,6 @@
-require "bundler/setup"
+require 'bundler/setup'
 
-require_relative 'hqmf/converter'
+require 'nokogiri'
+
+require_relative 'hqmf/document'
+require_relative 'hqmf/data_criteria'
