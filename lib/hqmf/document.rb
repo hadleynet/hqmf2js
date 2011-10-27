@@ -10,14 +10,22 @@ module HQMF
       end
     end
   
-    # Get the data criteria defined by the measure
+    # Get all the data criteria defined by the measure
     # @return [Array] an array of HQMF::DataCriteria describing the data elements used by the measure
     def all_data_criteria
       @data_criteria
     end
     
+    # Get a specific data criteria by id.
+    # @param [String] id the data criteria identifier
+    # @return [HQMF::DataCriteria] the matching data criteria, raises an Exception if not found
     def data_criteria(id)
-      @data_criteria.find {|c| c.id==id}
+      criteria = @data_criteria.find {|c| c.id==id}
+      if criteria
+        criteria
+      else
+        raise "Data criteria not found: #{id}"
+      end
     end
     
     # Parse an XML document at the supplied path

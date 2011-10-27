@@ -41,6 +41,13 @@ class DocumentTest  < Test::Unit::TestCase
     assert_equal 'Medication administered: Pneumococcal Vaccine all ages', criteria.title
     assert_equal '10165EC8-53EE-4242-A20D-B1D21CE0DC73', criteria.id
     assert_equal '2.16.840.1.113883.3.464.0001.430', criteria.code_list_id
+
+    begin
+      criteria = @doc.data_criteria('foo')
+      assert false, "Should raise exception for unknown data criteria"
+    rescue => detail
+    end
+
   end
   
 end
