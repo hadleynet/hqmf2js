@@ -57,7 +57,10 @@ class DocumentTest  < Test::Unit::TestCase
     den = @doc.population_criteria_for_code('DENOM')
     assert_equal 2, den.preconditions.length
     assert_equal 'AND', den.preconditions[0].conjunction
+    assert_equal '4AAEF95D-DCC6-459C-839C-C820DF310D60', den.preconditions[0].comparison.data_criteria_id
+    assert_equal nil, den.preconditions[0].comparison.restriction
     assert_equal 'AND', den.preconditions[1].conjunction
+    assert_equal '3CF573A8-34AE-408E-88D7-26A1016A140D', den.preconditions[1].comparison.data_criteria_id
     assert_equal 'DURING', den.preconditions[1].comparison.restriction.type
     assert_equal 'F8D5AD22-F49E-4181-B886-E5B12BEA8966', den.preconditions[1].comparison.restriction.target_id
     
