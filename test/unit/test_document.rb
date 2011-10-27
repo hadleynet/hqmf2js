@@ -17,6 +17,26 @@ class DocumentTest  < Test::Unit::TestCase
     assert_equal "The percentage of patients 65 years of age and older who have ever received a pneumococcal vaccine.", @doc.description
   end
   
+  def test_attributes
+    attr_list = @doc.all_attributes
+    assert_equal 16, attr_list.length
+  
+    attr = @doc.attribute_for_code('MSRTP')
+    assert_equal 'F8D5AD22-F49E-4181-B886-E5B12BEA8966', attr.id
+    assert_equal '12', attr.value
+    assert_equal 'm', attr.unit
+    assert_equal 'Measurement period', attr.name
+
+    attr = @doc.attribute('F8D5AD22-F49E-4181-B886-E5B12BEA8966e')
+    assert_equal 'MSRED', attr.code
+    assert_equal '00001231', attr.value
+    assert_equal nil, attr.unit
+    assert_equal 'Measurement end date', attr.name
+
+    attr = @doc.attribute_for_code('MSRMD')
+    assert_equal '12 month(s)', attr.value
+  end
+  
   def test_data_criteria
     data_criteria = @doc.all_data_criteria
     assert_equal 4, data_criteria.length
@@ -25,6 +45,7 @@ class DocumentTest  < Test::Unit::TestCase
     assert_equal 'Patient characteristic: birth date', data_criteria[0].title
     assert_equal '52A541D7-9C22-4633-8AEC-389611894672', data_criteria[0].id
     assert_equal '2.16.840.1.113883.3.464.0001.14', data_criteria[0].code_list_id
+    assert_equal :birthtime, data_criteria[0].property
     
     assert_equal :encounter, data_criteria[1].type
     assert_equal 'Encounter: encounter outpatient', data_criteria[1].title
@@ -52,7 +73,6 @@ class DocumentTest  < Test::Unit::TestCase
       assert false, "Should raise exception for unknown data criteria"
     rescue => detail
     end
-
   end
   
 end
