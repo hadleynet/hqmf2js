@@ -13,7 +13,10 @@ module HQMF
       if comparison_def
         data_criteria_id = attr_val('./*/cda:id/@root')
         @comparison = Comparison.new(data_criteria_id, comparison_def)
-      end 
+      end
+      @restrictions = @entry.xpath('./*/cda:sourceOf[@typeCode!="PRCN" and @typeCode!="COMP"]').collect do |entry|
+        Restriction.new(entry)
+      end
     end
     
     # Get the child preconditions for this precondition. Note that
@@ -34,6 +37,11 @@ module HQMF
     def comparison
       @comparison
     end
+    
+    def restrictions
+      @restrictions
+    end
+      
   end
   
 end
