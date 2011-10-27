@@ -9,6 +9,11 @@ module HQMF
       @preconditions = @entry.xpath('./*/cda:sourceOf[@typeCode="PRCN"]').collect do |entry|
         Precondition.new(entry)
       end
+      comparison_def = @entry.xpath('./*/cda:sourceOf[@typeCode="COMP"]')
+      if comparison_def
+        data_criteria_id = attr_val('./*/cda:id/@root')
+        @comparison = Comparison.new(data_criteria_id, comparison_def)
+      end 
     end
     
     # Get the child preconditions for this precondition. Note that
@@ -18,8 +23,16 @@ module HQMF
       @preconditions
     end
     
+    # Get the conjunction code, e.g. AND, OR
+    # @return [String] conjunction code
     def conjunction
       attr_val('./cda:conjunctionCode/@code')
+    end
+    
+    # Get the comparison
+    # @return [HQMF::Comparison] the comparison
+    def comparison
+      @comparison
     end
   end
   
