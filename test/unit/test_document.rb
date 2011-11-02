@@ -53,6 +53,10 @@ class DocumentTest  < Test::Unit::TestCase
     assert_equal '52A541D7-9C22-4633-8AEC-389611894672', ipp.preconditions[0].comparison.data_criteria_id
     assert_equal 'SBS', ipp.preconditions[0].comparison.restriction.type
     assert_equal 'F8D5AD22-F49E-4181-B886-E5B12BEA8966', ipp.preconditions[0].comparison.restriction.target_id
+    assert_equal '64', ipp.preconditions[0].comparison.restriction.range.low.value
+    assert_equal 'a', ipp.preconditions[0].comparison.restriction.range.low.unit
+    assert_equal true, ipp.preconditions[0].comparison.restriction.range.low.inclusive?
+    assert_equal nil, ipp.preconditions[0].comparison.restriction.range.high
 
     den = @doc.population_criteria_for_code('DENOM')
     assert_equal 2, den.preconditions.length

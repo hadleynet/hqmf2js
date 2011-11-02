@@ -3,6 +3,8 @@ module HQMF
   class DataCriteria
   
     include HQMF::Utilities
+    
+    attr_reader :property, :type
   
     # Create a new instance based on the supplied HQMF entry
     # @param [Nokogiri::XML::Element] entry the parsed HQMF entry
@@ -53,20 +55,6 @@ module HQMF
       attr_val(@code_list_xpath)
     end
     
-    # Get the type of criteria, e.g. procedure, encounter, etc.
-    # @return [Symbol] the type of criteria
-    def type
-      @type
-    end
-    
-    # Get the property referenced by the criteria. Only used for criteria that reference
-    # patient characteristics. Matches the name of the corresponding method in the patient
-    # API
-    # @return [Symbol] the property referenced by the criteria
-    def property
-      @property
-    end
-
     # Get the status of the criteria, e.g. active, completed, etc. Only present for
     # certain types like condition, diagnosis, procedure, etc.
     # @return [String] the status of this data criteria

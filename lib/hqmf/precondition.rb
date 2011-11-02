@@ -3,6 +3,8 @@ module HQMF
   class Precondition
   
     include HQMF::Utilities
+    
+    attr_reader :restrictions, :comparison, :preconditions
   
     def initialize(entry)
       @entry = entry
@@ -19,29 +21,12 @@ module HQMF
       end
     end
     
-    # Get the child preconditions for this precondition. Note that
-    # preconditions may be nested to an arbitrary depth
-    # @return [Array] the child preconditions as an Array of HQMF::Precondition
-    def preconditions
-      @preconditions
-    end
-    
     # Get the conjunction code, e.g. AND, OR
     # @return [String] conjunction code
     def conjunction
       attr_val('./cda:conjunctionCode/@code')
     end
     
-    # Get the comparison
-    # @return [HQMF::Comparison] the comparison
-    def comparison
-      @comparison
-    end
-    
-    def restrictions
-      @restrictions
-    end
-      
   end
   
 end
