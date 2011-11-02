@@ -1,0 +1,15 @@
+var pc_fn<%= count %> = function(patient) {
+  <% precondition.preconditions.each_with_index do |subcondition, i| %>
+  <%= js_for_precondition(subcondition, i) %>
+  <% end %>
+  
+  <% if precondition.preconditions && precondition.preconditions.length>0 %> 
+    <% precondition.preconditions.each_with_index do |subcondition, i| %>
+    <%= "return #{subcondition.conjunction}(" if i==0 %>
+      <%= ',' if i>0 %>pc_fn<%= i %>(patient)
+    <% end %>
+    );
+  <% else %>
+    return true;
+  <% end %>
+}

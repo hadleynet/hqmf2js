@@ -1,0 +1,10 @@
+function <%= criteria_code %>(patient) {
+  <% doc.population_criteria_for_code(criteria_code).preconditions.each_with_index do |precondition, i| %>
+  <%= js_for_precondition(precondition, i) %>
+  <% end %>
+  <% doc.population_criteria_for_code(criteria_code).preconditions.each_with_index do |precondition, i| %>
+  <%= "return #{precondition.conjunction}(" if i==0 %>
+    <%= ',' if i>0 %>pc_fn<%= i %>(patient)
+  <% end %>
+  );
+}
