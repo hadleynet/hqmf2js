@@ -16,10 +16,14 @@ module Generator
       binding
     end
     
-    def js_for_precondition(precondition, count)
+    def new_fn_name
+      "fn#{FunctionCounter.instance.new_id}"
+    end
+    
+    def js_for_precondition(precondition, name)
       template_str = File.read(File.expand_path("../precondition.js.erb", __FILE__))
-      template = ERB.new(template_str, nil, '<>', "_templ#{@count}")
-      params = {'doc' => doc, 'precondition' => precondition, 'count' => count}
+      template = ERB.new(template_str, nil, '-', "_templ#{TemplateCounter.instance.new_id}")
+      params = {'doc' => doc, 'precondition' => precondition, 'name' => name}
       context = ErbContext.new(params)
       template.result(context.get_binding)
     end
@@ -33,11 +37,35 @@ module Generator
     
     def js_for(criteria_code)
       template_str = File.read(File.expand_path("../population_criteria.js.erb", __FILE__))
-      template = ERB.new(template_str, nil, '<>', "_#{criteria_code}")
+      template = ERB.new(template_str, nil, '-', "_templ#{TemplateCounter.instance.new_id}")
       params = {'doc' => @doc, 'criteria_code' => criteria_code}
       context = ErbContext.new(params)
       template.result(context.get_binding)
     end
+  end
+
+  # Simple class to issue monotonically increasing integer identifiers
+  class Counter
+    def initialize
+      @count = 0
+    end
     
+    def new_id
+      @count+=1
+    end
+    
+    def reset
+      @count = 0
+    end
+  end
+    
+  # Singleton to keep a count of function identifiers
+  class FunctionCounter < Counter
+    include Singleton
+  end
+  
+  # Singleton to keep a count of template identifiers
+  class TemplateCounter < Counter
+    include Singleton
   end
 end

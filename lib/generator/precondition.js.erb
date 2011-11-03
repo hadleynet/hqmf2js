@@ -1,15 +1,24 @@
-var pc_fn<%= count %> = function(patient) {
-  <% precondition.preconditions.each_with_index do |subcondition, i| %>
-  <%= js_for_precondition(subcondition, i) %>
-  <% end %>
-  
-  <% if precondition.preconditions && precondition.preconditions.length>0 %> 
-    <% precondition.preconditions.each_with_index do |subcondition, i| %>
-    <%= "return #{subcondition.conjunction}(" if i==0 %>
-      <%= ',' if i>0 %>pc_fn<%= i %>(patient)
-    <% end %>
-    );
-  <% else %>
-    return true;
-  <% end %>
+var <%= name %> = function(patient) {
+  <%- fns = [] -%>
+  <%- precondition.preconditions.each_with_index do |subcondition, i| -%>
+  <%- name = new_fn_name -%>
+  <%- fns << name -%>
+  <%= js_for_precondition(subcondition, name) -%>
+  <%- end -%>
+  return<% -%>
+  <%- precondition.restrictions.each do |restriction| -%>
+  <%= "#{restriction.type}(" -%>
+  <%- end -%>
+  <%- if precondition.preconditions && precondition.preconditions.length>0 -%> 
+    <%- precondition.preconditions.each_with_index do |subcondition, i| -%>
+    <%= "#{subcondition.conjunction}(" if i==0 -%>
+      <%= ', ' if i>0 %><%= fns[i] %>(patient)
+    <%- end -%>
+    )
+  <%- precondition.restrictions.each do |restriction| -%>
+  <%= ")" -%>
+  <%- end -%>;
+  <%- else -%>
+    matchingStuff;
+  <%- end -%>
 }

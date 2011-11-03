@@ -3,6 +3,7 @@ require 'bundler/setup'
 require 'nokogiri'
 require 'erb'
 require 'ostruct'
+require 'singleton'
 
 require_relative 'hqmf/utilities'
 require_relative 'hqmf/range'
