@@ -16,14 +16,22 @@ module Generator
       binding
     end
     
-    def new_fn_name
-      "fn#{FunctionCounter.instance.new_id}"
+    def new_fn_name(prefix)
+      "#{prefix}#{FunctionCounter.instance.new_id}"
     end
     
     def js_for_precondition(precondition, name)
       template_str = File.read(File.expand_path("../precondition.js.erb", __FILE__))
       template = ERB.new(template_str, nil, '-', "_templ#{TemplateCounter.instance.new_id}")
       params = {'doc' => doc, 'precondition' => precondition, 'name' => name}
+      context = ErbContext.new(params)
+      template.result(context.get_binding)
+    end
+    
+    def js_for_comparison(comparison, name)
+      template_str = File.read(File.expand_path("../comparison.js.erb", __FILE__))
+      template = ERB.new(template_str, nil, '-', "_templ#{TemplateCounter.instance.new_id}")
+      params = {'doc' => doc, 'comparison' => comparison, 'name' => name}
       context = ErbContext.new(params)
       template.result(context.get_binding)
     end

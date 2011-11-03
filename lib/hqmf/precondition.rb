@@ -11,7 +11,7 @@ module HQMF
       @preconditions = @entry.xpath('./*/cda:sourceOf[@typeCode="PRCN"]').collect do |entry|
         Precondition.new(entry)
       end
-      comparison_def = @entry.xpath('./*/cda:sourceOf[@typeCode="COMP"]')
+      comparison_def = @entry.at_xpath('./*/cda:sourceOf[@typeCode="COMP"]')
       if comparison_def
         data_criteria_id = attr_val('./*/cda:id/@root')
         @comparison = Comparison.new(data_criteria_id, comparison_def)

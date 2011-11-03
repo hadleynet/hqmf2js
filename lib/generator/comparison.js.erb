@@ -1,0 +1,13 @@
+var <%= name %> = function(patient) {
+  // Title: <%= comparison.title %>
+  <%- data_criteria = doc.data_criteria(comparison.data_criteria_id) -%>
+  var eventsMatchingComparison = patient.<%= data_criteria.type %>s();
+  return 
+  <%- if comparison.restriction -%>
+  <%= "#{comparison.restriction.type}(\"#{comparison.restriction.target_id}\", " -%>
+  <%- end -%>
+  eventsMatchingComparison
+  <%- if comparison.restriction -%>
+  <%= ")" -%>
+  <%- end -%>;
+}

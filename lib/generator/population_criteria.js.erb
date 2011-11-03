@@ -1,7 +1,7 @@
 function <%= criteria_code %>(patient) {
   <%- fns = [] -%>
   <%- doc.population_criteria_for_code(criteria_code).preconditions.each do |precondition| -%>
-  <%- name = new_fn_name -%>
+  <%- name = new_fn_name('prcn') -%>
   <%- fns << name -%>
   <%= js_for_precondition(precondition, name) -%>
   <%- end -%>

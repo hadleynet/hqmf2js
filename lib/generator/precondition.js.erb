@@ -1,24 +1,37 @@
 var <%= name %> = function(patient) {
-  <%- fns = [] -%>
+  <%- nested_precondition_fns = [] -%>
   <%- precondition.preconditions.each_with_index do |subcondition, i| -%>
-  <%- name = new_fn_name -%>
-  <%- fns << name -%>
+  <%- name = new_fn_name('prcn') -%>
+  <%- nested_precondition_fns << name -%>
   <%= js_for_precondition(subcondition, name) -%>
   <%- end -%>
-  return<% -%>
-  <%- precondition.restrictions.each do |restriction| -%>
-  <%= "#{restriction.type}(" -%>
+  <%- nested_comparison_fns = [] -%>
+  <%- if precondition.comparison -%>
+  <%- name = new_fn_name('comp') -%>
+  <%- nested_comparison_fns << name -%>
+  <%= js_for_comparison(precondition.comparison, name) %>
   <%- end -%>
+  
+  var matchingPreconditionEvents = null;
   <%- if precondition.preconditions && precondition.preconditions.length>0 -%> 
+    matchingPreconditionEvents = <%= "#{precondition.preconditions[0].conjunction}(" -%>
     <%- precondition.preconditions.each_with_index do |subcondition, i| -%>
-    <%= "#{subcondition.conjunction}(" if i==0 -%>
-      <%= ', ' if i>0 %><%= fns[i] %>(patient)
+      <%= ', ' if i>0 %>
+      <%- precondition.restrictions.each do |restriction| -%>
+      <%= "#{restriction.type}(\"#{restriction.target_id}\", " -%>
+      <%- end -%>
+        <%= nested_precondition_fns[i] %>(patient)
+      <%- precondition.restrictions.each do |restriction| -%>
+      <%= ")" -%>
+      <%- end -%>
     <%- end -%>
-    )
-  <%- precondition.restrictions.each do |restriction| -%>
-  <%= ")" -%>
-  <%- end -%>;
-  <%- else -%>
-    matchingStuff;
+    );
   <%- end -%>
+  
+  var matchingComparisonEvents = null;
+  <%- if precondition.comparison -%>
+  matchingComparisonEvents = <%= nested_comparison_fns[0] %>(patient);
+  <%- end -%>
+  
+  return OR(matchingPreconditionEvents, matchingComparisonEvents);
 }
