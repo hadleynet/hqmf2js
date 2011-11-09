@@ -59,7 +59,11 @@ module HQMF
     # certain types like condition, diagnosis, procedure, etc.
     # @return [String] the status of this data criteria
     def status
-      attr_val(@status_xpath)
+      if @status_path
+        attr_val(@status_xpath)
+      else
+        nil
+      end
     end
   end
   

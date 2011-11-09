@@ -1,0 +1,14 @@
+var dataCriteria = {
+  <%- all_criteria.each_with_index do |criteria, index| -%>
+  "<%= criteria.id %>": {
+    "title": "<%= criteria.title %>",
+    "code_list_oid": "<%= criteria.code_list_id %>",
+    "type": "<%= criteria.type %>",
+    "status": "<%= criteria.status %>",
+    <%- if criteria.property -%>
+    <%= "\"property\": \"#{criteria.property}\"," %>
+    <%- end -%>
+    "codes": {}
+  }<%= ',' if index<all_criteria.length-1 %>
+  <%- end -%>
+}

@@ -6,6 +6,11 @@ class GeneratorTest  < Test::Unit::TestCase
     @gen = Generator::JS.new(@hqmf_file_path)
   end
   
+  def test_data_criteria
+    js = @gen.js_for_data_criteria()
+    puts js
+  end
+  
   def test_ipp
     js = @gen.js_for('IPP')
     puts js

@@ -1,13 +1,23 @@
 var <%= name %> = function(patient) {
-  // Title: <%= comparison.title %>
   <%- data_criteria = doc.data_criteria(comparison.data_criteria_id) -%>
-  var eventsMatchingComparison = patient.<%= data_criteria.type %>s();
-  return 
-  <%- if comparison.restriction -%>
-  <%= "#{comparison.restriction.type}(\"#{comparison.restriction.target_id}\", " -%>
+  // <%= data_criteria.title %>
+  <%- if data_criteria.property -%>
+  var eventsMatchingComparison = patient.<%= data_criteria.property %>();
+  <%- else -%>
+  var eventsMatchingComparison = patient.<%= data_criteria.type %>s().match(dataCriteria["<%= data_criteria.id %>"].codes);
+  <%- if data_criteria.status -%>
+  eventsMatchingComparison = filterByStatus(eventsMatchingComparison, "<%= data_criteria.status %>");
   <%- end -%>
-  eventsMatchingComparison
+  <%- end -%>
+  
   <%- if comparison.restriction -%>
-  <%= ")" -%>
-  <%- end -%>;
+  eventsMatchingComparison = <%= comparison.restriction.type %>(
+    attributes["<%= comparison.restriction.target_id %>"],
+    eventsMatchingComparison<%= ',' if comparison.restriction.range %>
+    <%- if comparison.restriction.range -%>
+    <%= js_for_range(comparison.restriction.range) %>
+    <%- end -%>
+  );
+  <%- end -%>
+  return eventsMatchingComparison;
 }

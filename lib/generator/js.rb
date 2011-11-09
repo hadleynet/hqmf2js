@@ -35,6 +35,22 @@ module Generator
       context = ErbContext.new(params)
       template.result(context.get_binding)
     end
+
+    def js_for_range(range)
+      template_str = File.read(File.expand_path("../range.js.erb", __FILE__))
+      template = ERB.new(template_str, nil, '-', "_templ#{TemplateCounter.instance.new_id}")
+      params = {'range' => range}
+      context = ErbContext.new(params)
+      template.result(context.get_binding)
+    end
+
+    def js_for_value(value)
+      template_str = File.read(File.expand_path("../value.js.erb", __FILE__))
+      template = ERB.new(template_str, nil, '-', "_templ#{TemplateCounter.instance.new_id}")
+      params = {'value' => value}
+      context = ErbContext.new(params)
+      template.result(context.get_binding)
+    end
   end
 
   class JS
@@ -47,6 +63,14 @@ module Generator
       template_str = File.read(File.expand_path("../population_criteria.js.erb", __FILE__))
       template = ERB.new(template_str, nil, '-', "_templ#{TemplateCounter.instance.new_id}")
       params = {'doc' => @doc, 'criteria_code' => criteria_code}
+      context = ErbContext.new(params)
+      template.result(context.get_binding)
+    end
+    
+    def js_for_data_criteria
+      template_str = File.read(File.expand_path("../data_criteria.js.erb", __FILE__))
+      template = ERB.new(template_str, nil, '-', "_templ#{TemplateCounter.instance.new_id}")
+      params = {'all_criteria' => @doc.all_data_criteria}
       context = ErbContext.new(params)
       template.result(context.get_binding)
     end
