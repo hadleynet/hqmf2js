@@ -13,9 +13,9 @@ var <%= name %> = function(patient) {
   <%- if comparison.restriction -%>
   eventsMatchingComparison = <%= comparison.restriction.type %>(
     attributes["<%= comparison.restriction.target_id %>"],
-    eventsMatchingComparison<%= ',' if comparison.restriction.range %>
+    eventsMatchingComparison<%- -%>
     <%- if comparison.restriction.range -%>
-    <%= js_for_range(comparison.restriction.range) %>
+    <%- -%>, <%= js_for_range(comparison.restriction.range) %>
     <%- end -%>
   );
   <%- end -%>

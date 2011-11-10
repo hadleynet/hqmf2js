@@ -1,4 +1,4 @@
-function <%= criteria_code %>(patient) {
+var <%= criteria_code %> = function(patient) {
   <%- fns = [] -%>
   <%- doc.population_criteria_for_code(criteria_code).preconditions.each do |precondition| -%>
   <%- name = new_fn_name('prcn') -%>
@@ -6,8 +6,8 @@ function <%= criteria_code %>(patient) {
   <%= js_for_precondition(precondition, name) -%>
   <%- end -%>
   <%- doc.population_criteria_for_code(criteria_code).preconditions.each_with_index do |precondition, i| -%>
-  <%= "return #{precondition.conjunction}(" if i==0 %>
-    <%= ',' if i>0 %><%= fns[i] %>(patient)
+  <%= "return #{precondition.conjunction}(" if i==0 %><%- -%>
+    <%- -%><%= ',' if i>0 %><%= fns[i] %>(patient)<%- -%>
   <%- end -%>
-  );
+  <%- -%>);
 }

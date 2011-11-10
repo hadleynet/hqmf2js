@@ -74,6 +74,14 @@ module Generator
       context = ErbContext.new(params)
       template.result(context.get_binding)
     end
+
+    def js_for_attributes
+      template_str = File.read(File.expand_path("../attributes.js.erb", __FILE__))
+      template = ERB.new(template_str, nil, '-', "_templ#{TemplateCounter.instance.new_id}")
+      params = {'all_attributes' => @doc.all_attributes}
+      context = ErbContext.new(params)
+      template.result(context.get_binding)
+    end
   end
 
   # Simple class to issue monotonically increasing integer identifiers

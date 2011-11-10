@@ -4,6 +4,7 @@ require 'nokogiri'
 require 'erb'
 require 'ostruct'
 require 'singleton'
+require 'json'
 
 require_relative 'hqmf/utilities'
 require_relative 'hqmf/range'

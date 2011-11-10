@@ -11,6 +11,11 @@ class GeneratorTest  < Test::Unit::TestCase
     puts js
   end
   
+  def test_attributes
+    js = @gen.js_for_attributes()
+    puts js
+  end
+
   def test_ipp
     js = @gen.js_for('IPP')
     puts js

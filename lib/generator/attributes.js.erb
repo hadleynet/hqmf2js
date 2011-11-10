@@ -1,0 +1,19 @@
+var attributes = {
+  <%- comma_reqd = false -%>
+  <%- all_attributes.each_with_index do |attribute, index| -%>
+  <%- if attribute.id -%>
+  <%- -%><%= ', ' if comma_reqd -%>
+  "<%= attribute.id %>": {
+    "code": "<%= attribute.code %>",
+    <%- if attribute.value -%>
+    "value": "<%= attribute.value %>",
+    <%- end -%>
+    <%- if attribute.unit -%>
+    "unit": "<%= attribute.unit %>",
+    <%- end -%>
+    "name": "<%= attribute.name %>"
+  }
+  <%- comma_reqd = true -%>
+  <%- end -%>
+  <%- end -%>
+}

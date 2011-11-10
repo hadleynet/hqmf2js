@@ -4,9 +4,11 @@ var dataCriteria = {
     "title": "<%= criteria.title %>",
     "code_list_oid": "<%= criteria.code_list_id %>",
     "type": "<%= criteria.type %>",
+    <%- if criteria.status -%>
     "status": "<%= criteria.status %>",
+    <%- end -%>
     <%- if criteria.property -%>
-    <%= "\"property\": \"#{criteria.property}\"," %>
+    "property": "<%= criteria.property %>",
     <%- end -%>
     "codes": {}
   }<%= ',' if index<all_criteria.length-1 %>
