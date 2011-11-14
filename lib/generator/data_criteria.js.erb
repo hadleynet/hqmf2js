@@ -1,6 +1,6 @@
 var dataCriteria = {
   <%- all_criteria.each_with_index do |criteria, index| -%>
-  "<%= criteria.id %>": {
+  "<%= criteria.const_name %>": {
     "title": "<%= criteria.title %>",
     "code_list_oid": "<%= criteria.code_list_id %>",
     "type": "<%= criteria.type %>",

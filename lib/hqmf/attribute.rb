@@ -45,5 +45,11 @@ module HQMF
       attr_val('./cda:value/@unit')
     end
     
+    # Get a JS friendly constant name for this measure attribute
+    def const_name
+      components = name.gsub(/\W/,' ').split.collect {|word| word.strip.upcase }
+      components.join '_'
+    end
+    
   end
 end

@@ -17,16 +17,7 @@ var <%= name %> = function(patient) {
     matchingPreconditionEvents = <%= "#{precondition.preconditions[0].conjunction}(" -%>
     <%- precondition.preconditions.each_with_index do |subcondition, i| -%>
       <%- -%><%= ', ' if i>0 %>
-      <%- precondition.restrictions.each do |restriction| -%>
-      <%= restriction.type %>(attributes["<%= restriction.target_id %>"],<%- -%>
-      <%- end -%>
       <%- -%> <%= nested_precondition_fns[i] %>(patient)<%- -%>
-      <%- precondition.restrictions.each do |restriction| -%>
-      <%- if restriction.range -%>
-      <%- -%>, <%= js_for_range(restriction.range) %><%- -%>
-      <%- end -%>
-      <%- -%>)<%- -%>
-      <%- end -%>
     <%- end -%>
     <%- -%>);
   <%- end -%>

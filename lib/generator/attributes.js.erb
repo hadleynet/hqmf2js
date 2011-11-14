@@ -3,7 +3,7 @@ var attributes = {
   <%- all_attributes.each_with_index do |attribute, index| -%>
   <%- if attribute.id -%>
   <%- -%><%= ', ' if comma_reqd -%>
-  "<%= attribute.id %>": {
+  "<%= attribute.const_name %>": {
     "code": "<%= attribute.code %>",
     <%- if attribute.value -%>
     "value": "<%= attribute.value %>",

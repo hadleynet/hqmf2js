@@ -65,6 +65,14 @@ module HQMF
         nil
       end
     end
+    
+    # Get a JS friendly constant name for this measure attribute
+    def const_name
+      components = title.gsub(/\W/,' ').split.collect {|word| word.strip.upcase }
+      components.join '_'
+    end
+    
+
   end
   
 end

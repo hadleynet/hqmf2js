@@ -11,7 +11,7 @@ module HQMF
     def initialize(entry)
       @entry = entry
       @preconditions = @entry.xpath('./*/cda:sourceOf[@typeCode="PRCN"]').collect do |entry|
-        pc = Precondition.new(entry)
+        pc = Precondition.new(entry, nil)
         if pc.preconditions.length==0 && !pc.comparison && pc.restrictions.length==0
           nil
         else
