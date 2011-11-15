@@ -11,7 +11,8 @@ module HQMF
     def initialize(entry)
       @entry = entry
       @code_list_xpath = 'cda:act/cda:sourceOf//cda:code/@code'
-      case entry.at_xpath('cda:act/cda:templateId/@root').value
+      template_id = attr_val('cda:act/cda:templateId/@root')
+      case template_id
       when '2.16.840.1.113883.3.560.1.2'
         @type = :diagnosis
         @code_list_xpath = 'cda:act/cda:sourceOf/cda:observation/cda:value/@code'
@@ -21,8 +22,15 @@ module HQMF
         @status_xpath = 'cda:act/cda:sourceOf/cda:observation/cda:statusCode/@code'
       when '2.16.840.1.113883.3.560.1.4'
         @type = :encounter
+      when '2.16.840.1.113883.3.560.1.5'
+        @type = :result
+        @status_xpath = 'cda:act/cda:sourceOf/cda:observation/cda:statusCode/@code'
       when '2.16.840.1.113883.3.560.1.6'
         @type = :procedure
+      when '2.16.840.1.113883.3.560.1.13'
+        @type = :medication
+        @code_list_xpath = 'cda:act/cda:sourceOf/cda:substanceAdministration/cda:participant/cda:roleParticipant/cda:playingMaterial/cda:code/@code'
+        @status_xpath = 'cda:act/cda:sourceOf/cda:substanceAdministration/cda:sourceOf/cda:observation/cda:value/@displayName'
       when '2.16.840.1.113883.3.560.1.14'
         @type = :medication
       when '2.16.840.1.113883.3.560.1.25'

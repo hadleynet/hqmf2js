@@ -11,5 +11,9 @@ module HQMF
         nil
       end
     end
+    
+    def to_xml
+      @entry.to_xml
+    end
   end
 end  

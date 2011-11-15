@@ -11,6 +11,7 @@ var <%= name %> = function(patient) {
   <%- end -%>
   
   <%- comparison.restrictions.each do |restriction| -%>
+  <%- if doc.attribute(restriction.target_id) -%>
   // <%= restriction.type %> <%= doc.attribute(restriction.target_id).name %>
   eventsMatchingComparison = <%= restriction.type %>(
     attributes["<%= doc.attribute(restriction.target_id).const_name %>"],
@@ -20,5 +21,41 @@ var <%= name %> = function(patient) {
     <%- end -%>
   );
   <%- end -%>
+  <%- end -%>
+  
+  <%- if comparison.subset -%>
+  eventsMatchingComparison = <%= comparison.subset %>(eventsMatchingComparison);
+  <%- end -%>
+  
+  <%- comparison.restrictions.each do |restriction| -%>
+  <%- if doc.data_criteria(restriction.target_id) -%>
+  <%- other_data_criteria = doc.data_criteria(restriction.target_id) -%>
+  var otherEvents = patient.<%= data_criteria.type %>s().match(dataCriteria["<%= data_criteria.const_name %>"].codes);
+  <%- if other_data_criteria.status -%>
+  otherEvents = filterByStatus(otherEvents, "<%= other_data_criteria.status %>");
+  <%- end -%>
+  <%- comparison.restrictions.each do |restriction| -%>
+  <%- if doc.attribute(restriction.target_id) -%>
+  // <%= restriction.type %> <%= doc.attribute(restriction.target_id).name %>
+  otherEvents = <%= restriction.type %>(
+    attributes["<%= doc.attribute(restriction.target_id).const_name %>"],
+    otherEvents<%- -%>
+    <%- if restriction.range -%>
+    <%- -%>, <%= js_for_range(restriction.range) %>
+    <%- end -%>
+  );
+  <%- end -%>
+  <%- end -%>
+  <%- if restriction.subset -%>
+  otherEvents = <%= restriction.subset %>(otherEvents);
+  <%- end -%>
+  // <%= restriction.type %> <%= other_data_criteria.title %>
+  eventsMatchingComparison = <%= restriction.type %>(
+    eventsMatchingComparison,
+    otherEvents
+  );
+  <%- end -%>
+  <%- end -%>
+  
   return eventsMatchingComparison;
 }

@@ -92,12 +92,7 @@ module HQMF
     private
     
     def find(collection, attribute, value)
-      entry = collection.find {|e| e.send(attribute)==value}
-      if entry
-        entry
-      else
-        raise "Entry with #{attribute}==#{value} not found"
-      end
+      collection.find {|e| e.send(attribute)==value}
     end
   end
 end

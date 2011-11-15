@@ -25,5 +25,10 @@ module HQMF
       attr_val('./*/cda:id/@root')
     end
     
+    # The subset code (e.g. FIRST, SECOND etc) if present
+    def subset
+      attr_val('./cda:subsetCode/@code')
+    end
+    
   end
 end

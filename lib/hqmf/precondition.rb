@@ -4,18 +4,23 @@ module HQMF
   
     include HQMF::Utilities
     
-    attr_reader :restrictions, :comparison, :preconditions
+    attr_reader :restrictions, :comparison, :preconditions, :subset
   
     def initialize(entry, parent)
       @entry = entry
       @restrictions = []
       if (parent)
         @restrictions.concat(parent.restrictions)
+        @subset = parent.subset
       end
       local_restrictions = @entry.xpath('./*/cda:sourceOf[@typeCode!="PRCN" and @typeCode!="COMP"]').collect do |entry|
         Restriction.new(entry)
       end
       @restrictions.concat(local_restrictions)
+      local_subset = attr_val('./cda:subsetCode/@code')
+      if local_subset
+        @subset = local_subset
+      end
       @preconditions = @entry.xpath('./*/cda:sourceOf[@typeCode="PRCN"]').collect do |entry|
         Precondition.new(entry, self)
       end

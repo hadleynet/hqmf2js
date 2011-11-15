@@ -3,7 +3,7 @@ module HQMF
   
     include HQMF::Utilities
     
-    attr_reader :restrictions, :data_criteria_id, :title
+    attr_reader :restrictions, :data_criteria_id, :title, :subset
     
     def initialize(data_criteria_id, entry, parent)
       @data_criteria_id = data_criteria_id
@@ -15,6 +15,7 @@ module HQMF
       @restrictions = []
       if parent
         @restrictions.concat(parent.restrictions)
+        @subset = parent.subset
       end
       restriction_def = @entry.at_xpath('./*/cda:sourceOf')
       if restriction_def

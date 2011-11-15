@@ -82,6 +82,7 @@ module Generator
       context = ErbContext.new(params)
       template.result(context.get_binding)
     end
+
   end
 
   # Simple class to issue monotonically increasing integer identifiers
