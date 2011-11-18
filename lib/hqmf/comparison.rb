@@ -5,7 +5,8 @@ module HQMF
     
     attr_reader :restrictions, :data_criteria_id, :title, :subset
     
-    def initialize(data_criteria_id, entry, parent)
+    def initialize(data_criteria_id, entry, parent, doc)
+      @doc = doc
       @data_criteria_id = data_criteria_id
       @entry = entry
       title_def = @entry.at_xpath('./*/cda:title')
@@ -19,7 +20,9 @@ module HQMF
       end
       restriction_def = @entry.at_xpath('./*/cda:sourceOf')
       if restriction_def
-        @restrictions << Restriction.new(restriction_def)
+        @entry.xpath('./*/cda:sourceOf').each do |restriction|
+          @restrictions << Restriction.new(restriction, self, @doc)
+        end
       end
     end
     

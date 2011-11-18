@@ -8,10 +8,11 @@ module HQMF
     
     # Create a new population criteria from the supplied HQMF entry
     # @param [Nokogiri::XML::Element] the HQMF entry
-    def initialize(entry)
+    def initialize(entry, doc)
+      @doc = doc
       @entry = entry
       @preconditions = @entry.xpath('./*/cda:sourceOf[@typeCode="PRCN"]').collect do |entry|
-        pc = Precondition.new(entry, nil)
+        pc = Precondition.new(entry, nil, @doc)
         if pc.preconditions.length==0 && !pc.comparison && pc.restrictions.length==0
           nil
         else

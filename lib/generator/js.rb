@@ -36,6 +36,14 @@ module Generator
       template.result(context.get_binding)
     end
 
+    def js_for_restriction(restriction, name)
+      template_str = File.read(File.expand_path("../restriction.js.erb", __FILE__))
+      template = ERB.new(template_str, nil, '-', "_templ#{TemplateCounter.instance.new_id}")
+      params = {'doc' => doc, 'restriction' => restriction, 'name' => name}
+      context = ErbContext.new(params)
+      template.result(context.get_binding)
+    end
+
     def js_for_range(range)
       template_str = File.read(File.expand_path("../range.js.erb", __FILE__))
       template = ERB.new(template_str, nil, '-', "_templ#{TemplateCounter.instance.new_id}")

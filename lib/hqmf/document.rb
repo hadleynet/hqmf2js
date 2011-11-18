@@ -12,7 +12,7 @@ module HQMF
         Attribute.new(attr)
       end
       @population_criteria = @doc.xpath('//cda:section[cda:code/@code="57026-7"]/cda:entry').collect do |attr|
-        PopulationCriteria.new(attr)
+        PopulationCriteria.new(attr, self)
       end
     end
     
