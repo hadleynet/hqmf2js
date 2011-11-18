@@ -27,5 +27,10 @@ var <%= name %> = function(patient) {
   matchingComparisonEvents = <%= nested_comparison_fns[0] %>(patient);
   <%- end -%>
   
+  <%- if precondition.negation -%>
+  return NOT(OR(matchingPreconditionEvents, matchingComparisonEvents));
+  <%- else -%>
   return OR(matchingPreconditionEvents, matchingComparisonEvents);
+  <%- end -%>
+  
 }

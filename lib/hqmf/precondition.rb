@@ -38,6 +38,14 @@ module HQMF
       attr_val('./cda:conjunctionCode/@code')
     end
     
+    def negation
+      if @entry.at_xpath('./cda:act[@actionNegationInd="true"]')
+        true
+      else
+        false
+      end
+    end
+    
   end
   
 end

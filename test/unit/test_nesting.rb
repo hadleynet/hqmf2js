@@ -10,8 +10,10 @@ class NestingTest  < Test::Unit::TestCase
   
   def test_metadata
     assert_equal "AND", @precondition.conjunction
+    assert @precondition.negation
     assert_equal 1, @precondition.preconditions.length
     assert_equal "AND", @precondition.preconditions[0].conjunction
+    assert_equal false, @precondition.preconditions[0].negation
     assert_equal "FIRST", @precondition.preconditions[0].subset
     assert @precondition.preconditions[0].comparison
     assert_equal "FIRST", @precondition.preconditions[0].comparison.subset
