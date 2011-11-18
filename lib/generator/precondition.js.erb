@@ -12,25 +12,31 @@ var <%= name %> = function(patient) {
   <%= js_for_comparison(precondition.comparison, name) %>
   <%- end -%>
   
-  var matchingPreconditionEvents = null;
   <%- if precondition.preconditions && precondition.preconditions.length>0 -%> 
-    matchingPreconditionEvents = <%= "#{precondition.preconditions[0].conjunction}(" -%>
+    <%- if precondition.negation -%>
+    return NOT(<%= "#{precondition.preconditions[0].conjunction}(" -%>
+    <%- precondition.preconditions.each_with_index do |subcondition, i| -%>
+      <%- -%><%= ', ' if i>0 %>
+      <%- -%> <%= nested_precondition_fns[i] %>(patient)<%- -%>
+    <%- end -%>
+    <%- -%>));
+    <%- else -%>
+    return <%= "#{precondition.preconditions[0].conjunction}(" -%>
     <%- precondition.preconditions.each_with_index do |subcondition, i| -%>
       <%- -%><%= ', ' if i>0 %>
       <%- -%> <%= nested_precondition_fns[i] %>(patient)<%- -%>
     <%- end -%>
     <%- -%>);
+    <%- end -%>
   <%- end -%>
   
-  var matchingComparisonEvents = null;
   <%- if precondition.comparison -%>
-  matchingComparisonEvents = <%= nested_comparison_fns[0] %>(patient);
-  <%- end -%>
-  
+  var matchingEvents = <%= nested_comparison_fns[0] %>(patient);
   <%- if precondition.negation -%>
-  return NOT(OR(matchingPreconditionEvents, matchingComparisonEvents));
+  return NOT(matchingEvents);
   <%- else -%>
-  return OR(matchingPreconditionEvents, matchingComparisonEvents);
+  return OR(matchingEvents);
   <%- end -%>
+  <%- end -%>  
   
 }
