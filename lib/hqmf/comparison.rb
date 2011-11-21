@@ -15,7 +15,7 @@ module HQMF
       end
       @restrictions = []
       if parent
-        @restrictions.concat(parent.restrictions)
+        @restrictions.concat(parent.restrictions.select {|r| r.field==nil})
         @subset = parent.subset
       end
       restriction_def = @entry.at_xpath('./*/cda:sourceOf')

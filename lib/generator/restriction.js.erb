@@ -1,5 +1,4 @@
 var <%= name %> = function(patient, events) {
-  <%- nested_comparison_fns = [] -%>
   <%- if restriction.comparison -%>
     <%- name = new_fn_name('comp') -%>
     <%- nested_comparison_fn = name -%>
@@ -16,9 +15,11 @@ var <%= name %> = function(patient, events) {
       <%- -%>, <%= js_for_range(restriction.range) %>
       <%- end -%>
     );
-  <%- else -%>
+  <%- elsif nested_comparison_fn -%>
     var otherEvents = <%= nested_comparison_fn %>(patient);
     eventsMatchingComparison = <%= restriction.type %>(events, otherEvents);
+  <%- elsif restriction.field -%>
+    eventsMatchingComparison = <%= restriction.type %>(events, "<%= restriction.field %>", "<%= restriction.value %>"); 
   <%- end -%>
       
   return eventsMatchingComparison;

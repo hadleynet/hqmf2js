@@ -8,7 +8,7 @@ module HQMF
       @data_criteria = @doc.xpath('//cda:section[cda:code/@code="57025-9"]/cda:entry').collect do |entry|
         DataCriteria.new(entry)
       end
-      @attributes = @doc.xpath('//cda:subjectOf/cda:measureAttribute').collect do |attr|
+      @attributes = @doc.xpath('//cda:subjectOf/cda:measureAttribute[cda:id]').collect do |attr|
         Attribute.new(attr)
       end
       @population_criteria = @doc.xpath('//cda:section[cda:code/@code="57026-7"]/cda:entry').collect do |attr|

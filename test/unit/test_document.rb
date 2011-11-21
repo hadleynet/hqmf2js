@@ -19,7 +19,7 @@ class DocumentTest  < Test::Unit::TestCase
   
   def test_attributes
     attr_list = @doc.all_attributes
-    assert_equal 16, attr_list.length
+    assert_equal 3, attr_list.length
   
     attr = @doc.attribute_for_code('MSRTP')
     assert_equal 'F8D5AD22-F49E-4181-B886-E5B12BEA8966', attr.id
@@ -33,8 +33,8 @@ class DocumentTest  < Test::Unit::TestCase
     assert_equal nil, attr.unit
     assert_equal 'Measurement end date', attr.name
 
-    attr = @doc.attribute_for_code('MSRMD')
-    assert_equal '12 month(s)', attr.value
+    attr = @doc.attribute_for_code('MSRTP')
+    assert_equal 'Measurement period', attr.name
   end
   
   def test_population_criteria

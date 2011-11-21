@@ -18,7 +18,7 @@ var <%= name %> = function(patient) {
   <%- end -%>
   
   <%- comparison.restrictions.each_with_index do |restriction,i| -%>
-  <%- if doc.attribute(restriction.target_id) -%>
+  <%- if doc.attribute(restriction.target_id) || restriction.field -%>
     eventsMatchingComparison = <%= restriction_fns[i] %>(patient, eventsMatchingComparison);
   <%- end -%>
   <%- end -%>

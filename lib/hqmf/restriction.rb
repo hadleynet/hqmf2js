@@ -15,7 +15,7 @@ module HQMF
         @range = Range.new(range_def)
       end
       if parent
-        @restrictions.concat(parent.restrictions)
+        @restrictions.concat(parent.restrictions.select {|r| r.field==nil})
       end
       @subset = attr_val('./cda:subsetCode/@code')
       
@@ -37,5 +37,13 @@ module HQMF
       attr_val('./*/cda:id/@root')
     end
     
+    def field
+      attr_val('./cda:observation/cda:code/@displayName')
+    end
+    
+    def value
+      attr_val('./cda:observation/cda:value/@displayName')
+    end
+
   end
 end
