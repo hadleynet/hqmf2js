@@ -4,7 +4,7 @@ module HQMF
   
     include HQMF::Utilities
     
-    attr_reader :range, :comparison, :restrictions, :subset
+    attr_reader :range, :comparison, :restrictions, :subset, :preconditions
     
     def initialize(entry, parent, doc)
       @doc = doc
@@ -23,6 +23,10 @@ module HQMF
       if comparison_def
         data_criteria_id = attr_val('./*/cda:id/@root')
         @comparison = Comparison.new(data_criteria_id, comparison_def, self, @doc)
+      end
+      
+      @preconditions = @entry.xpath('./*/cda:sourceOf[@typeCode="PRCN"]').collect do |entry|
+        p = Precondition.new(entry, nil, @doc)
       end
     end
     

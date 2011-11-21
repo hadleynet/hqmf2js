@@ -35,7 +35,7 @@ var <%= name %> = function(patient) {
   <%- if precondition.negation -%>
   return NOT(matchingEvents);
   <%- else -%>
-  return OR(matchingEvents);
+  return matchingEvents;
   <%- end -%>
   <%- end -%>  
   
