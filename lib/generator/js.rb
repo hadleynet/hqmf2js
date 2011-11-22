@@ -67,16 +67,6 @@ module Generator
       template.result(context.get_binding)
     end
     
-    def logical_to_set(logical)
-      case logical
-      when 'OR'
-        'UNION'
-      when 'AND'
-        'INTERSECTION'
-      else
-        raise "Unknown logical operator [#{logical}]"
-      end
-    end
   end
 
   # Entry point to JavaScript generator

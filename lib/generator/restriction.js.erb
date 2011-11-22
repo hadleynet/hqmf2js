@@ -31,18 +31,11 @@ var <%= name %> = function(patient, events) {
       <%- end -%>);
   <%- elsif restriction.field -%>
     eventsMatchingComparison = <%= restriction.type %>(events, "<%= restriction.field %>", "<%= restriction.value %>"); 
-  <%- elsif restriction.preconditions -%>
-    var otherEvents = <%= logical_to_set(restriction.preconditions[0].conjunction) %>(
+  <%- elsif restriction.preconditions && restriction.preconditions.length>0 -%>
+    eventsMatchingComparison = <%= restriction.preconditions[0].conjunction %>(
     <%- nested_precondition_fns.each_with_index do |fn, i| -%>
       <%= ',' if i>0 %><%= fn %>(patient)
     <%- end -%>
-    );
-    eventsMatchingComparison = <%= restriction.type %>(
-      events,
-      otherEvents<%- -%>
-      <%- if restriction.range -%>
-      <%- -%>, <%= js_for_range(restriction.range) %>
-      <%- end -%>
     );
   <%- end -%>
       

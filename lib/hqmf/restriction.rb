@@ -26,7 +26,32 @@ module HQMF
       end
       
       @preconditions = @entry.xpath('./*/cda:sourceOf[@typeCode="PRCN"]').collect do |entry|
-        p = Precondition.new(entry, nil, @doc)
+        # create a dummy parent with a single restriction copied from self minus the
+        # nested preconditions to avoid an infinite loop
+        prior_comparison = nil
+        if parent.class==HQMF::Precondition
+          prior_comparison = parent.first_comparison
+        else
+          prior_comparison = @comparsion
+        end
+        current_restriction = OpenStruct.new(
+          'range' => @range,
+          'comparison' => prior_comparison,
+          'restrictions' => [],
+          'preconditions' => [],
+          'subset' => @subset,
+          'type' => type,
+          'target_id' => target_id,
+          'field' => field,
+          'value' => value)
+        all_restrictions = []
+        all_restrictions.concat @restrictions
+        all_restrictions << current_restriction
+        parent = OpenStruct.new(
+          'restrictions' => all_restrictions,
+          'subset' => @subset
+        )
+        p = Precondition.new(entry, parent, @doc)
       end
     end
     
