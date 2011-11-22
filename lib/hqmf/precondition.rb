@@ -38,6 +38,7 @@ module HQMF
       attr_val('./cda:conjunctionCode/@code')
     end
     
+    # Return whether the precondition is negated (true) or not (false)
     def negation
       if @entry.at_xpath('./cda:act[@actionNegationInd="true"]')
         true
