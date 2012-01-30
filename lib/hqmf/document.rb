@@ -5,13 +5,13 @@ module HQMF
     # @param [String] path the path to the HQMF document
     def initialize(path)
       @doc = Document.parse(path)
-      @data_criteria = @doc.xpath('//cda:section[cda:code/@code="57025-9"]/cda:entry').collect do |entry|
-        DataCriteria.new(entry)
-      end
-      @attributes = @doc.xpath('//cda:subjectOf/cda:measureAttribute[cda:id]').collect do |attr|
+      @attributes = @doc.xpath('cda:QualityMeasureDocument/cda:component/cda:measureDescriptionSection/cda:entry').collect do |attr|
         Attribute.new(attr)
       end
-      @population_criteria = @doc.xpath('//cda:section[cda:code/@code="57026-7"]/cda:entry').collect do |attr|
+      @data_criteria = @doc.xpath('cda:QualityMeasureDocument/cda:component/cda:dataCriteriaSection/cda:entry').collect do |entry|
+        DataCriteria.new(entry)
+      end
+      @population_criteria = @doc.xpath('cda:QualityMeasureDocument/cda:component/cda:populationCriteriaSection/cda:entry').collect do |attr|
         PopulationCriteria.new(attr, self)
       end
     end
@@ -25,7 +25,8 @@ module HQMF
     # Get the description of the measure
     # @return [String] the description
     def description
-      @doc.at_xpath('cda:QualityMeasureDocument/cda:text').inner_text
+      description = @doc.at_xpath('cda:QualityMeasureDocument/cda:text')
+      description==nil ? '' : description.inner_text
     end
   
     # Get all the attributes defined by the measure

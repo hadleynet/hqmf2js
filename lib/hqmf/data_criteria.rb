@@ -4,63 +4,57 @@ module HQMF
   
     include HQMF::Utilities
     
-    attr_reader :property, :type
+    attr_reader :property, :type, :status
   
     # Create a new instance based on the supplied HQMF entry
     # @param [Nokogiri::XML::Element] entry the parsed HQMF entry
     def initialize(entry)
       @entry = entry
-      @code_list_xpath = 'cda:act/cda:sourceOf//cda:code/@code'
-      template_id = attr_val('cda:act/cda:templateId/@root')
-      case template_id
-      when '2.16.840.1.113883.3.560.1.2'
+      @status = attr_val('./cda:observationCriteria/cda:statusCode/@code')
+      @id_xpath = './cda:observationCriteria/cda:id/@extension'
+      @code_list_xpath = './cda:observationCriteria/cda:code/@valueSet'
+      
+      entry_type = attr_val('./*/cda:definition/*/cda:id/@extension')
+      case entry_type
+      when 'Problem'
         @type = :diagnosis
-        @code_list_xpath = 'cda:act/cda:sourceOf/cda:observation/cda:value/@code'
-        @status_xpath = 'cda:act/cda:sourceOf/cda:observation/cda:sourceOf/cda:observation/cda:value/@displayName'
-      when '2.16.840.1.113883.3.560.1.3'
-        @type = :procedure
-        @status_xpath = 'cda:act/cda:sourceOf/cda:observation/cda:statusCode/@code'
-      when '2.16.840.1.113883.3.560.1.4'
+        @code_list_xpath = './cda:observationCriteria/cda:value/@valueSet'
+      when 'Encounter'
         @type = :encounter
-      when '2.16.840.1.113883.3.560.1.5'
+      @id_xpath = './cda:encounterCriteria/cda:id/@extension'
+      @code_list_xpath = './cda:encounterCriteria/cda:code/@valueSet'
+      when 'LabResults'
         @type = :result
-        @status_xpath = 'cda:act/cda:sourceOf/cda:observation/cda:statusCode/@code'
-      when '2.16.840.1.113883.3.560.1.6'
+      when 'Procedure'
         @type = :procedure
-      when '2.16.840.1.113883.3.560.1.8'
+      when 'Medication'
         @type = :medication
-        @code_list_xpath = 'cda:act/cda:sourceOf/cda:supply/cda:participant/cda:roleParticipant/cda:playingMaterial/cda:code/@code'
-      when '2.16.840.1.113883.3.560.1.13'
+        @id_xpath = './cda:substanceAdministrationCriteria/cda:id/@extension'
+        @code_list_xpath = './cda:substanceAdministrationCriteria/cda:participant/cda:roleParticipant/cda:code/@valueSet'
+      when 'RX'
         @type = :medication
-        @code_list_xpath = 'cda:act/cda:sourceOf/cda:substanceAdministration/cda:participant/cda:roleParticipant/cda:playingMaterial/cda:code/@code'
-        @status_xpath = 'cda:act/cda:sourceOf/cda:substanceAdministration/cda:sourceOf/cda:observation/cda:value/@displayName'
-      when '2.16.840.1.113883.3.560.1.14'
-        @type = :medication
-      when '2.16.840.1.113883.3.560.1.17'
-        @type = :medication
-        @code_list_xpath = 'cda:act/cda:sourceOf/cda:substanceAdministration/cda:participant/cda:roleParticipant/cda:playingMaterial/cda:code/@code'
-      when '2.16.840.1.113883.3.560.1.25'
+        @id_xpath = './cda:supplyCriteria/cda:id/@extension'
+        @code_list_xpath = './cda:supplyCriteria/cda:participant/cda:roleParticipant/cda:code/@valueSet'
+      when 'Demographics'
         @type = :characteristic
-        @property = :birthtime
-      when '2.16.840.1.113883.3.560.1.1001'
-        @type = :characteristic
-        @code_list_xpath = 'cda:act/cda:sourceOf/cda:observation/cda:value/@code'
-        @property = :gender
+        @property = property_for_demographic
+      when nil
+        @type = :variable
       else
-        raise "Unknown data criteria template identifier [#{template_id}]"
+        raise "Unknown data criteria template identifier [#{entry_type}]"
       end
     end
     
     # Get the identifier of the criteria, used elsewhere within the document for referencing
     # @return [String] the identifier of this data criteria
     def id
-      attr_val('cda:act/cda:id/@root')
+      attr_val(@id_xpath)
     end
     
     # Get the title of the criteria, provides a human readable description
     # @return [String] the title of this data criteria
     def title
-      @entry.at_xpath('.//cda:title').inner_text
+      @entry.at_xpath('./cda:localVariableName').inner_text
     end
     
     # Get the code list OID of the criteria, used as an index to the code list database
@@ -69,23 +63,25 @@ module HQMF
       attr_val(@code_list_xpath)
     end
     
-    # Get the status of the criteria, e.g. active, completed, etc. Only present for
-    # certain types like condition, diagnosis, procedure, etc.
-    # @return [String] the status of this data criteria
-    def status
-      if @status_path
-        attr_val(@status_xpath)
-      else
-        nil
-      end
-    end
-    
     # Get a JS friendly constant name for this measure attribute
     def const_name
       components = title.gsub(/\W/,' ').split.collect {|word| word.strip.upcase }
       components.join '_'
     end
     
+    private
+    
+    def property_for_demographic
+      demographic_type = attr_val('./cda:observationCriteria/cda:code/@code')
+      case demographic_type
+      when '424144002'
+        :age
+      when '263495000'
+        :gender
+      else
+        raise "Unknown demographic identifier [#{demographic_type}]"
+      end
+    end
 
   end
   
