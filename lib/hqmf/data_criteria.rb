@@ -4,7 +4,7 @@ module HQMF
   
     include HQMF::Utilities
     
-    attr_reader :property, :type, :status, :value
+    attr_reader :property, :type, :status, :value, :effective_time
   
     # Create a new instance based on the supplied HQMF entry
     # @param [Nokogiri::XML::Element] entry the parsed HQMF entry
@@ -14,28 +14,35 @@ module HQMF
       @id_xpath = './cda:observationCriteria/cda:id/@extension'
       @code_list_xpath = './cda:observationCriteria/cda:code/@valueSet'
       @value_xpath = './cda:observationCriteria/cda:value'
+      @effective_time_xpath = './*/cda:effectiveTime'
       
       entry_type = attr_val('./*/cda:definition/*/cda:id/@extension')
       case entry_type
       when 'Problem'
         @type = :diagnosis
         @code_list_xpath = './cda:observationCriteria/cda:value/@valueSet'
+        @effective_time = extract_effective_time
       when 'Encounter'
         @type = :encounter
-      @id_xpath = './cda:encounterCriteria/cda:id/@extension'
-      @code_list_xpath = './cda:encounterCriteria/cda:code/@valueSet'
+        @id_xpath = './cda:encounterCriteria/cda:id/@extension'
+        @code_list_xpath = './cda:encounterCriteria/cda:code/@valueSet'
+        @effective_time = extract_effective_time
       when 'LabResults'
         @type = :result
+        @value = extract_value
+        @effective_time = extract_effective_time
       when 'Procedure'
         @type = :procedure
       when 'Medication'
         @type = :medication
         @id_xpath = './cda:substanceAdministrationCriteria/cda:id/@extension'
         @code_list_xpath = './cda:substanceAdministrationCriteria/cda:participant/cda:roleParticipant/cda:code/@valueSet'
+        @effective_time = extract_effective_time
       when 'RX'
         @type = :medication
         @id_xpath = './cda:supplyCriteria/cda:id/@extension'
         @code_list_xpath = './cda:supplyCriteria/cda:participant/cda:roleParticipant/cda:code/@valueSet'
+        @effective_time = extract_effective_time
       when 'Demographics'
         @type = :characteristic
         @property = property_for_demographic
@@ -73,6 +80,15 @@ module HQMF
     end
     
     private
+    
+    def extract_effective_time
+      effective_time_def = @entry.at_xpath(@effective_time_xpath)
+      if effective_time_def
+        EffectiveTime.new(effective_time_def)
+      else
+        nil
+      end
+    end
     
     def extract_value
       value = nil

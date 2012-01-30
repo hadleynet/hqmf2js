@@ -8,7 +8,7 @@ require 'singleton'
 require 'json'
 
 require_relative 'hqmf/utilities'
-require_relative 'hqmf/range'
+require_relative 'hqmf/types'
 require_relative 'hqmf/document'
 require_relative 'hqmf/data_criteria'
 require_relative 'hqmf/attribute'

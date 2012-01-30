@@ -28,6 +28,24 @@ module HQMF
         false
       end
     end
+    
+    def derived?
+      case attr_val('./@nullFlavor')
+      when 'DER'
+        true
+      else
+        false
+      end
+    end
+    
+    def expression
+      if !derived?
+        nil
+      else
+        @entry.at_xpath('./cda:expression').inner_text
+      end
+    end
+    
   end
   
   # Represents a HQMF pauseQuantity which can have low and high bounds
@@ -56,8 +74,18 @@ module HQMF
       else
         nil
       end
+    end 
+  end
+  
+  # Represents a HQMF effective time which is a specialization of a interval
+  class EffectiveTime < Range
+    def initialize(entry)
+      super
     end
     
+    def type
+      'IVL_PQ'
+    end
   end
   
   # Represents a HQMF CD value which has a code and codeSystem

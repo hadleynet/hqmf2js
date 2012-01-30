@@ -111,8 +111,10 @@ class DocumentTest  < Test::Unit::TestCase
     assert_equal 'IVL_PQ', criteria.value.type
     assert_equal '17', criteria.value.low.value
     assert_equal 'a', criteria.value.low.unit
+    assert_equal false, criteria.value.low.derived?
     assert_equal '64', criteria.value.high.value
     assert_equal 'a', criteria.value.high.unit
+    assert_equal false, criteria.value.high.derived?
 
     criteria = @doc.data_criteria('genderMale')
     assert_equal :characteristic, criteria.type
@@ -127,27 +129,55 @@ class DocumentTest  < Test::Unit::TestCase
     assert_equal :encounter, criteria.type
     assert_equal 'EDorInpatientEncounter', criteria.title
     assert_equal '2.16.840.1.113883.3.464.1.42', criteria.code_list_id
+    assert criteria.effective_time
+    assert_equal nil, criteria.effective_time.low
+    assert criteria.effective_time.high
+    assert_equal true, criteria.effective_time.high.derived?
+    assert_equal 'EndDate.add(new PQ(-2,"a"))', criteria.effective_time.high.expression
 
-    criteria = @doc.data_criteria('HasDiabetes')
+    criteria = @doc.data_criteria('HasGestationalDiabetes')
     assert_equal :diagnosis, criteria.type
-    assert_equal 'HasDiabetes', criteria.title
-    assert_equal '2.16.840.1.113883.3.464.1.37', criteria.code_list_id
+    assert_equal 'HasGestationalDiabetes', criteria.title
+    assert_equal '2.16.840.1.113883.3.464.1.67', criteria.code_list_id
+    assert criteria.effective_time
+    assert criteria.effective_time.low
+    assert_equal true, criteria.effective_time.low.derived?
+    assert_equal 'StartDate', criteria.effective_time.low.expression
+    assert criteria.effective_time.high
+    assert_equal true, criteria.effective_time.high.derived?
+    assert_equal 'EndDate', criteria.effective_time.high.expression
 
     criteria = @doc.data_criteria('HbA1C')
     assert_equal :result, criteria.type
     assert_equal 'HbA1C', criteria.title
     assert_equal '2.16.840.1.113883.3.464.1.72', criteria.code_list_id
     assert_equal 'completed', criteria.status
+    assert_equal nil, criteria.effective_time
+    assert_equal HQMF::Range, criteria.value.class
+    assert_equal nil, criteria.value.high
+    assert criteria.value.low
+    assert_equal '9', criteria.value.low.value
+    assert_equal '%', criteria.value.low.unit
 
     criteria = @doc.data_criteria('DiabetesMedAdministered')
     assert_equal :medication, criteria.type
     assert_equal 'DiabetesMedAdministered', criteria.title
     assert_equal '2.16.840.1.113883.3.464.1.94', criteria.code_list_id
+    assert criteria.effective_time
+    assert_equal nil, criteria.effective_time.low
+    assert criteria.effective_time.high
+    assert_equal true, criteria.effective_time.high.derived?
+    assert_equal 'EndDate.add(new PQ(-2,"a"))', criteria.effective_time.high.expression
 
     criteria = @doc.data_criteria('DiabetesMedSupplied')
     assert_equal :medication, criteria.type
     assert_equal 'DiabetesMedSupplied', criteria.title
     assert_equal '2.16.840.1.113883.3.464.1.94', criteria.code_list_id
+    assert criteria.effective_time
+    assert_equal nil, criteria.effective_time.low
+    assert criteria.effective_time.high
+    assert_equal true, criteria.effective_time.high.derived?
+    assert_equal 'EndDate.add(new PQ(-2,"a"))', criteria.effective_time.high.expression
 
     begin
       criteria = @doc.data_criteria('foo')
