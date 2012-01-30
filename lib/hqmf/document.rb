@@ -42,13 +42,6 @@ module HQMF
       find(@attributes, :id, id)
     end
     
-    # Get a specific attribute by code.
-    # @param [String] code the attribute code
-    # @return [HQMF::Attribute] the matching attribute, raises an Exception if not found
-    def attribute_for_code(code)
-      find(@attributes, :code, code)
-    end
-
     # Get all the population criteria defined by the measure
     # @return [Array] an array of HQMF::PopulationCriteria
     def all_population_criteria
@@ -62,13 +55,6 @@ module HQMF
       find(@population_criteria, :id, id)
     end
     
-    # Get a specific population criteria by code.
-    # @param [String] code the population criteria code
-    # @return [HQMF::PopulationCriteria] the matching criteria, raises an Exception if not found
-    def population_criteria_for_code(code)
-      find(@population_criteria, :code, code)
-    end
-
     # Get all the data criteria defined by the measure
     # @return [Array] an array of HQMF::DataCriteria describing the data elements used by the measure
     def all_data_criteria

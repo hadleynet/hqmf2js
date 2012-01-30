@@ -11,33 +11,15 @@ module HQMF
     def initialize(entry, doc)
       @doc = doc
       @entry = entry
-      @preconditions = @entry.xpath('./*/cda:sourceOf[@typeCode="PRCN"]').collect do |entry|
-        pc = Precondition.new(entry, nil, @doc)
-        if pc.preconditions.length==0 && !pc.comparison && pc.restrictions.length==0
-          nil
-        else
-          pc
-        end
-      end.compact
-    end
-    
-    # Get the code for the population criteria
-    # @return [String] the code (e.g. IPP, DEMON, NUMER, EXCL)
-    def code
-      value = attr_val('cda:observation/cda:value/@code')
-      # exclusion population criteria has id of DENOM with actionNegationInd of true
-      # special case this to simply handling
-      if attr_val('cda:observation/@actionNegationInd')=='true'
-        value = 'EXCL'
+      @preconditions = @entry.xpath('./*/cda:precondition').collect do |entry|
+        Precondition.new(entry, @doc)
       end
-      value
     end
     
-    # Get the id for the population criteria, used elsewhere in the HQMF document to
-    # refer to this criteria
+    # Get the id for the population criteria
     # @return [String] the id
     def id
-      attr_val('cda:observation/cda:id/@root')
+      attr_val('./*/cda:id/@extension')
     end
     
   end

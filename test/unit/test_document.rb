@@ -40,12 +40,12 @@ class DocumentTest  < Test::Unit::TestCase
   def test_population_criteria
     all_population_criteria = @doc.all_population_criteria
     assert_equal 6, all_population_criteria.length
-#     
-#     codes = all_population_criteria.collect {|p| p.code}
-#     %w(IPP DENOM NUMER EXCL).each do |c|
-#       assert codes.include?(c)
-#     end
-#     
+    
+    codes = all_population_criteria.collect {|p| p.id}
+    %w(IPP DENOM NUMER DENEXCEP).each do |c|
+      assert codes.include?(c)
+    end
+
 #     ipp = @doc.population_criteria_for_code('IPP')
 #     assert_equal 1, ipp.preconditions.length
 #     assert_equal 0, ipp.preconditions[0].preconditions.length
@@ -59,9 +59,14 @@ class DocumentTest  < Test::Unit::TestCase
 #     assert_equal true, ipp.preconditions[0].comparison.restrictions[0].range.low.inclusive?
 #     assert_equal nil, ipp.preconditions[0].comparison.restrictions[0].range.high
 # 
-#     den = @doc.population_criteria_for_code('DENOM')
-#     assert_equal 1, den.preconditions.length
-#     assert_equal 'AND', den.preconditions[0].conjunction
+    den = @doc.population_criteria('DENOM')
+    assert_equal 1, den.preconditions.length
+    assert den.preconditions[0].conjunction?
+    assert_equal 'atLeastOneTrue', den.preconditions[0].conjunction_code
+    assert_equal 5, den.preconditions[0].preconditions.length
+    assert den.preconditions[0].preconditions[0].conjunction?
+    assert_equal 'allTrue', den.preconditions[0].preconditions[0].conjunction_code
+    
 #     assert_equal '3CF573A8-34AE-408E-88D7-26A1016A140D', den.preconditions[0].comparison.data_criteria_id
 #     assert_equal 1, den.preconditions[0].comparison.restrictions.length
 #     assert_equal 'DURING', den.preconditions[0].comparison.restrictions[0].type
