@@ -4,7 +4,7 @@ module HQMF
   
     include HQMF::Utilities
     
-    attr_reader :property, :type, :status
+    attr_reader :property, :type, :status, :value
   
     # Create a new instance based on the supplied HQMF entry
     # @param [Nokogiri::XML::Element] entry the parsed HQMF entry
@@ -13,6 +13,7 @@ module HQMF
       @status = attr_val('./cda:observationCriteria/cda:statusCode/@code')
       @id_xpath = './cda:observationCriteria/cda:id/@extension'
       @code_list_xpath = './cda:observationCriteria/cda:code/@valueSet'
+      @value_xpath = './cda:observationCriteria/cda:value'
       
       entry_type = attr_val('./*/cda:definition/*/cda:id/@extension')
       case entry_type
@@ -38,8 +39,10 @@ module HQMF
       when 'Demographics'
         @type = :characteristic
         @property = property_for_demographic
+        @value = extract_value
       when nil
         @type = :variable
+        @value = extract_value
       else
         raise "Unknown data criteria template identifier [#{entry_type}]"
       end
@@ -70,6 +73,28 @@ module HQMF
     end
     
     private
+    
+    def extract_value
+      value = nil
+      value_def = @entry.at_xpath(@value_xpath)
+      if value_def
+        value_type_def = value_def.at_xpath('@xsi:type')
+        if value_type_def
+          value_type = value_type_def.value
+          case value_type
+          when 'TS'
+            value = Value.new(value_def)
+          when 'IVL_PQ'
+            value = Range.new(value_def)
+          when 'CD'
+            value = Coded.new(value_def)
+          else
+            raise "Unknown value type [#{value_type}]"
+          end
+        end
+      end
+      value
+    end
     
     def property_for_demographic
       demographic_type = attr_val('./cda:observationCriteria/cda:code/@code')

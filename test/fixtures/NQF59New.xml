@@ -33,6 +33,7 @@
       <entry>
         <localVariableName>StartDate</localVariableName>
         <observationCriteria>
+          <id root="0" extension="StartDate"/>
           <code code="52832-3" codeSystem="2.16.840.1.113883.6.1"/>
           <value xsi:type="TS" value="20100101"/>
         </observationCriteria>
@@ -40,6 +41,7 @@
       <entry>
         <localVariableName>EndDate</localVariableName>
         <observationCriteria>
+          <id root="0" extension="EndDate"/>
           <code code="52833-1" codeSystem="2.16.840.1.113883.6.1"/>
           <value xsi:type="TS" value="20101231"/>
         </observationCriteria>

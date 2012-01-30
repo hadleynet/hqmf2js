@@ -96,15 +96,32 @@ class DocumentTest  < Test::Unit::TestCase
     data_criteria = @doc.all_data_criteria
     assert_equal 22, data_criteria.length
     
+    criteria = @doc.data_criteria('EndDate')
+    assert_equal :variable, criteria.type
+    assert_equal 'EndDate', criteria.title
+    assert_equal HQMF::Value, criteria.value.class
+    assert_equal '20101231', criteria.value.value
+    assert_equal 'TS', criteria.value.type
+
     criteria = @doc.data_criteria('ageBetween17and64')
     assert_equal :characteristic, criteria.type
     assert_equal 'ageBetween17and64', criteria.title
     assert_equal :age, criteria.property
+    assert_equal HQMF::Range, criteria.value.class
+    assert_equal 'IVL_PQ', criteria.value.type
+    assert_equal '17', criteria.value.low.value
+    assert_equal 'a', criteria.value.low.unit
+    assert_equal '64', criteria.value.high.value
+    assert_equal 'a', criteria.value.high.unit
 
     criteria = @doc.data_criteria('genderMale')
     assert_equal :characteristic, criteria.type
     assert_equal 'genderMale', criteria.title
     assert_equal :gender, criteria.property
+    assert_equal HQMF::Coded, criteria.value.class
+    assert_equal 'CD', criteria.value.type
+    assert_equal 'M', criteria.value.code
+    assert_equal '2.16.840.1.113883.5.1', criteria.value.system
 
     criteria = @doc.data_criteria('EDorInpatientEncounter')
     assert_equal :encounter, criteria.type

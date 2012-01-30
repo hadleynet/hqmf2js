@@ -8,6 +8,10 @@ module HQMF
       @entry = entry
     end
     
+    def type
+      attr_val('./@xsi:type')
+    end
+    
     def value
       attr_val('./@value')
     end
@@ -39,6 +43,10 @@ module HQMF
       end
     end
     
+    def type
+      attr_val('./@xsi:type')
+    end
+    
     private
     
     def optional_value(xpath)
@@ -48,6 +56,28 @@ module HQMF
       else
         nil
       end
+    end
+    
+  end
+  
+  # Represents a HQMF CD value which has a code and codeSystem
+  class Coded
+    include HQMF::Utilities
+    
+    def initialize(entry)
+      @entry = entry
+    end
+    
+    def type
+      attr_val('./@xsi:type')
+    end
+    
+    def system
+      attr_val('./@codeSystem')
+    end
+    
+    def code
+      attr_val('./@code')
     end
     
   end
