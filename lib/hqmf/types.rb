@@ -107,6 +107,19 @@ module HQMF
     def code
       attr_val('./@code')
     end
-    
   end
+  
+  # Represents a HQMF reference from a precondition to a data criteria
+  class Reference
+    include HQMF::Utilities
+    
+    def initialize(entry)
+      @entry = entry
+    end
+    
+    def data_criteria_id
+      attr_val('./@extension')
+    end
+  end
+  
 end

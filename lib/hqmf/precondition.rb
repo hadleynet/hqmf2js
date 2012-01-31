@@ -4,7 +4,7 @@ module HQMF
   
     include HQMF::Utilities
     
-    attr_reader :preconditions
+    attr_reader :preconditions, :reference
   
     def initialize(entry, doc)
       @doc = doc
@@ -12,8 +12,14 @@ module HQMF
       @preconditions = @entry.xpath('./*/cda:precondition').collect do |entry|
         Precondition.new(entry, @doc)
       end
+      reference_def = @entry.at_xpath('./*/cda:id')
+      if reference_def
+        @reference = Reference.new(reference_def)
+      end
     end
     
+    # Return true of this precondition represents a conjunction with nested preconditions
+    # or false of this precondition is a reference to a data criteria
     def conjunction?
       @preconditions.length>0
     end
