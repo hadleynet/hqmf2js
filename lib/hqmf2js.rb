@@ -14,7 +14,5 @@ require_relative 'hqmf/data_criteria'
 require_relative 'hqmf/attribute'
 require_relative 'hqmf/population_criteria'
 require_relative 'hqmf/precondition'
-require_relative 'hqmf/restriction'
-require_relative 'hqmf/comparison'
 
 require_relative 'generator/js'
