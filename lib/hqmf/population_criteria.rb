@@ -33,11 +33,7 @@ module HQMF
     # @return [String] conjunction code
     def conjunction_code
       case id
-      when 'IPP'
-        'allTrue'
-      when 'DENOM'
-        'allTrue'
-      when 'NUMER'
+      when 'IPP', 'DENOM', 'NUMER'
         'allTrue'
       when 'DENEXCEP'
         'atLeastOneTrue'

@@ -1,16 +1,28 @@
-var dataCriteria = {
-  <%- all_criteria.each_with_index do |criteria, index| -%>
-  "<%= criteria.const_name %>": {
-    "title": "<%= criteria.title %>",
-    "code_list_oid": "<%= criteria.code_list_id %>",
-    "type": "<%= criteria.type %>",
-    <%- if criteria.status -%>
-    "status": "<%= criteria.status %>",
-    <%- end -%>
-    <%- if criteria.property -%>
-    "property": "<%= criteria.property %>",
-    <%- end -%>
-    "codes": {}
-  }<%= ',' if index<all_criteria.length-1 %>
+// Measure variables
+<%- all_criteria.select {|c| c.type == :variable}.each do |criteria| -%>
+var <%= criteria.id %> = <%= js_for_value(criteria.value) %>;
+<%- end -%>
+
+// Data critera
+<%- all_criteria.select {|c| c.type != :variable}.each do |criteria| -%>
+var <%= criteria.id %> = function(patient) {
+  <%- if criteria.type == :characteristic -%>
+  var value = patient.<%= criteria.property %>();
+  return matchingValue(value, <%= js_for_bounds(criteria.value) %>);
+  <%- else -%>
+  var codes = getCodes("<%= criteria.code_list_id %>");
+  <%- if criteria.effective_time -%>
+  var start = <%= js_for_value(criteria.effective_time.low) %>;
+  var end = <%= js_for_value(criteria.effective_time.high) %>;
+  var events = patient.<%= criteria.section %>().match(codes, start, end);
+  <%- else -%>
+  var events = patient.<%= criteria.section %>().match(codes);
+  <%- end -%>
+  <%- if criteria.value -%>
+  events = filterEventsByValue(events, <%= js_for_bounds(criteria.value) %>);
+  <%- end -%>
+  return (events.length > 0);
   <%- end -%>
 }
+
+<%- end -%>

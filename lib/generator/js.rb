@@ -17,56 +17,82 @@ module Generator
       binding
     end
     
-    # Create a new function name using the supplied prefix and an incremented counter.
-    def new_fn_name(prefix)
-      "#{prefix}#{FunctionCounter.instance.new_id}"
-    end
-    
-    # Returns the JavaScript generated for a HQMF::Precondition
-    def js_for_precondition(precondition, name)
-      template_str = File.read(File.expand_path("../precondition.js.erb", __FILE__))
-      template = ERB.new(template_str, nil, '-', "_templ#{TemplateCounter.instance.new_id}")
-      params = {'doc' => doc, 'precondition' => precondition, 'name' => name}
-      context = ErbContext.new(params)
-      template.result(context.get_binding)
-    end
-    
-    # Returns the JavaScript generated for a HQMF::Comparison
-    def js_for_comparison(comparison, name)
-      template_str = File.read(File.expand_path("../comparison.js.erb", __FILE__))
-      template = ERB.new(template_str, nil, '-', "_templ#{TemplateCounter.instance.new_id}")
-      params = {'doc' => doc, 'comparison' => comparison, 'name' => name}
-      context = ErbContext.new(params)
-      template.result(context.get_binding)
-    end
-
-    # Returns the JavaScript generated for a HQMF::Restriction
-    def js_for_restriction(restriction, name)
-      template_str = File.read(File.expand_path("../restriction.js.erb", __FILE__))
-      template = ERB.new(template_str, nil, '-', "_templ#{TemplateCounter.instance.new_id}")
-      params = {'doc' => doc, 'restriction' => restriction, 'name' => name}
-      context = ErbContext.new(params)
-      template.result(context.get_binding)
-    end
-
-    # Returns the JavaScript generated for a HQMF::Range
-    def js_for_range(range)
-      template_str = File.read(File.expand_path("../range.js.erb", __FILE__))
-      template = ERB.new(template_str, nil, '-', "_templ#{TemplateCounter.instance.new_id}")
-      params = {'range' => range}
-      context = ErbContext.new(params)
-      template.result(context.get_binding)
-    end
-
-    # Returns the JavaScript generated for a HQMF::Value
     def js_for_value(value)
-      template_str = File.read(File.expand_path("../value.js.erb", __FILE__))
-      template = ERB.new(template_str, nil, '-', "_templ#{TemplateCounter.instance.new_id}")
-      params = {'value' => value}
-      context = ErbContext.new(params)
-      template.result(context.get_binding)
+      if value
+        if value.derived?
+          value.expression
+        else
+          if value.type=='TS'
+            "new TS(\"#{value.value}\")"
+          elsif value.unit != nil
+            "new #{value.type}(#{value.value}, \"#{value.unit}\")"
+          else
+            "new #{value.type}(\"#{value.value}\")"
+          end
+        end
+      else
+        'null'
+      end
     end
     
+    def js_for_bounds(bounds)
+      if bounds.class == HQMF::Range
+        "{\"low\": #{js_for_value(bounds.low)}, \"high\": #{js_for_value(bounds.high)}}"
+      else
+        "#{js_for_value(bounds)}"
+      end
+    end
+    
+#     # Create a new function name using the supplied prefix and an incremented counter.
+#     def new_fn_name(prefix)
+#       "#{prefix}#{FunctionCounter.instance.new_id}"
+#     end
+#     
+#     # Returns the JavaScript generated for a HQMF::Precondition
+#     def js_for_precondition(precondition, name)
+#       template_str = File.read(File.expand_path("../precondition.js.erb", __FILE__))
+#       template = ERB.new(template_str, nil, '-', "_templ#{TemplateCounter.instance.new_id}")
+#       params = {'doc' => doc, 'precondition' => precondition, 'name' => name}
+#       context = ErbContext.new(params)
+#       template.result(context.get_binding)
+#     end
+#     
+#     # Returns the JavaScript generated for a HQMF::Comparison
+#     def js_for_comparison(comparison, name)
+#       template_str = File.read(File.expand_path("../comparison.js.erb", __FILE__))
+#       template = ERB.new(template_str, nil, '-', "_templ#{TemplateCounter.instance.new_id}")
+#       params = {'doc' => doc, 'comparison' => comparison, 'name' => name}
+#       context = ErbContext.new(params)
+#       template.result(context.get_binding)
+#     end
+# 
+#     # Returns the JavaScript generated for a HQMF::Restriction
+#     def js_for_restriction(restriction, name)
+#       template_str = File.read(File.expand_path("../restriction.js.erb", __FILE__))
+#       template = ERB.new(template_str, nil, '-', "_templ#{TemplateCounter.instance.new_id}")
+#       params = {'doc' => doc, 'restriction' => restriction, 'name' => name}
+#       context = ErbContext.new(params)
+#       template.result(context.get_binding)
+#     end
+# 
+#     # Returns the JavaScript generated for a HQMF::Range
+#     def js_for_range(range)
+#       template_str = File.read(File.expand_path("../range.js.erb", __FILE__))
+#       template = ERB.new(template_str, nil, '-', "_templ#{TemplateCounter.instance.new_id}")
+#       params = {'range' => range}
+#       context = ErbContext.new(params)
+#       template.result(context.get_binding)
+#     end
+# 
+#     # Returns the JavaScript generated for a HQMF::Value
+#     def js_for_value(value)
+#       template_str = File.read(File.expand_path("../value.js.erb", __FILE__))
+#       template = ERB.new(template_str, nil, '-', "_templ#{TemplateCounter.instance.new_id}")
+#       params = {'value' => value}
+#       context = ErbContext.new(params)
+#       template.result(context.get_binding)
+#     end
+#     
   end
 
   # Entry point to JavaScript generator

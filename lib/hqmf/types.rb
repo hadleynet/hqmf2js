@@ -107,6 +107,18 @@ module HQMF
     def code
       attr_val('./@code')
     end
+
+    def value
+      code
+    end
+
+    def derived?
+      false
+    end
+
+    def unit
+      nil
+    end
   end
   
   # Represents a HQMF reference from a precondition to a data criteria

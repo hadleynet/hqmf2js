@@ -4,7 +4,7 @@ module HQMF
   
     include HQMF::Utilities
     
-    attr_reader :property, :type, :status, :value, :effective_time
+    attr_reader :property, :type, :status, :value, :effective_time, :section
   
     # Create a new instance based on the supplied HQMF entry
     # @param [Nokogiri::XML::Element] entry the parsed HQMF entry
@@ -22,27 +22,33 @@ module HQMF
         @type = :diagnosis
         @code_list_xpath = './cda:observationCriteria/cda:value/@valueSet'
         @effective_time = extract_effective_time
+        @section = 'conditions'
       when 'Encounter'
         @type = :encounter
         @id_xpath = './cda:encounterCriteria/cda:id/@extension'
         @code_list_xpath = './cda:encounterCriteria/cda:code/@valueSet'
         @effective_time = extract_effective_time
+        @section = 'encounters'
       when 'LabResults'
         @type = :result
         @value = extract_value
         @effective_time = extract_effective_time
+        @section = 'results'
       when 'Procedure'
         @type = :procedure
+        @section = 'procedures'
       when 'Medication'
         @type = :medication
         @id_xpath = './cda:substanceAdministrationCriteria/cda:id/@extension'
         @code_list_xpath = './cda:substanceAdministrationCriteria/cda:participant/cda:roleParticipant/cda:code/@valueSet'
         @effective_time = extract_effective_time
+        @section = 'medications'
       when 'RX'
         @type = :medication
         @id_xpath = './cda:supplyCriteria/cda:id/@extension'
         @code_list_xpath = './cda:supplyCriteria/cda:participant/cda:roleParticipant/cda:code/@valueSet'
         @effective_time = extract_effective_time
+        @section = 'medications'
       when 'Demographics'
         @type = :characteristic
         @property = property_for_demographic
@@ -71,12 +77,6 @@ module HQMF
     # @return [String] the code list identifier of this data criteria
     def code_list_id
       attr_val(@code_list_xpath)
-    end
-    
-    # Get a JS friendly constant name for this measure attribute
-    def const_name
-      components = title.gsub(/\W/,' ').split.collect {|word| word.strip.upcase }
-      components.join '_'
     end
     
     private
