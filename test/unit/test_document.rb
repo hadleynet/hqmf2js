@@ -47,6 +47,8 @@ class DocumentTest  < Test::Unit::TestCase
     end
 
     ipp = @doc.population_criteria('IPP')
+    assert ipp.conjunction?
+    assert_equal 'allTrue', ipp.conjunction_code
     assert_equal 1, ipp.preconditions.length
     assert_equal false, ipp.preconditions[0].conjunction?
     assert_equal 'ageBetween17and64', ipp.preconditions[0].reference.data_criteria_id
@@ -67,6 +69,10 @@ class DocumentTest  < Test::Unit::TestCase
     assert_equal false, num.preconditions[0].conjunction?
     assert_equal 'HbA1C', num.preconditions[0].reference.data_criteria_id
 
+    ipp = @doc.population_criteria('DENEXCEP')
+    assert ipp.conjunction?
+    assert_equal 'atLeastOneTrue', ipp.conjunction_code
+    assert_equal 3, ipp.preconditions.length
   end
   
   def test_data_criteria

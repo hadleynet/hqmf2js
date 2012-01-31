@@ -1,5 +1,6 @@
 module HQMF
-  # Represents an HQMF population criteria
+  # Represents an HQMF population criteria, also supports all the same methods as
+  # HQMF::Precondition
   class PopulationCriteria
   
     include HQMF::Utilities
@@ -22,5 +23,29 @@ module HQMF
       attr_val('./*/cda:id/@extension')
     end
     
+    # Return true of this precondition represents a conjunction with nested preconditions
+    # or false of this precondition is a reference to a data criteria
+    def conjunction?
+      true
+    end
+
+    # Get the conjunction code, e.g. allTrue, allFalse
+    # @return [String] conjunction code
+    def conjunction_code
+      case id
+      when 'IPP'
+        'allTrue'
+      when 'DENOM'
+        'allTrue'
+      when 'NUMER'
+        'allTrue'
+      when 'DENEXCEP'
+        'atLeastOneTrue'
+      else
+        raise "Unknown population type [#{id}]"
+      end
+    end
+
   end
+  
 end
