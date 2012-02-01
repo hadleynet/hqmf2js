@@ -133,6 +133,7 @@ class DocumentTest  < Test::Unit::TestCase
     criteria = @doc.data_criteria('HbA1C')
     assert_equal :result, criteria.type
     assert_equal 'HbA1C', criteria.title
+    assert_equal 'RECENT', criteria.subset_code
     assert_equal '2.16.840.1.113883.3.464.1.72', criteria.code_list_id
     assert_equal 'completed', criteria.status
     assert_equal nil, criteria.effective_time

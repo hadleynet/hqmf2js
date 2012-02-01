@@ -67,6 +67,12 @@ module HQMF
       attr_val(@id_xpath)
     end
     
+    # Get the identifier of the criteria, used elsewhere within the document for referencing
+    # @return [String] the identifier of this data criteria
+    def subset_code
+      attr_val('./cda:subsetCode/@code')
+    end
+    
     # Get the title of the criteria, provides a human readable description
     # @return [String] the title of this data criteria
     def title

@@ -9,7 +9,7 @@ module HQMF
     end
     
     def type
-      attr_val('./@xsi:type')
+      attr_val('./@xsi:type') || 'PQ'
     end
     
     def value

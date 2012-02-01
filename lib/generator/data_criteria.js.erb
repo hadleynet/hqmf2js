@@ -21,7 +21,10 @@ var <%= criteria.id %> = function(patient) {
   <%- if criteria.value -%>
   events = filterEventsByValue(events, <%= js_for_bounds(criteria.value) %>);
   <%- end -%>
-  return (events.length > 0);
+  <%- if criteria.subset_code -%>
+  events = <%= criteria.subset_code %>(events);
+  <%- end -%>
+  return events;
   <%- end -%>
 }
 
