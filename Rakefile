@@ -1,5 +1,8 @@
 require 'rake'
 require 'rake/testtask'
+require 'sprockets'
+require 'tilt'
+require 'fileutils'
 
 # Pull in any rake task defined in lib/tasks
 Dir['lib/tasks/*.rake'].sort.each do |ext|
