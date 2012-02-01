@@ -43,18 +43,18 @@ module Generator
       end
     end
     
+    # Returns the JavaScript generated for a HQMF::Precondition
+    def js_for_precondition(precondition, indent)
+      template_str = File.read(File.expand_path("../precondition.js.erb", __FILE__))
+      template = ERB.new(template_str, nil, '-', "_templ#{TemplateCounter.instance.new_id}")
+      params = {'doc' => doc, 'precondition' => precondition, 'indent' => indent}
+      context = ErbContext.new(params)
+      template.result(context.get_binding)
+    end
+
 #     # Create a new function name using the supplied prefix and an incremented counter.
 #     def new_fn_name(prefix)
 #       "#{prefix}#{FunctionCounter.instance.new_id}"
-#     end
-#     
-#     # Returns the JavaScript generated for a HQMF::Precondition
-#     def js_for_precondition(precondition, name)
-#       template_str = File.read(File.expand_path("../precondition.js.erb", __FILE__))
-#       template = ERB.new(template_str, nil, '-', "_templ#{TemplateCounter.instance.new_id}")
-#       params = {'doc' => doc, 'precondition' => precondition, 'name' => name}
-#       context = ErbContext.new(params)
-#       template.result(context.get_binding)
 #     end
 #     
 #     # Returns the JavaScript generated for a HQMF::Comparison
@@ -106,7 +106,8 @@ module Generator
     def js_for(criteria_code)
       template_str = File.read(File.expand_path("../population_criteria.js.erb", __FILE__))
       template = ERB.new(template_str, nil, '-', "_templ#{TemplateCounter.instance.new_id}")
-      params = {'doc' => @doc, 'criteria_code' => criteria_code}
+      criteria = @doc.population_criteria(criteria_code)
+      params = {'doc' => @doc, 'criteria' => criteria}
       context = ErbContext.new(params)
       template.result(context.get_binding)
     end

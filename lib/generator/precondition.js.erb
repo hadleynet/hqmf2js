@@ -1,42 +1,14 @@
-var <%= name %> = function(patient) {
-  <%- nested_precondition_fns = [] -%>
-  <%- precondition.preconditions.each_with_index do |subcondition, i| -%>
-  <%- name = new_fn_name('prcn') -%>
-  <%- nested_precondition_fns << name -%>
-  <%= js_for_precondition(subcondition, name) -%>
-  <%- end -%>
-  <%- nested_comparison_fns = [] -%>
-  <%- if precondition.comparison -%>
-  <%- name = new_fn_name('comp') -%>
-  <%- nested_comparison_fns << name -%>
-  <%= js_for_comparison(precondition.comparison, name) %>
-  <%- end -%>
-  
-  <%- if precondition.preconditions && precondition.preconditions.length>0 -%> 
-    <%- if precondition.negation -%>
-    return NOT(<%= "#{precondition.preconditions[0].conjunction}(" -%>
-    <%- precondition.preconditions.each_with_index do |subcondition, i| -%>
-      <%- -%><%= ', ' if i>0 %>
-      <%- -%> <%= nested_precondition_fns[i] %>(patient)<%- -%>
-    <%- end -%>
-    <%- -%>));
-    <%- else -%>
-    return <%= "#{precondition.preconditions[0].conjunction}(" -%>
-    <%- precondition.preconditions.each_with_index do |subcondition, i| -%>
-      <%- -%><%= ', ' if i>0 %>
-      <%- -%> <%= nested_precondition_fns[i] %>(patient)<%- -%>
-    <%- end -%>
-    <%- -%>);
-    <%- end -%>
-  <%- end -%>
-  
-  <%- if precondition.comparison -%>
-  var matchingEvents = <%= nested_comparison_fns[0] %>(patient);
-  <%- if precondition.negation -%>
-  return NOT(matchingEvents);
-  <%- else -%>
-  return matchingEvents;
-  <%- end -%>
-  <%- end -%>  
-  
-}
+<%- if precondition.conjunction? -%>
+<%- if indent>0 -%>
+<%= "\n#{'  '*(indent+1)}#{precondition.conjunction_code}(" -%>
+<%- else -%>
+<%= "#{precondition.conjunction_code}(" -%>
+<%- end -%>
+<%- precondition.preconditions.each_with_index do |child, index| -%>
+<%= "#{'  '*(indent+1)}#{js_for_precondition(child, indent+1)}" -%>
+<%= "," if index < precondition.preconditions.length-1 -%>
+<%- end -%>
+<%= "\n#{'  '*(indent+1)})" -%>
+<%- else -%>
+<%= "\n#{'  '*(indent+1)}#{precondition.reference.data_criteria_id}()" -%>
+<%- end -%>

@@ -8,10 +8,10 @@ namespace :hqmf do
     gen = Generator::JS.new(f)
 #    puts gen.js_for_attributes()
     puts gen.js_for_data_criteria()
-#    puts gen.js_for('IPP')
-#    puts gen.js_for('DENOM')
-#    puts gen.js_for('NUMER')
-#    puts gen.js_for('EXCL')
+    puts gen.js_for('IPP')
+    puts gen.js_for('DENOM')
+    puts gen.js_for('NUMER')
+    puts gen.js_for('DENEXCEP')
   end
 end
     
