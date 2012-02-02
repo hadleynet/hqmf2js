@@ -37,7 +37,7 @@ module Generator
     
     def js_for_bounds(bounds)
       if bounds.class == HQMF::Range
-        "{\"low\": #{js_for_value(bounds.low)}, \"high\": #{js_for_value(bounds.high)}}"
+        "new IVL(#{js_for_value(bounds.low)}, #{js_for_value(bounds.high)})"
       else
         "#{js_for_value(bounds)}"
       end

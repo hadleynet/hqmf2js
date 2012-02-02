@@ -7,13 +7,15 @@ var <%= criteria.id %> = <%= js_for_value(criteria.value) %>;
 <%- all_criteria.select {|c| c.type != :variable}.each do |criteria| -%>
 var <%= criteria.id %> = function(patient) {
   <%- if criteria.type == :characteristic -%>
-  var value = patient.<%= criteria.property %>();
+  var value = patient.<%= criteria.property %>(<%= 'EndDate.asDate()' if criteria.property == :age %>);
   return matchingValue(value, <%= js_for_bounds(criteria.value) %>);
   <%- else -%>
   var codes = getCodes("<%= criteria.code_list_id %>");
   <%- if criteria.effective_time -%>
-  var start = <%= js_for_value(criteria.effective_time.low) %>;
-  var end = <%= js_for_value(criteria.effective_time.high) %>;
+  <%- startExp = js_for_value(criteria.effective_time.low) -%>
+  var start = <%= startExp %><%= '.asDate()' if startExp != 'null' %>;
+  <%- endExp = js_for_value(criteria.effective_time.high) -%>
+  var end = <%= endExp %><%= '.asDate()' if endExp != 'null' %>;
   var events = patient.<%= criteria.section %>().match(codes, start, end);
   <%- else -%>
   var events = patient.<%= criteria.section %>().match(codes);
