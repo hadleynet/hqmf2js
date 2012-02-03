@@ -60,7 +60,11 @@ filterEventsByValue = (events, value) ->
 
 getCodes = (oid) ->
 
-PREVSUM = () ->
+PREVSUM = (eventList) ->
+  eventList
 
-RECENT = () ->
+RECENT = (events) ->
+  dateSortDescending = (a, b) ->
+    b.date.getTime() - a.date.getTime()
+  events.sort(dateSortDescending)[0]
   
