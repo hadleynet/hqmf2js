@@ -65,9 +65,13 @@ module Generator
       template_str = File.read(File.expand_path("../population_criteria.js.erb", __FILE__))
       template = ERB.new(template_str, nil, '-', "_templ#{TemplateCounter.instance.new_id}")
       criteria = @doc.population_criteria(criteria_code)
-      params = {'doc' => @doc, 'criteria' => criteria}
-      context = ErbContext.new(params)
-      template.result(context.get_binding)
+      if criteria
+        params = {'doc' => @doc, 'criteria' => criteria}
+        context = ErbContext.new(params)
+        template.result(context.get_binding)
+      else
+        ''
+      end
     end
     
     # Generate JS for a HQMF::DataCriteria

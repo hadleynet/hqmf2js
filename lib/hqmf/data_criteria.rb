@@ -18,7 +18,7 @@ module HQMF
       
       entry_type = attr_val('./*/cda:definition/*/cda:id/@extension')
       case entry_type
-      when 'Problem'
+      when 'Problem', 'Problems'
         @type = :diagnosis
         @code_list_xpath = './cda:observationCriteria/cda:value/@valueSet'
         @effective_time = extract_effective_time
@@ -29,7 +29,7 @@ module HQMF
         @code_list_xpath = './cda:encounterCriteria/cda:code/@valueSet'
         @effective_time = extract_effective_time
         @section = 'encounters'
-      when 'LabResults'
+      when 'LabResults', 'Results'
         @type = :result
         @value = extract_value
         @effective_time = extract_effective_time
