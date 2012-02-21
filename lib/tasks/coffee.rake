@@ -1,3 +1,5 @@
+require 'hqmf2js'
+
 namespace :coffee do
   desc 'Compile the CoffeeScript library'
   task :compile do

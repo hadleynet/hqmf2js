@@ -1,8 +1,8 @@
-class TS
+class TS  
   constructor: (hl7ts) ->
     year = parseInt(hl7ts.substring(0, 4))
-    month = parseInt(hl7ts.substring(4, 6))-1
-    day = parseInt(hl7ts.substring(6, 8))
+    month = parseInt(hl7ts.substring(4, 6), 10)-1
+    day = parseInt(hl7ts.substring(6, 8), 10)
     @date = new Date(year, month, day)
   add: (pq) ->
     if pq.unit=="a"
@@ -17,6 +17,7 @@ class TS
       @date.setMinutes(@date.getMinutes()+pq.value)
     else
       throw "Unknown time unit: "+pq.unit
+    this
   asDate: ->
     @date
   
@@ -41,14 +42,14 @@ class PQ
 class IVL
   constructor: (@low_pq, @high_pq) ->
   match: (val) ->
-    (@low_pq==null || @low_pq.lessThan(val)) && (@hight_pq==null || @high_pq.greaterThan(val))
+    (!@low_pq? || (@low_pq? && @low_pq.lessThan(val))) && (!@high_pq? || (@high_pq? && @high_pq.greaterThan(val)))
 	
 atLeastOneTrue = (values...) ->
-  trueValues = (value for value in values when value && (value==true || value.length>0))
+  trueValues = (value for value in values when value && (value==true || value.length!=0))
   trueValues.length>0
   
 allTrue = (values...) ->
-  trueValues = (value for value in values when value && (value==true || value.length>0))
+  trueValues = (value for value in values when value && (value==true || value.length!=0))
   trueValues.length==values.length
   
 matchingValue = (value, compareTo) ->
@@ -59,12 +60,13 @@ filterEventsByValue = (events, value) ->
   matchingValues
 
 getCodes = (oid) ->
+  OidDictionary[oid]
 
 PREVSUM = (eventList) ->
   eventList
 
 RECENT = (events) ->
   dateSortDescending = (a, b) ->
-    b.date.getTime() - a.date.getTime()
+    b.json.time - a.json.time
   events.sort(dateSortDescending)[0]
   

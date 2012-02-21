@@ -331,9 +331,9 @@
         <substanceAdministrationCriteria>
           <id root="0" extension="DiabetesMedAdministered"/>
           <effectiveTime xsi:type="IVL_TS">
-            <high nullFlavor="DER">
-              <expression>EndDate.add(new PQ(-2,"a"))</expression>
-            </high>
+            <low nullFlavor="DER">
+              <expression>StartDate.add(new PQ(-2,"a"))</expression>
+            </low>
           </effectiveTime>
           <participant typeCode="CSM">
             <roleParticipant classCode="THER">

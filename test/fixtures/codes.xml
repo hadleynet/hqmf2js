@@ -1,0 +1,1935 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSystems>
+   <ValueSet id="2.16.840.1.113883.3.464.1.14" displayName="birth date">
+      <ConceptList xml:lang="en-US">
+         <Concept code="00110" codeSystemName="HL7" displayName="Date/Time of birth (TS)"
+            codeSystemVersion="3"/>
+      </ConceptList>
+   </ValueSet>
+   <ValueSet id="2.16.840.1.113883.3.464.1.37" displayName="diabetes">
+      <ConceptList xml:lang="en-US">
+         <Concept code="E10.36" codeSystemName="ICD-10-CM"
+            displayName="Type 1 diabetes mellitus with diabetic cataract"
+            codeSystemVersion="06/2009"/>
+         <Concept code="E11.36" codeSystemName="ICD-10-CM"
+            displayName="Type 2 diabetes mellitus with diabetic cataract"
+            codeSystemVersion="06/2009"/>
+         <Concept code="E11.9" codeSystemName="ICD-10-CM"
+            displayName="Type 2 diabetes mellitus without complications" codeSystemVersion="06/2009"/>
+         <Concept code="E13.31" codeSystemName="ICD-10-CM" displayName="Diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="E13.32" codeSystemName="ICD-10-CM"
+            displayName="Other specified diabetes mellitus with nonproliferative diabetic retinopathy NOS"
+            codeSystemVersion="06/2009"/>
+         <Concept code="E13.33" codeSystemName="ICD-10-CM"
+            displayName="Other specified diabetes mellitus with moderate nonproliferative diabetic retinopathy"
+            codeSystemVersion="06/2009"/>
+         <Concept code="E13.34" codeSystemName="ICD-10-CM"
+            displayName="Other specified diabetes mellitus with severe nonproliferative diabetic retinopathy"
+            codeSystemVersion="06/2009"/>
+         <Concept code="E13.35" codeSystemName="ICD-10-CM"
+            displayName="Other specified diabetes mellitus with proliferative diabetic retinopathy"
+            codeSystemVersion="06/2009"/>
+         <Concept code="E13.43" codeSystemName="ICD-10-CM"
+            displayName="Other specified diabetes mellitus with diabetic autonomic (poly)neuropathy"
+            codeSystemVersion="06/2009"/>
+         <Concept code="O24.42" codeSystemName="ICD-10-CM" displayName="Diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Diabetes mellitus"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes mellitus without mention of complication"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes mellitus without mention of complication, type II or unspecified type, not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.1" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes mellitus without mention of complication, type I [juvenile type], not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.2" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes mellitus without mention of complication, type II or unspecified type, uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.3" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes mellitus without mention of complication, type I [juvenile type], uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.10" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with ketoacidosis, type II or unspecified type, not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.11" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with ketoacidosis, type I [juvenile type], not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.12" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with ketoacidosis, type II or unspecified type, uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.13" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with ketoacidosis, type I [juvenile type], uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.20" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with hyperosmolarity, type II or unspecified type, not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.21" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with hyperosmolarity, type I [juvenile type], not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.22" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with hyperosmolarity, type II or unspecified type, uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.23" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with hyperosmolarity, type I [juvenile type], uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.30" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with other coma, type II or unspecified type, not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.31" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with other coma, type I [juvenile type], not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.32" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with other coma, type II or unspecified type, uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.33" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with other coma, type I [juvenile type], uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.4" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Evidence of treatment for nephropathy" codeSystemVersion="06/2009"/>
+         <Concept code="250.40" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Evidence of treatment for nephropathy" codeSystemVersion="06/2009"/>
+         <Concept code="250.41" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with renal manifestations, type I [juvenile type], not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.42" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with renal manifestations, type II or unspecified type, uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.43" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with renal manifestations, type I [juvenile type], uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.50" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with ophthalmic manifestations, type II or unspecified type, not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.51" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with ophthalmic manifestations, type I [juvenile type], not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.52" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with ophthalmic manifestations, type II or unspecified type, uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.53" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with ophthalmic manifestations, type I [juvenile type], uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.60" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with neurological manifestations, type II or unspecified type, not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.61" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with neurological manifestations, type I [juvenile type], not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.62" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with neurological manifestations, type II or unspecified type, uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.63" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with neurological manifestations, type I [juvenile type], uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.7" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with peripheral circulatory disorders" codeSystemVersion="06/2009"/>
+         <Concept code="250.70" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with peripheral circulatory disorders, type II or unspecified type, not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.71" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with peripheral circulatory disorders, type I [juvenile type], not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.72" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with peripheral circulatory disorders, type II or unspecified type, uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.73" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with peripheral circulatory disorders, type I [juvenile type], uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.8" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with other specified manifestations" codeSystemVersion="06/2009"/>
+         <Concept code="250.80" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with other specified manifestations, type II or unspecified type, not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.81" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with other specified manifestations, type I [juvenile type], not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.82" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with other specified manifestations, type II or unspecified type, uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.83" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with other specified manifestations, type I [juvenile type], uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.9" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with unspecified complication" codeSystemVersion="06/2009"/>
+         <Concept code="250.90" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with unspecified complication, type II or unspecified type, not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.91" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with unspecified complication, type I [juvenile type], not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.92" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with unspecified complication, type II or unspecified type, uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.93" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with unspecified complication, type I [juvenile type], uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="357.2" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="POLYNEUROPATHY IN DIABETES"
+            codeSystemVersion="06/2009"/>
+         <Concept code="362" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Diabetic retinopathy"
+            codeSystemVersion="06/2009"/>
+         <Concept code="362.1" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Background diabetic retinopathy" codeSystemVersion="06/2009"/>
+         <Concept code="362.2" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Proliferative diabetic retinopathy" codeSystemVersion="06/2009"/>
+         <Concept code="362.3" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Nonproliferative diabetic retinopathy NOS" codeSystemVersion="06/2009"/>
+         <Concept code="362.4" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Mild nonproliferative diabetic retinopathy" codeSystemVersion="06/2009"/>
+         <Concept code="362.5" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Moderate nonproliferative diabetic retinopathy" codeSystemVersion="06/2009"/>
+         <Concept code="362.6" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Severe nonproliferative diabetic retinopathy" codeSystemVersion="06/2009"/>
+         <Concept code="362.7" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="DIABETIC MACULAR EDEMA"
+            codeSystemVersion="06/2009"/>
+         <Concept code="366.41" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="DIABETIC CATARACT"
+            codeSystemVersion="06/2009"/>
+         <Concept code="648" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Diabetes mellitus"
+            codeSystemVersion="06/2009"/>
+         <Concept code="648" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Maternal diabetes mellitus, complicating pregnancy, childbirth, or the puerperium, unspecified as to episode of care"
+            codeSystemVersion="06/2009"/>
+         <Concept code="648.1" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes mellitus of mother with delivery" codeSystemVersion="06/2009"/>
+         <Concept code="648.2" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Maternal diabetes mellitus with delivery, with current postpartum complication"
+            codeSystemVersion="06/2009"/>
+         <Concept code="648.3" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Maternal diabetes mellitus, antepartum" codeSystemVersion="06/2009"/>
+         <Concept code="648.4" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Maternal diabetes mellitus, previous postpartum condition"
+            codeSystemVersion="06/2009"/>
+         <Concept code="111552007" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus without complication" codeSystemVersion="07/2009"/>
+         <Concept code="111558006" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Insulin coma"
+            codeSystemVersion="07/2009"/>
+         <Concept code="11530004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="brittle diabetes"
+            codeSystemVersion="07/2009"/>
+         <Concept code="123763000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Houssay's syndrome"
+            codeSystemVersion="07/2009"/>
+         <Concept code="127013003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Diabetic renal disease"
+            codeSystemVersion="07/2009"/>
+         <Concept code="127014009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetic peripheral angiopathy" codeSystemVersion="07/2009"/>
+         <Concept code="190321005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus with no mention of complication"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190328004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetes mellitus NOS with ketoacidosis" codeSystemVersion="07/2009"/>
+         <Concept code="190330002" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus, juvenile type, with hyperosmolar coma"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190331003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus, adult onset, with hyperosmolar coma"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190336008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Other specified diabetes mellitus with coma" codeSystemVersion="07/2009"/>
+         <Concept code="190353001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetes mellitus NOS with neurological manifestation"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190361006" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetes mellitus NOS with peripheral circulatory disorder"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190368000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type I diabetes mellitus with ulcer" codeSystemVersion="07/2009"/>
+         <Concept code="190369008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type I diabetes mellitus with gangrene" codeSystemVersion="07/2009"/>
+         <Concept code="190371008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type I diabetes mellitus - poor control" codeSystemVersion="07/2009"/>
+         <Concept code="190372001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type I diabetes mellitus maturity onset" codeSystemVersion="07/2009"/>
+         <Concept code="190383005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="unspecified diabetes mellitus with multiple complications"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190389009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type II diabetes mellitus with ulcer" codeSystemVersion="07/2009"/>
+         <Concept code="190390000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type II diabetes mellitus with gangrene" codeSystemVersion="07/2009"/>
+         <Concept code="190392008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type II diabetes mellitus - poor control" codeSystemVersion="07/2009"/>
+         <Concept code="190406000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="malnutrition-related diabetes mellitus with ketoacidosis"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190407009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="malnutrition-related diabetes mellitus with renal complications"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190410002" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="malnutrition-related diabetes mellitus with peripheral circulatory complications"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190411003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="malnutrition-related diabetes mellitus with multiple complications"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190412005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="malnutrition-related diabetes mellitus without complications"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190416001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetes mellitus NOS with unspecified complication"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190417004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus with other specified manifestation"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190418009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus, juvenile type, with other specified manifestation"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190419001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus, adult onset, with other specified manifestation"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190422004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetes with unspecified complication" codeSystemVersion="07/2009"/>
+         <Concept code="193184006" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Chronic painful diabetic neuropathy" codeSystemVersion="07/2009"/>
+         <Concept code="197605007" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Nephrotic syndrome in diabetes mellitus" codeSystemVersion="07/2009"/>
+         <Concept code="198609003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="complications of pregnancy, childbirth and the puerperium"
+            codeSystemVersion="07/2009"/>
+         <Concept code="199223000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus during pregnancy, childbirth and the puerperium"
+            codeSystemVersion="07/2009"/>
+         <Concept code="199227004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus during pregnancy - baby not yet delivered"
+            codeSystemVersion="07/2009"/>
+         <Concept code="199229001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="pre-existing diabetes mellitus, insulin-dependent"
+            codeSystemVersion="07/2009"/>
+         <Concept code="199230006" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="pre-existing diabetes mellitus, non-insulin-dependent"
+            codeSystemVersion="07/2009"/>
+         <Concept code="199231005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Pre-existing malnutrition-related diabetes mellitus"
+            codeSystemVersion="07/2009"/>
+         <Concept code="199234002" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetes mellitus during pregnancy, childbirth or the puerperium NOS"
+            codeSystemVersion="07/2009"/>
+         <Concept code="201250006" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Ischemic ulcer diabetic foot" codeSystemVersion="07/2009"/>
+         <Concept code="201251005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Neuropathic diabetic ulcer - foot" codeSystemVersion="07/2009"/>
+         <Concept code="201252003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Mixed diabetic ulcer - foot" codeSystemVersion="07/2009"/>
+         <Concept code="23045005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="insulin dependent diabetes mellitus type IA" codeSystemVersion="07/2009"/>
+         <Concept code="230572002" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Diabetic neuropathy"
+            codeSystemVersion="07/2009"/>
+         <Concept code="230577008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Diabetic mononeuropathy"
+            codeSystemVersion="07/2009"/>
+         <Concept code="237599002" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="insulin-treated non-insulin-dependent diabetes mellitus"
+            codeSystemVersion="07/2009"/>
+         <Concept code="237600004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="malnutrition-related diabetes mellitus - fibrocalculous"
+            codeSystemVersion="07/2009"/>
+         <Concept code="237601000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="secondary endocrine diabetes mellitus" codeSystemVersion="07/2009"/>
+         <Concept code="237604008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus autosomal dominant type II" codeSystemVersion="07/2009"/>
+         <Concept code="237613005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="hyperproinsulinemia"
+            codeSystemVersion="07/2009"/>
+         <Concept code="237618001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="insulin-dependent diabetes mellitus secretory diarrhea syndrome"
+            codeSystemVersion="07/2009"/>
+         <Concept code="237619009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes-deafness syndrome maternally transmitted"
+            codeSystemVersion="07/2009"/>
+         <Concept code="237627000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="pregnancy and non-insulin-dependent diabetes mellitus"
+            codeSystemVersion="07/2009"/>
+         <Concept code="25907005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Diabetic gangrene"
+            codeSystemVersion="07/2009"/>
+         <Concept code="26298008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetic coma with ketoacidosis" codeSystemVersion="07/2009"/>
+         <Concept code="267379000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus, juvenile type, with no mention of complication"
+            codeSystemVersion="07/2009"/>
+         <Concept code="267380002" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus, adult onset, with no mention of complication"
+            codeSystemVersion="07/2009"/>
+         <Concept code="2751001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="fibrocalculous pancreatic diabetes" codeSystemVersion="07/2009"/>
+         <Concept code="275918005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="unstable diabetes"
+            codeSystemVersion="07/2009"/>
+         <Concept code="28032008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="insulin dependent diabetes mellitus type IB" codeSystemVersion="07/2009"/>
+         <Concept code="28453007" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="maturity onset diabetes mellitus in young" codeSystemVersion="07/2009"/>
+         <Concept code="290002008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="unstable type I diabetes mellitus" codeSystemVersion="07/2009"/>
+         <Concept code="309426007" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Diabetic glomerulopathy"
+            codeSystemVersion="07/2009"/>
+         <Concept code="310387003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetic intracapillary glomerulosclerosis" codeSystemVersion="07/2009"/>
+         <Concept code="311366001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Kimmelstiel-Wilson syndrome" codeSystemVersion="07/2009"/>
+         <Concept code="312912001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="diabetic macular edema"
+            codeSystemVersion="07/2009"/>
+         <Concept code="313435000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type I diabetes mellitus without complication" codeSystemVersion="07/2009"/>
+         <Concept code="313436004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type II diabetes mellitus without complication" codeSystemVersion="07/2009"/>
+         <Concept code="314537004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetic optic papillopathy" codeSystemVersion="07/2009"/>
+         <Concept code="314771006" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type I diabetes mellitus with hypoglycemic coma"
+            codeSystemVersion="07/2009"/>
+         <Concept code="314772004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type II diabetes mellitus with hypoglycemic coma"
+            codeSystemVersion="07/2009"/>
+         <Concept code="314893005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type I diabetes mellitus with arthropathy" codeSystemVersion="07/2009"/>
+         <Concept code="314902007" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type II diabetes mellitus with peripheral angiopathy"
+            codeSystemVersion="07/2009"/>
+         <Concept code="314903002" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type II diabetes mellitus with arthropathy" codeSystemVersion="07/2009"/>
+         <Concept code="33559001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="pineal hyperplasia AND diabetes mellitus syndrome"
+            codeSystemVersion="07/2009"/>
+         <Concept code="34140002" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Diabetic gastroparesis"
+            codeSystemVersion="07/2009"/>
+         <Concept code="359611005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetic neuropathy with neurologic complication"
+            codeSystemVersion="07/2009"/>
+         <Concept code="359638003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="NIDDM in nonobese"
+            codeSystemVersion="07/2009"/>
+         <Concept code="359642000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus type 2 in nonobese" codeSystemVersion="07/2009"/>
+         <Concept code="360546002" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Hypoglycemic shock"
+            codeSystemVersion="07/2009"/>
+         <Concept code="371087003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Diabetic foot ulcer"
+            codeSystemVersion="07/2009"/>
+         <Concept code="38542009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Nodular glomerulosclerosis" codeSystemVersion="07/2009"/>
+         <Concept code="39058009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Diabetic amyotrophy"
+            codeSystemVersion="07/2009"/>
+         <Concept code="39181008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Diabetic radiculopathy"
+            codeSystemVersion="07/2009"/>
+         <Concept code="408539000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="insulin autoimmune syndrome" codeSystemVersion="07/2009"/>
+         <Concept code="408540003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus induced by non-steroid drugs" codeSystemVersion="07/2009"/>
+         <Concept code="413183008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus induced by non-steroid drugs without complication"
+            codeSystemVersion="07/2009"/>
+         <Concept code="414890007" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="O/E - left chronic diabetic foot ulcer" codeSystemVersion="07/2009"/>
+         <Concept code="414906009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="O/E -right chronic diabetic foot ulcer" codeSystemVersion="07/2009"/>
+         <Concept code="420414003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="multiple complications of type II diabetes mellitus"
+            codeSystemVersion="07/2009"/>
+         <Concept code="420422005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Diabetic ketoacidosis"
+            codeSystemVersion="07/2009"/>
+         <Concept code="421750000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Ketoacidosis in type II diabetes mellitus" codeSystemVersion="07/2009"/>
+         <Concept code="421847006" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Ketoacidotic coma in type II diabetes mellitus" codeSystemVersion="07/2009"/>
+         <Concept code="421895002" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Peripheral circulatory disorder associated with diabetes mellitus"
+            codeSystemVersion="07/2009"/>
+         <Concept code="422183001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Diabetic skin ulcer"
+            codeSystemVersion="07/2009"/>
+         <Concept code="422228004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="multiple complications of type I diabetes mellitus"
+            codeSystemVersion="07/2009"/>
+         <Concept code="422275004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Gangrene associated with diabetes mellitus" codeSystemVersion="07/2009"/>
+         <Concept code="423263001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetic autonomic neuropathy associated with type 2 diabetes mellitus"
+            codeSystemVersion="07/2009"/>
+         <Concept code="424736006" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetic peripheral neuropathy" codeSystemVersion="07/2009"/>
+         <Concept code="424989000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetic gastroparesis associated with type 2 diabetes mellitus"
+            codeSystemVersion="07/2009"/>
+         <Concept code="425159004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetic gastroparesis associated with type 1 diabetes mellitus"
+            codeSystemVersion="07/2009"/>
+         <Concept code="425442003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetic autonomic neuropathy associated with type 1 diabetes mellitus"
+            codeSystemVersion="07/2009"/>
+         <Concept code="426705001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus associated with cystic fibrosis"
+            codeSystemVersion="07/2009"/>
+         <Concept code="426875007" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="latent autoimmune diabetes mellitus in adult" codeSystemVersion="07/2009"/>
+         <Concept code="427089005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus due to cystic fibrosis" codeSystemVersion="07/2009"/>
+         <Concept code="428896009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Hyperosmolality  due to uncontrolled type I diabetes mellitus"
+            codeSystemVersion="07/2009"/>
+         <Concept code="42954008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus associated with receptor abnormality"
+            codeSystemVersion="07/2009"/>
+         <Concept code="44054006" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="diabetes mellitus type 2"
+            codeSystemVersion="07/2009"/>
+         <Concept code="4627003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Diabetic complication"
+            codeSystemVersion="07/2009"/>
+         <Concept code="46635009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="diabetes mellitus type 1"
+            codeSystemVersion="07/2009"/>
+         <Concept code="50620007" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetic autonomic neuropathy" codeSystemVersion="07/2009"/>
+         <Concept code="51002006" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus associated with pancreatic disease"
+            codeSystemVersion="07/2009"/>
+         <Concept code="5368009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="drug-induced diabetes mellitus" codeSystemVersion="07/2009"/>
+         <Concept code="54181000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetes-nephrosis syndrome" codeSystemVersion="07/2009"/>
+         <Concept code="57886004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="protein-deficient diabetes mellitus" codeSystemVersion="07/2009"/>
+         <Concept code="59079001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus associated with hormonal etiology"
+            codeSystemVersion="07/2009"/>
+         <Concept code="5969009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus associated with genetic syndrome"
+            codeSystemVersion="07/2009"/>
+         <Concept code="70694009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus AND insipidus with optic atrophy AND deafness"
+            codeSystemVersion="07/2009"/>
+         <Concept code="73211009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="diabetes mellitus"
+            codeSystemVersion="07/2009"/>
+         <Concept code="74263009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Carpenter syndrome"
+            codeSystemVersion="07/2009"/>
+         <Concept code="75524006" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="malnutrition related diabetes mellitus" codeSystemVersion="07/2009"/>
+         <Concept code="75682002" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus due to insulin receptor antibodies"
+            codeSystemVersion="07/2009"/>
+         <Concept code="76751001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetes mellitus in mother complicatin pregtnancy, childbirth AND/OR puerperium"
+            codeSystemVersion="07/2009"/>
+         <Concept code="81531005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus type 2 in obese" codeSystemVersion="07/2009"/>
+         <Concept code="81830002" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetic mononeuropathy simplex" codeSystemVersion="07/2009"/>
+         <Concept code="8801005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="secondary diabetes mellitus" codeSystemVersion="07/2009"/>
+         <Concept code="91352004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus due to structurally abnormal insulin"
+            codeSystemVersion="07/2009"/>
+         <Concept code="9859006" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="insulin-resistant diabetes mellitus AND acanthosis nigricans"
+            codeSystemVersion="07/2009"/>
+      </ConceptList>
+   </ValueSet>
+   <ValueSet id="2.16.840.1.113883.3.464.1.38" displayName="diabetes">
+      <ConceptList xml:lang="en-US">
+         <Concept code="E10.36" codeSystemName="ICD-10-CM"
+            displayName="Type 1 diabetes mellitus with diabetic cataract"
+            codeSystemVersion="06/2009"/>
+         <Concept code="E11.36" codeSystemName="ICD-10-CM"
+            displayName="Type 2 diabetes mellitus with diabetic cataract"
+            codeSystemVersion="06/2009"/>
+         <Concept code="E11.9" codeSystemName="ICD-10-CM"
+            displayName="Type 2 diabetes mellitus without complications" codeSystemVersion="06/2009"/>
+         <Concept code="E13.31" codeSystemName="ICD-10-CM" displayName="Diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="E13.32" codeSystemName="ICD-10-CM"
+            displayName="Other specified diabetes mellitus with nonproliferative diabetic retinopathy NOS"
+            codeSystemVersion="06/2009"/>
+         <Concept code="E13.33" codeSystemName="ICD-10-CM"
+            displayName="Other specified diabetes mellitus with moderate nonproliferative diabetic retinopathy"
+            codeSystemVersion="06/2009"/>
+         <Concept code="E13.34" codeSystemName="ICD-10-CM"
+            displayName="Other specified diabetes mellitus with severe nonproliferative diabetic retinopathy"
+            codeSystemVersion="06/2009"/>
+         <Concept code="E13.35" codeSystemName="ICD-10-CM"
+            displayName="Other specified diabetes mellitus with proliferative diabetic retinopathy"
+            codeSystemVersion="06/2009"/>
+         <Concept code="E13.43" codeSystemName="ICD-10-CM"
+            displayName="Other specified diabetes mellitus with diabetic autonomic (poly)neuropathy"
+            codeSystemVersion="06/2009"/>
+         <Concept code="O24.42" codeSystemName="ICD-10-CM" displayName="Diabetes"
+            codeSystemVersion="06/2009"/>
+      </ConceptList>
+   </ValueSet>
+   <ValueSet id="2.16.840.1.113883.3.464.1.39" displayName="diabetes">
+      <ConceptList xml:lang="en-US">
+         <Concept code="250" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Diabetes mellitus"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes mellitus without mention of complication"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes mellitus without mention of complication, type II or unspecified type, not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.1" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes mellitus without mention of complication, type I [juvenile type], not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.2" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes mellitus without mention of complication, type II or unspecified type, uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.3" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes mellitus without mention of complication, type I [juvenile type], uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.10" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with ketoacidosis, type II or unspecified type, not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.11" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with ketoacidosis, type I [juvenile type], not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.12" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with ketoacidosis, type II or unspecified type, uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.13" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with ketoacidosis, type I [juvenile type], uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.20" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with hyperosmolarity, type II or unspecified type, not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.21" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with hyperosmolarity, type I [juvenile type], not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.22" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with hyperosmolarity, type II or unspecified type, uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.23" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with hyperosmolarity, type I [juvenile type], uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.30" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with other coma, type II or unspecified type, not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.31" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with other coma, type I [juvenile type], not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.32" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with other coma, type II or unspecified type, uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.33" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with other coma, type I [juvenile type], uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.4" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Evidence of treatment for nephropathy" codeSystemVersion="06/2009"/>
+         <Concept code="250.40" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Evidence of treatment for nephropathy" codeSystemVersion="06/2009"/>
+         <Concept code="250.41" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with renal manifestations, type I [juvenile type], not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.42" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with renal manifestations, type II or unspecified type, uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.43" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with renal manifestations, type I [juvenile type], uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.50" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with ophthalmic manifestations, type II or unspecified type, not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.51" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with ophthalmic manifestations, type I [juvenile type], not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.52" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with ophthalmic manifestations, type II or unspecified type, uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.53" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with ophthalmic manifestations, type I [juvenile type], uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.60" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with neurological manifestations, type II or unspecified type, not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.61" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with neurological manifestations, type I [juvenile type], not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.62" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with neurological manifestations, type II or unspecified type, uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.63" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with neurological manifestations, type I [juvenile type], uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.7" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with peripheral circulatory disorders" codeSystemVersion="06/2009"/>
+         <Concept code="250.70" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with peripheral circulatory disorders, type II or unspecified type, not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.71" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with peripheral circulatory disorders, type I [juvenile type], not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.72" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with peripheral circulatory disorders, type II or unspecified type, uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.73" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with peripheral circulatory disorders, type I [juvenile type], uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.8" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with other specified manifestations" codeSystemVersion="06/2009"/>
+         <Concept code="250.80" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with other specified manifestations, type II or unspecified type, not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.81" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with other specified manifestations, type I [juvenile type], not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.82" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with other specified manifestations, type II or unspecified type, uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.83" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with other specified manifestations, type I [juvenile type], uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.9" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with unspecified complication" codeSystemVersion="06/2009"/>
+         <Concept code="250.90" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with unspecified complication, type II or unspecified type, not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.91" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with unspecified complication, type I [juvenile type], not stated as uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.92" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with unspecified complication, type II or unspecified type, uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="250.93" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes with unspecified complication, type I [juvenile type], uncontrolled"
+            codeSystemVersion="06/2009"/>
+         <Concept code="357.2" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="POLYNEUROPATHY IN DIABETES"
+            codeSystemVersion="06/2009"/>
+         <Concept code="362" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Diabetic retinopathy"
+            codeSystemVersion="06/2009"/>
+         <Concept code="362.1" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Background diabetic retinopathy" codeSystemVersion="06/2009"/>
+         <Concept code="362.2" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Proliferative diabetic retinopathy" codeSystemVersion="06/2009"/>
+         <Concept code="362.3" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Nonproliferative diabetic retinopathy NOS" codeSystemVersion="06/2009"/>
+         <Concept code="362.4" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Mild nonproliferative diabetic retinopathy" codeSystemVersion="06/2009"/>
+         <Concept code="362.5" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Moderate nonproliferative diabetic retinopathy" codeSystemVersion="06/2009"/>
+         <Concept code="362.6" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Severe nonproliferative diabetic retinopathy" codeSystemVersion="06/2009"/>
+         <Concept code="362.7" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="DIABETIC MACULAR EDEMA"
+            codeSystemVersion="06/2009"/>
+         <Concept code="366.41" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="DIABETIC CATARACT"
+            codeSystemVersion="06/2009"/>
+         <Concept code="648" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Diabetes mellitus"
+            codeSystemVersion="06/2009"/>
+         <Concept code="648" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Maternal diabetes mellitus, complicating pregnancy, childbirth, or the puerperium, unspecified as to episode of care"
+            codeSystemVersion="06/2009"/>
+         <Concept code="648.1" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Diabetes mellitus of mother with delivery" codeSystemVersion="06/2009"/>
+         <Concept code="648.2" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Maternal diabetes mellitus with delivery, with current postpartum complication"
+            codeSystemVersion="06/2009"/>
+         <Concept code="648.3" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Maternal diabetes mellitus, antepartum" codeSystemVersion="06/2009"/>
+         <Concept code="648.4" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Maternal diabetes mellitus, previous postpartum condition"
+            codeSystemVersion="06/2009"/>
+      </ConceptList>
+   </ValueSet>
+   <ValueSet id="2.16.840.1.113883.3.464.1.40" displayName="diabetes">
+      <ConceptList xml:lang="en-US">
+         <Concept code="111552007" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus without complication" codeSystemVersion="07/2009"/>
+         <Concept code="111558006" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Insulin coma"
+            codeSystemVersion="07/2009"/>
+         <Concept code="11530004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="brittle diabetes"
+            codeSystemVersion="07/2009"/>
+         <Concept code="123763000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Houssay's syndrome"
+            codeSystemVersion="07/2009"/>
+         <Concept code="127013003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Diabetic renal disease"
+            codeSystemVersion="07/2009"/>
+         <Concept code="127014009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetic peripheral angiopathy" codeSystemVersion="07/2009"/>
+         <Concept code="190321005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus with no mention of complication"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190328004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetes mellitus NOS with ketoacidosis" codeSystemVersion="07/2009"/>
+         <Concept code="190330002" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus, juvenile type, with hyperosmolar coma"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190331003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus, adult onset, with hyperosmolar coma"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190336008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Other specified diabetes mellitus with coma" codeSystemVersion="07/2009"/>
+         <Concept code="190353001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetes mellitus NOS with neurological manifestation"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190361006" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetes mellitus NOS with peripheral circulatory disorder"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190368000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type I diabetes mellitus with ulcer" codeSystemVersion="07/2009"/>
+         <Concept code="190369008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type I diabetes mellitus with gangrene" codeSystemVersion="07/2009"/>
+         <Concept code="190371008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type I diabetes mellitus - poor control" codeSystemVersion="07/2009"/>
+         <Concept code="190372001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type I diabetes mellitus maturity onset" codeSystemVersion="07/2009"/>
+         <Concept code="190383005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="unspecified diabetes mellitus with multiple complications"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190389009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type II diabetes mellitus with ulcer" codeSystemVersion="07/2009"/>
+         <Concept code="190390000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type II diabetes mellitus with gangrene" codeSystemVersion="07/2009"/>
+         <Concept code="190392008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type II diabetes mellitus - poor control" codeSystemVersion="07/2009"/>
+         <Concept code="190406000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="malnutrition-related diabetes mellitus with ketoacidosis"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190407009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="malnutrition-related diabetes mellitus with renal complications"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190410002" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="malnutrition-related diabetes mellitus with peripheral circulatory complications"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190411003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="malnutrition-related diabetes mellitus with multiple complications"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190412005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="malnutrition-related diabetes mellitus without complications"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190416001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetes mellitus NOS with unspecified complication"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190417004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus with other specified manifestation"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190418009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus, juvenile type, with other specified manifestation"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190419001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus, adult onset, with other specified manifestation"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190422004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetes with unspecified complication" codeSystemVersion="07/2009"/>
+         <Concept code="193184006" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Chronic painful diabetic neuropathy" codeSystemVersion="07/2009"/>
+         <Concept code="197605007" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Nephrotic syndrome in diabetes mellitus" codeSystemVersion="07/2009"/>
+         <Concept code="198609003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="complications of pregnancy, childbirth and the puerperium"
+            codeSystemVersion="07/2009"/>
+         <Concept code="199223000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus during pregnancy, childbirth and the puerperium"
+            codeSystemVersion="07/2009"/>
+         <Concept code="199227004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus during pregnancy - baby not yet delivered"
+            codeSystemVersion="07/2009"/>
+         <Concept code="199229001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="pre-existing diabetes mellitus, insulin-dependent"
+            codeSystemVersion="07/2009"/>
+         <Concept code="199230006" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="pre-existing diabetes mellitus, non-insulin-dependent"
+            codeSystemVersion="07/2009"/>
+         <Concept code="199231005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Pre-existing malnutrition-related diabetes mellitus"
+            codeSystemVersion="07/2009"/>
+         <Concept code="199234002" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetes mellitus during pregnancy, childbirth or the puerperium NOS"
+            codeSystemVersion="07/2009"/>
+         <Concept code="201250006" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Ischemic ulcer diabetic foot" codeSystemVersion="07/2009"/>
+         <Concept code="201251005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Neuropathic diabetic ulcer - foot" codeSystemVersion="07/2009"/>
+         <Concept code="201252003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Mixed diabetic ulcer - foot" codeSystemVersion="07/2009"/>
+         <Concept code="23045005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="insulin dependent diabetes mellitus type IA" codeSystemVersion="07/2009"/>
+         <Concept code="230572002" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Diabetic neuropathy"
+            codeSystemVersion="07/2009"/>
+         <Concept code="230577008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Diabetic mononeuropathy"
+            codeSystemVersion="07/2009"/>
+         <Concept code="237599002" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="insulin-treated non-insulin-dependent diabetes mellitus"
+            codeSystemVersion="07/2009"/>
+         <Concept code="237600004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="malnutrition-related diabetes mellitus - fibrocalculous"
+            codeSystemVersion="07/2009"/>
+         <Concept code="237601000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="secondary endocrine diabetes mellitus" codeSystemVersion="07/2009"/>
+         <Concept code="237604008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus autosomal dominant type II" codeSystemVersion="07/2009"/>
+         <Concept code="237613005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="hyperproinsulinemia"
+            codeSystemVersion="07/2009"/>
+         <Concept code="237618001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="insulin-dependent diabetes mellitus secretory diarrhea syndrome"
+            codeSystemVersion="07/2009"/>
+         <Concept code="237619009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes-deafness syndrome maternally transmitted"
+            codeSystemVersion="07/2009"/>
+         <Concept code="237627000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="pregnancy and non-insulin-dependent diabetes mellitus"
+            codeSystemVersion="07/2009"/>
+         <Concept code="25907005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Diabetic gangrene"
+            codeSystemVersion="07/2009"/>
+         <Concept code="26298008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetic coma with ketoacidosis" codeSystemVersion="07/2009"/>
+         <Concept code="267379000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus, juvenile type, with no mention of complication"
+            codeSystemVersion="07/2009"/>
+         <Concept code="267380002" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus, adult onset, with no mention of complication"
+            codeSystemVersion="07/2009"/>
+         <Concept code="2751001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="fibrocalculous pancreatic diabetes" codeSystemVersion="07/2009"/>
+         <Concept code="275918005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="unstable diabetes"
+            codeSystemVersion="07/2009"/>
+         <Concept code="28032008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="insulin dependent diabetes mellitus type IB" codeSystemVersion="07/2009"/>
+         <Concept code="28453007" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="maturity onset diabetes mellitus in young" codeSystemVersion="07/2009"/>
+         <Concept code="290002008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="unstable type I diabetes mellitus" codeSystemVersion="07/2009"/>
+         <Concept code="309426007" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Diabetic glomerulopathy"
+            codeSystemVersion="07/2009"/>
+         <Concept code="310387003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetic intracapillary glomerulosclerosis" codeSystemVersion="07/2009"/>
+         <Concept code="311366001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Kimmelstiel-Wilson syndrome" codeSystemVersion="07/2009"/>
+         <Concept code="312912001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="diabetic macular edema"
+            codeSystemVersion="07/2009"/>
+         <Concept code="313435000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type I diabetes mellitus without complication" codeSystemVersion="07/2009"/>
+         <Concept code="313436004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type II diabetes mellitus without complication" codeSystemVersion="07/2009"/>
+         <Concept code="314537004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetic optic papillopathy" codeSystemVersion="07/2009"/>
+         <Concept code="314771006" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type I diabetes mellitus with hypoglycemic coma"
+            codeSystemVersion="07/2009"/>
+         <Concept code="314772004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type II diabetes mellitus with hypoglycemic coma"
+            codeSystemVersion="07/2009"/>
+         <Concept code="314893005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type I diabetes mellitus with arthropathy" codeSystemVersion="07/2009"/>
+         <Concept code="314902007" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type II diabetes mellitus with peripheral angiopathy"
+            codeSystemVersion="07/2009"/>
+         <Concept code="314903002" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Type II diabetes mellitus with arthropathy" codeSystemVersion="07/2009"/>
+         <Concept code="33559001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="pineal hyperplasia AND diabetes mellitus syndrome"
+            codeSystemVersion="07/2009"/>
+         <Concept code="34140002" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Diabetic gastroparesis"
+            codeSystemVersion="07/2009"/>
+         <Concept code="359611005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetic neuropathy with neurologic complication"
+            codeSystemVersion="07/2009"/>
+         <Concept code="359638003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="NIDDM in nonobese"
+            codeSystemVersion="07/2009"/>
+         <Concept code="359642000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus type 2 in nonobese" codeSystemVersion="07/2009"/>
+         <Concept code="360546002" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Hypoglycemic shock"
+            codeSystemVersion="07/2009"/>
+         <Concept code="371087003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Diabetic foot ulcer"
+            codeSystemVersion="07/2009"/>
+         <Concept code="38542009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Nodular glomerulosclerosis" codeSystemVersion="07/2009"/>
+         <Concept code="39058009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Diabetic amyotrophy"
+            codeSystemVersion="07/2009"/>
+         <Concept code="39181008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Diabetic radiculopathy"
+            codeSystemVersion="07/2009"/>
+         <Concept code="408539000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="insulin autoimmune syndrome" codeSystemVersion="07/2009"/>
+         <Concept code="408540003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus induced by non-steroid drugs" codeSystemVersion="07/2009"/>
+         <Concept code="413183008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus induced by non-steroid drugs without complication"
+            codeSystemVersion="07/2009"/>
+         <Concept code="414890007" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="O/E - left chronic diabetic foot ulcer" codeSystemVersion="07/2009"/>
+         <Concept code="414906009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="O/E -right chronic diabetic foot ulcer" codeSystemVersion="07/2009"/>
+         <Concept code="420414003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="multiple complications of type II diabetes mellitus"
+            codeSystemVersion="07/2009"/>
+         <Concept code="420422005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Diabetic ketoacidosis"
+            codeSystemVersion="07/2009"/>
+         <Concept code="421750000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Ketoacidosis in type II diabetes mellitus" codeSystemVersion="07/2009"/>
+         <Concept code="421847006" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Ketoacidotic coma in type II diabetes mellitus" codeSystemVersion="07/2009"/>
+         <Concept code="421895002" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Peripheral circulatory disorder associated with diabetes mellitus"
+            codeSystemVersion="07/2009"/>
+         <Concept code="422183001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Diabetic skin ulcer"
+            codeSystemVersion="07/2009"/>
+         <Concept code="422228004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="multiple complications of type I diabetes mellitus"
+            codeSystemVersion="07/2009"/>
+         <Concept code="422275004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Gangrene associated with diabetes mellitus" codeSystemVersion="07/2009"/>
+         <Concept code="423263001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetic autonomic neuropathy associated with type 2 diabetes mellitus"
+            codeSystemVersion="07/2009"/>
+         <Concept code="424736006" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetic peripheral neuropathy" codeSystemVersion="07/2009"/>
+         <Concept code="424989000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetic gastroparesis associated with type 2 diabetes mellitus"
+            codeSystemVersion="07/2009"/>
+         <Concept code="425159004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetic gastroparesis associated with type 1 diabetes mellitus"
+            codeSystemVersion="07/2009"/>
+         <Concept code="425442003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetic autonomic neuropathy associated with type 1 diabetes mellitus"
+            codeSystemVersion="07/2009"/>
+         <Concept code="426705001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus associated with cystic fibrosis"
+            codeSystemVersion="07/2009"/>
+         <Concept code="426875007" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="latent autoimmune diabetes mellitus in adult" codeSystemVersion="07/2009"/>
+         <Concept code="427089005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus due to cystic fibrosis" codeSystemVersion="07/2009"/>
+         <Concept code="428896009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Hyperosmolality  due to uncontrolled type I diabetes mellitus"
+            codeSystemVersion="07/2009"/>
+         <Concept code="42954008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus associated with receptor abnormality"
+            codeSystemVersion="07/2009"/>
+         <Concept code="44054006" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="diabetes mellitus type 2"
+            codeSystemVersion="07/2009"/>
+         <Concept code="4627003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Diabetic complication"
+            codeSystemVersion="07/2009"/>
+         <Concept code="46635009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="diabetes mellitus type 1"
+            codeSystemVersion="07/2009"/>
+         <Concept code="50620007" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetic autonomic neuropathy" codeSystemVersion="07/2009"/>
+         <Concept code="51002006" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus associated with pancreatic disease"
+            codeSystemVersion="07/2009"/>
+         <Concept code="5368009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="drug-induced diabetes mellitus" codeSystemVersion="07/2009"/>
+         <Concept code="54181000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetes-nephrosis syndrome" codeSystemVersion="07/2009"/>
+         <Concept code="57886004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="protein-deficient diabetes mellitus" codeSystemVersion="07/2009"/>
+         <Concept code="59079001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus associated with hormonal etiology"
+            codeSystemVersion="07/2009"/>
+         <Concept code="5969009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus associated with genetic syndrome"
+            codeSystemVersion="07/2009"/>
+         <Concept code="70694009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus AND insipidus with optic atrophy AND deafness"
+            codeSystemVersion="07/2009"/>
+         <Concept code="73211009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="diabetes mellitus"
+            codeSystemVersion="07/2009"/>
+         <Concept code="74263009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="Carpenter syndrome"
+            codeSystemVersion="07/2009"/>
+         <Concept code="75524006" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="malnutrition related diabetes mellitus" codeSystemVersion="07/2009"/>
+         <Concept code="75682002" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus due to insulin receptor antibodies"
+            codeSystemVersion="07/2009"/>
+         <Concept code="76751001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetes mellitus in mother complicatin pregtnancy, childbirth AND/OR puerperium"
+            codeSystemVersion="07/2009"/>
+         <Concept code="81531005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus type 2 in obese" codeSystemVersion="07/2009"/>
+         <Concept code="81830002" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Diabetic mononeuropathy simplex" codeSystemVersion="07/2009"/>
+         <Concept code="8801005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="secondary diabetes mellitus" codeSystemVersion="07/2009"/>
+         <Concept code="91352004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="diabetes mellitus due to structurally abnormal insulin"
+            codeSystemVersion="07/2009"/>
+         <Concept code="9859006" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="insulin-resistant diabetes mellitus AND acanthosis nigricans"
+            codeSystemVersion="07/2009"/>
+      </ConceptList>
+   </ValueSet>
+   <ValueSet id="2.16.840.1.113883.3.464.1.42" displayName="Encounter acute inpatient or ED">
+      <ConceptList xml:lang="en-US">
+         <Concept code="99221" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99222" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99223" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99231" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99232" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99233" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99238" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99239" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99251" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99252" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99253" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99254" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99255" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99291" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99281" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99282" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99283" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99284" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99285" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+      </ConceptList>
+   </ValueSet>
+   <ValueSet id="2.16.840.1.113883.3.464.1.43" displayName="encounter acute inpt">
+      <ConceptList xml:lang="en-US">
+         <Concept code="99221" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99222" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99223" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99231" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99232" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99233" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99238" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99239" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99251" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99252" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99253" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99254" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99255" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99291" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+      </ConceptList>
+   </ValueSet>
+   <ValueSet id="2.16.840.1.113883.3.464.1.45" displayName="encounter ED">
+      <ConceptList xml:lang="en-US">
+         <Concept code="99281" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99282" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99283" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99284" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99285" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+      </ConceptList>
+   </ValueSet>
+   <ValueSet id="2.16.840.1.113883.3.464.1.46" displayName="encounter non-acute inpatient">
+      <ConceptList xml:lang="en-US">
+         <Concept code="99304" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99305" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99306" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99307" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99308" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99309" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99310" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99315" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99316" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99318" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99324" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99325" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99326" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99327" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99328" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99334" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99335" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99336" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99337" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+      </ConceptList>
+   </ValueSet>
+   <ValueSet id="2.16.840.1.113883.3.464.3.1142"
+      displayName="Encounter non-acute inpatient and outpatient">
+      <ConceptList xml:lang="en-US">
+         <Concept code="99201" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99202" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99203" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99204" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99205" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99211" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99212" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99213" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99214" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99215" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99217" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99218" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99219" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99220" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99241" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99242" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99243" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99244" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99245" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99341" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99342" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99343" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99344" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99345" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99347" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99348" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99349" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99350" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99384" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99385" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99386" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99387" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99394" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99395" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99396" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99397" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99401" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99402" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99403" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99404" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99411" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99412" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99420" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99429" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99455" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99456" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="V70." codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Routine general medical examination at a health care facility"
+            codeSystemVersion="06/2009"/>
+         <Concept code="V70.3" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Other medical examination for administrative purposes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="V70.5" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Health examination of defined subpopulations" codeSystemVersion="06/2009"/>
+         <Concept code="V70.6" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Health examination in population surveys" codeSystemVersion="06/2009"/>
+         <Concept code="V70.8" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Other specified general medical examinations" codeSystemVersion="06/2009"/>
+         <Concept code="V70.9" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Unspecified general medical examination" codeSystemVersion="06/2009"/>
+      </ConceptList>
+   </ValueSet>
+   <ValueSet id="2.16.840.1.113883.3.464.1.48" displayName="encounter outpatient">
+      <ConceptList xml:lang="en-US">
+         <Concept code="99201" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99202" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99203" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99204" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99205" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99211" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99212" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99213" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99214" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99215" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99217" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99218" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99219" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99220" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99241" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99242" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99243" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99244" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99245" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99341" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99342" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99343" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99344" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99345" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99347-99350" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99384" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99385" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99386" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99387" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99394" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99395" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99396" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99397" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99401" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99402" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99403" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99404" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99411" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99412" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99420" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99429" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99455" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="99456" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+      </ConceptList>
+   </ValueSet>
+   <ValueSet id="2.16.840.1.113883.3.464.1.50" displayName="encounter outpatient">
+      <ConceptList xml:lang="en-US">
+         <Concept code="V70." codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Routine general medical examination at a health care facility"
+            codeSystemVersion="06/2009"/>
+         <Concept code="V70.3" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Other medical examination for administrative purposes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="V70.5" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Health examination of defined subpopulations" codeSystemVersion="06/2009"/>
+         <Concept code="V70.6" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Health examination in population surveys" codeSystemVersion="06/2009"/>
+         <Concept code="V70.8" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Other specified general medical examinations" codeSystemVersion="06/2009"/>
+         <Concept code="V70.9" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Unspecified general medical examination" codeSystemVersion="06/2009"/>
+      </ConceptList>
+   </ValueSet>
+   <ValueSet id="2.16.840.1.113883.3.464.1.67" displayName="gestational diabetes">
+      <ConceptList xml:lang="en-US">
+         <Concept code="R73.2" codeSystemName="ICD-10-CM" displayName="Gestational Diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="R73.9" codeSystemName="ICD-10-CM" displayName="Gestational Diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="648.8" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Abnormal glucose tolerance"
+            codeSystemVersion="06/2009"/>
+         <Concept code="648.80" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Abnormal maternal glucose tolerance, complicating pregnancy, childbirth, or the puerperium, unspecified as to episode of care"
+            codeSystemVersion="06/2009"/>
+         <Concept code="648.81" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Abnormal maternal glucose tolerance, with delivery"
+            codeSystemVersion="06/2009"/>
+         <Concept code="648.82" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Abnormal maternal glucose tolerance, with delivery, with current postpartum complication"
+            codeSystemVersion="06/2009"/>
+         <Concept code="648.83" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Abnormal maternal glucose tolerance, antepartum"
+            codeSystemVersion="06/2009"/>
+         <Concept code="648.84" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103"
+            displayName="Abnormal maternal glucose tolerance, previous postpartum condition"
+            codeSystemVersion="06/2009"/>
+         <Concept code="11687002" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="gestational diabetes mellitus" codeSystemVersion="07/2009"/>
+         <Concept code="420491007" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="gestational diabetes mellitus, class H" codeSystemVersion="07/2009"/>
+         <Concept code="420738003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="gestational diabetes mellitus, class T" codeSystemVersion="07/2009"/>
+         <Concept code="420989005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="gestational diabetes mellitus, class R" codeSystemVersion="07/2009"/>
+         <Concept code="421223006" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="gestational diabetes mellitus, class F" codeSystemVersion="07/2009"/>
+         <Concept code="421389009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="gestational diabetes mellitus, class C" codeSystemVersion="07/2009"/>
+         <Concept code="421443003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="gestational diabetes mellitus, class D" codeSystemVersion="07/2009"/>
+         <Concept code="422155003" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="gestational diabetes mellitus, class B" codeSystemVersion="07/2009"/>
+         <Concept code="46894009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="gestational diabetes mellitus, class A&gt;2&lt;"
+            codeSystemVersion="07/2009"/>
+         <Concept code="71546005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="gestational diabetes mellitus, class B&gt;1&lt;"
+            codeSystemVersion="07/2009"/>
+         <Concept code="75022004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="gestational diabetes mellitus, class A&gt;1&lt;"
+            codeSystemVersion="07/2009"/>
+      </ConceptList>
+   </ValueSet>
+   <ValueSet id="2.16.840.1.113883.3.464.1.72" displayName="HbA1c test">
+      <ConceptList xml:lang="en-US">
+         <Concept code="83036" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="83037" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" displayName="" codeSystemVersion="06/2009"/>
+         <Concept code="17856-6" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1"
+            displayName="Hemoglobin A1c/Hemoglobin.total" codeSystemVersion="06/2009"/>
+         <Concept code="4548-4" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" displayName="Hemoglobin A1c/Hemoglobin.total"
+            codeSystemVersion="06/2009"/>
+         <Concept code="4549-2" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" displayName="Hemoglobin A1c/Hemoglobin.total"
+            codeSystemVersion="06/2009"/>
+         <Concept code="117346004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="glucose measurement estimated from glycated hemoglobin"
+            codeSystemVersion="07/2009"/>
+         <Concept code="165680008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="hemoglobin A1c between 7%-10% indicating borderline diabetic control"
+            codeSystemVersion="07/2009"/>
+         <Concept code="259689004" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="glycosylated hemoglobin"
+            codeSystemVersion="07/2009"/>
+         <Concept code="259690008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="glycosylated hemoglobin-c fraction" codeSystemVersion="07/2009"/>
+         <Concept code="313835008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="HbA1c measurement (DCCT aligned)" codeSystemVersion="07/2009"/>
+         <Concept code="33601001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="glycosylated hemoglobin A"
+            codeSystemVersion="07/2009"/>
+         <Concept code="40402000" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Glucohemoglobin measurement" codeSystemVersion="07/2009"/>
+         <Concept code="408254005" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="total glycosylated hemoglobin level" codeSystemVersion="07/2009"/>
+         <Concept code="43396009" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Hemoglobin A1c measurement" codeSystemVersion="07/2009"/>
+      </ConceptList>
+   </ValueSet>
+   <ValueSet id="2.16.840.1.113883.3.464.1.94" displayName="Medications indicative of diabetes">
+      <ConceptList xml:lang="en-US">
+         <Concept code="199149" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="Acarbose 50 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="199150" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="Acarbose 100 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="200132" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="Acarbose 25 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="205329" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="miglitol 25 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="205330" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="miglitol 50 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="205331" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="miglitol 100 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="401938" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="Miglustat 100 MG Oral Capsule"
+            codeSystemVersion="07/2009"/>
+         <Concept code="200256" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="repaglinide 1 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="200257" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="repaglinide 0.5 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="200258" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="repaglinide 2 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="311919" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="nateglinide 120 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="314142" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="nateglinide 60 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="389139" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="nateglinide 180 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861035" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="pramlintide acetate 1 MG/ML Injectable Solution"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861039" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="pramlintide acetate 0.6 MG/ML Injectable Solution"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861042" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="pramlintide acetate 2.7 MG per 2.7 ML Prefilled Syringe"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861044" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="pramlintide acetate 1.5 MG per 1.5 ML Prefilled Syringe"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861787" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 500 MG / repaglinide 1 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861790" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 500 MG / repaglinide 2 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="665033" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="sitagliptin 100 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="665038" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="sitagliptin 25 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="665042" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="sitagliptin 50 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="744863" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="exenatide 0.25 MG/ML Injectable Solution" codeSystemVersion="07/2009"/>
+         <Concept code="847910" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="60 ACTUAT exenatide 0.1 MG/ACTUAT Prefilled Syringe"
+            codeSystemVersion="07/2009"/>
+         <Concept code="847915" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="exenatide 5 MCG/ACTUAT Prefilled Syringe, 60 ACTUAT"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861769" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 1000 MG / sitagliptin 50 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861819" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 500 MG / sitagliptin 50 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="602544" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="glimepiride 1 MG / rosiglitazone 4 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="602549" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="glimepiride 2 MG / rosiglitazone 4 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="602550" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="glimepiride 4 MG / rosiglitazone 4 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="647237" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="glimepiride 2 MG / pioglitazone 30 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="647239" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="glimepiride 4 MG / pioglitazone 30 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="706895" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="glimepiride 2 MG / rosiglitazone 8 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="706896" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="glimepiride 4 MG / rosiglitazone 8 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861731" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Glipizide 2.5 MG / Metformin hydrochloride 250 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861736" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Glipizide 2.5 MG / Metformin hydrochloride 500 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861740" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Glipizide 5 MG / Metformin hydrochloride 500 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861743" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Glyburide 1.25 MG / Metformin hydrochloride 250 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861748" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Glyburide 2.5 MG / Metformin hydrochloride 500 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861753" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Glyburide 5 MG / Metformin hydrochloride 500 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861760" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 1000 MG / rosiglitazone 2 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861763" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 1000 MG / rosiglitazone 4 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861769" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 1000 MG / sitagliptin 50 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861783" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 500 MG / pioglitazone 15 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861787" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 500 MG / repaglinide 1 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861790" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 500 MG / repaglinide 2 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861795" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 500 MG / rosiglitazone 1 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861806" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 500 MG / rosiglitazone 2 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861816" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 500 MG / rosiglitazone 4 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861819" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 500 MG / sitagliptin 50 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861822" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 850 MG / pioglitazone 15 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="665033" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="sitagliptin 100 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="665038" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="sitagliptin 25 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="665042" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="sitagliptin 50 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="860975" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="metformin hydrochloride 24 HR 500 MG Extended Release Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="860978" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 500 MG Extended Release Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="860981" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="metformin hydrochloride 750 MG 24 HR Extended Release Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="860984" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 750 MG Extended Release Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="860996" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="metformin hydrochloride 1000 MG 24 HR Extended Release Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="860999" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 1000 MG Extended Release Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861004" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 1000 MG Oral Tablet" codeSystemVersion="07/2009"/>
+         <Concept code="861007" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 500 MG Oral Tablet" codeSystemVersion="07/2009"/>
+         <Concept code="861010" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 850 MG Oral Tablet" codeSystemVersion="07/2009"/>
+         <Concept code="861021" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 625 MG Oral Tablet" codeSystemVersion="07/2009"/>
+         <Concept code="861025" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 100 MG/ML Oral Solution"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861731" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Glipizide 2.5 MG / Metformin hydrochloride 250 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861736" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Glipizide 2.5 MG / Metformin hydrochloride 500 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861740" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Glipizide 5 MG / Metformin hydrochloride 500 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861743" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Glyburide 1.25 MG / Metformin hydrochloride 250 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861748" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Glyburide 2.5 MG / Metformin hydrochloride 500 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861753" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Glyburide 5 MG / Metformin hydrochloride 500 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861760" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 1000 MG / rosiglitazone 2 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861763" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 1000 MG / rosiglitazone 4 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861769" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 1000 MG / sitagliptin 50 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861783" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 500 MG / pioglitazone 15 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861787" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 500 MG / repaglinide 1 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861790" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 500 MG / repaglinide 2 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861795" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 500 MG / rosiglitazone 1 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861806" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 500 MG / rosiglitazone 2 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861816" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 500 MG / rosiglitazone 4 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861819" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 500 MG / sitagliptin 50 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861822" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 850 MG / pioglitazone 15 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="105374" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="gliquidone 30 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="153842" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="glimepiride 3 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="197306" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Acetohexamide 250 MG Oral Tablet" codeSystemVersion="07/2009"/>
+         <Concept code="197307" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Acetohexamide 500 MG Oral Tablet" codeSystemVersion="07/2009"/>
+         <Concept code="197495" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Chlorpropamide 100 MG Oral Tablet" codeSystemVersion="07/2009"/>
+         <Concept code="197496" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Chlorpropamide 250 MG Oral Tablet" codeSystemVersion="07/2009"/>
+         <Concept code="197737" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="Glyburide 1.25 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="198291" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="Tolazamide 100 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="198292" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="Tolazamide 250 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="198293" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="Tolazamide 500 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="198294" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="Tolbutamide 500 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="199245" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="glimepiride 1 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="199246" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="glimepiride 2 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="199247" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="glimepiride 4 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="199825" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="Gliclazide 80 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="199984" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="troglitazone 200 MG Oral Tablet" codeSystemVersion="07/2009"/>
+         <Concept code="199985" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="troglitazone 400 MG Oral Tablet" codeSystemVersion="07/2009"/>
+         <Concept code="200065" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="troglitazone 300 MG Oral Tablet" codeSystemVersion="07/2009"/>
+         <Concept code="252960" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="Glyburide 4.5 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="310488" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="Glipizide 10 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="310489" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="glipizide ER 2.5 MG 24 HR Extended Release Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="310490" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="Glipizide 5 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="310534" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="Glyburide 2.5 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="310536" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="Glyburide 3 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="310537" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="Glyburide 5 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="310539" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="Glyburide 6 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="312440" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="pioglitazone 30 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="312441" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="pioglitazone 45 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="312859" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="rosiglitazone 2 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="312860" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="rosiglitazone 4 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="312861" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="rosiglitazone 8 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="313418" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="Tolazamide 250 MG Oral Capsule"
+            codeSystemVersion="07/2009"/>
+         <Concept code="313419" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="Tolbutamide 250 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="314000" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="Glyburide 1.5 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="314006" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="glipizide ER 5 MG 24 HR Extended Release Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="315107" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Glipizide ER 10 MG 24 HR Extended Release Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="315239" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Tolbutamide 50 MG/ML Injectable Solution" codeSystemVersion="07/2009"/>
+         <Concept code="317573" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="pioglitazone 15 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="379804" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="Glipizide 2.5 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="389137" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Gliclazide 30 MG Extended Release Tablet" codeSystemVersion="07/2009"/>
+         <Concept code="602544" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="glimepiride 1 MG / rosiglitazone 4 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="602549" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="glimepiride 2 MG / rosiglitazone 4 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="602550" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="glimepiride 4 MG / rosiglitazone 4 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="647237" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="glimepiride 2 MG / pioglitazone 30 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="647239" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="glimepiride 4 MG / pioglitazone 30 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="706895" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="glimepiride 2 MG / rosiglitazone 8 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="706896" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="glimepiride 4 MG / rosiglitazone 8 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="757710" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="vildagliptin 100 MG Oral Tablet" codeSystemVersion="07/2009"/>
+         <Concept code="757712" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="vildagliptin 50 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="844809" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Glipizide 2.5 MG Extended Release Tablet" codeSystemVersion="07/2009"/>
+         <Concept code="844824" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Glipizide 5 MG Extended Release Tablet" codeSystemVersion="07/2009"/>
+         <Concept code="844827" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Glipizide 10 MG Extended Release Tablet" codeSystemVersion="07/2009"/>
+         <Concept code="861731" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Glipizide 2.5 MG / Metformin hydrochloride 250 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861736" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Glipizide 2.5 MG / Metformin hydrochloride 500 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861740" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Glipizide 5 MG / Metformin hydrochloride 500 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861743" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Glyburide 1.25 MG / Metformin hydrochloride 250 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861748" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Glyburide 2.5 MG / Metformin hydrochloride 500 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861753" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Glyburide 5 MG / Metformin hydrochloride 500 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861760" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 1000 MG / rosiglitazone 2 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861763" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 1000 MG / rosiglitazone 4 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861783" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 500 MG / pioglitazone 15 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861795" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 500 MG / rosiglitazone 1 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861806" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 500 MG / rosiglitazone 2 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861816" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 500 MG / rosiglitazone 4 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="861822" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Metformin hydrochloride 850 MG / pioglitazone 15 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="312440" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="pioglitazone 30 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="312441" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="pioglitazone 45 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="312859" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="rosiglitazone 2 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="312860" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="rosiglitazone 4 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="312861" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="rosiglitazone 8 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="317573" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="pioglitazone 15 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="205314" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Insulin, Regular, Pork 500 UNT/ML Injectable Solution"
+            codeSystemVersion="07/2009"/>
+         <Concept code="237527" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Insulin, Zinc, Human 100 UNT/ML Injectable Suspension"
+            codeSystemVersion="07/2009"/>
+         <Concept code="242120" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Insulin Lispro 100 UNT/ML Injectable Solution" codeSystemVersion="07/2009"/>
+         <Concept code="242916" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="insulin, protamine zinc, beef 100 UNT/ML Injectable Suspension"
+            codeSystemVersion="07/2009"/>
+         <Concept code="242917" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Insulin, Protamine Zinc, Pork 100 UNT/ML Injectable Suspension"
+            codeSystemVersion="07/2009"/>
+         <Concept code="259111" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Insulin Lispro 25 UNT/ML / Insulin, Protamine Lispro, Human 75 UNT/ML Injectable Suspension"
+            codeSystemVersion="07/2009"/>
+         <Concept code="260265" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Insulin Lispro 50 UNT/ML / Insulin, Protamine Lispro, Human 50 UNT/ML Injectable Suspension"
+            codeSystemVersion="07/2009"/>
+         <Concept code="283394" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Insulin, Prompt Zinc, Beef 100 UNT/ML Injectable Suspension"
+            codeSystemVersion="07/2009"/>
+         <Concept code="311040" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Insulin, Aspart, Human 100 UNT/ML Injectable Solution"
+            codeSystemVersion="07/2009"/>
+         <Concept code="311041" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Insulin Glargine 100 UNT/ML Injectable Solution"
+            codeSystemVersion="07/2009"/>
+         <Concept code="311053" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Insulin, Protamine Zinc, Beef-Pork 100 UNT/ML Injectable Suspension"
+            codeSystemVersion="07/2009"/>
+         <Concept code="311054" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Insulin, Regular, Beef-Pork 100 UNT/ML Injectable Solution"
+            codeSystemVersion="07/2009"/>
+         <Concept code="311055" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Insulin, Regular, Beef-Pork 40 UNT/ML Inhalant Solution"
+            codeSystemVersion="07/2009"/>
+         <Concept code="311056" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Insulin, Regular, Beef 100 UNT/ML Injectable Solution"
+            codeSystemVersion="07/2009"/>
+         <Concept code="311057" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Insulin, Regular, Pork 100 UNT/ML Injectable Solution"
+            codeSystemVersion="07/2009"/>
+         <Concept code="311058" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Insulin, Regular, Pork 40 UNT/ML Injectable Solution"
+            codeSystemVersion="07/2009"/>
+         <Concept code="311059" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Insulin, Prompt Zinc, Beef-Pork 100 UNT/ML Injectable Suspension"
+            codeSystemVersion="07/2009"/>
+         <Concept code="311060" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Insulin, Prompt Zinc, Beef-Pork 40 UNT/ML Injectable Suspension"
+            codeSystemVersion="07/2009"/>
+         <Concept code="311061" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Insulin, Prompt Zinc, Pork 100 UNT/ML Injectable Suspension"
+            codeSystemVersion="07/2009"/>
+         <Concept code="314038" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Insulin, Protamine Zinc, Beef-Pork 40 UNT/ML Injectable Suspension"
+            codeSystemVersion="07/2009"/>
+         <Concept code="317800" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Insulin, Zinc, Pork 100 UNT/ML Injectable Suspension"
+            codeSystemVersion="07/2009"/>
+         <Concept code="351297" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Insulin, Aspart Protamine, Human 70 UNT/ML / Insulin, Aspart, Human 30 UNT/ML Injectable Suspension"
+            codeSystemVersion="07/2009"/>
+         <Concept code="358349" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Insulin, Regular, Pork 30 UNT/ML / NPH Insulin, Pork 70 UNT/ML Injectable Suspension"
+            codeSystemVersion="07/2009"/>
+         <Concept code="484322" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="insulin detemir 100 UNT/ML Injectable Solution" codeSystemVersion="07/2009"/>
+         <Concept code="485210" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Insulin, Glulisine, Human 100 UNT/ML Injectable Solution"
+            codeSystemVersion="07/2009"/>
+         <Concept code="544614" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Insulin, Zinc, Pork 40 UNT/ML Injectable Solution"
+            codeSystemVersion="07/2009"/>
+         <Concept code="763002" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="rDNA origin human insulin 1 MG/ACTUAT Dry Powder Inhaler, 90 ACTUAT"
+            codeSystemVersion="07/2009"/>
+         <Concept code="763007" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="rDNA origin human insulin 3 MG/ACTUAT Dry Powder Inhaler, 90 ACTUAT"
+            codeSystemVersion="07/2009"/>
+         <Concept code="763013" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="insulin human, rDNA origin 1 MG/ACTUAT Inhalant Powder"
+            codeSystemVersion="07/2009"/>
+         <Concept code="763014" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="insulin human, rDNA origin 3 MG/ACTUAT Inhalant Powder"
+            codeSystemVersion="07/2009"/>
+         <Concept code="833159" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="insulin biphasic aspart 50/50 100 UNT/ML Injectable Suspension"
+            codeSystemVersion="07/2009"/>
+         <Concept code="847191" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="aspart protamine human insulin 210 UNT / aspart human insulin 90 UNT per 3 ML Prefilled Syringe"
+            codeSystemVersion="07/2009"/>
+         <Concept code="847207" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="lispro insulin 300 UNT per 3 ML Prefilled Syringe"
+            codeSystemVersion="07/2009"/>
+         <Concept code="847211" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="lispro insulin 150 UNT / protamine lispro human insulin 150 UNT per 3 ML Prefilled Syringe"
+            codeSystemVersion="07/2009"/>
+         <Concept code="847230" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="glargine insulin 300 UNT per 3 ML Prefilled Syringe"
+            codeSystemVersion="07/2009"/>
+         <Concept code="847239" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="detemir insulin 300 UNT per 3 ML Prefilled Syringe"
+            codeSystemVersion="07/2009"/>
+         <Concept code="847252" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="lispro insulin 75 UNT / protamine lispro human insulin 225 UNT per 3 ML Prefilled Syringe"
+            codeSystemVersion="07/2009"/>
+         <Concept code="847259" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="Insulin, Glulisine, Human 100 UNT/ML 3 ML Prefilled Syringe"
+            codeSystemVersion="07/2009"/>
+         <Concept code="847263" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="aspart human insulin 300 UNT per 3 ML Prefilled Syringe"
+            codeSystemVersion="07/2009"/>
+         <Concept code="847416" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88"
+            displayName="lispro insulin 150 UNT per 1.5 ML Prefilled Syringe"
+            codeSystemVersion="07/2009"/>
+         <Concept code="200256" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="repaglinide 1 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="200257" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="repaglinide 0.5 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="200258" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="repaglinide 2 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="311919" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="nateglinide 120 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="314142" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="nateglinide 60 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+         <Concept code="389139" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" displayName="nateglinide 180 MG Oral Tablet"
+            codeSystemVersion="07/2009"/>
+      </ConceptList>
+   </ValueSet>
+   <ValueSet id="2.16.840.1.113883.3.464.1.98" displayName="polycystic ovaries">
+      <ConceptList xml:lang="en-US">
+         <Concept code="E28.2" codeSystemName="ICD-10-CM" displayName="Polycystic ovaries"
+            codeSystemVersion="06/2009"/>
+         <Concept code="256.4" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Polycystic ovaries"
+            codeSystemVersion="06/2009"/>
+         <Concept code="69878008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="polycystic ovaries"
+            codeSystemVersion="07/2009"/>
+      </ConceptList>
+   </ValueSet>
+   <ValueSet id="2.16.840.1.113883.3.464.1.113" displayName="steroid induced diabetes">
+      <ConceptList xml:lang="en-US">
+         <Concept code="E08" codeSystemName="ICD-10-CM" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="E10" codeSystemName="ICD-10-CM" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="T38" codeSystemName="ICD-10-CM"
+            displayName="Poisoning by, adverse effect of and underdosing of hormones and their synthetic substitutes and antagonists, not elsewhere classified"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.1" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.1" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.10" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.11" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.2" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.20" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.21" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.3" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.30" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.31" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.4" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.40" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.41" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.5" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.50" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.51" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.6" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.60" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.61" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.7" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.70" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.71" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.8" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.80" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.81" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.9" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.90" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="249.91" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="251.8" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Steroid induced diabetes"
+            codeSystemVersion="06/2009"/>
+         <Concept code="962" codeSystemName="ICD-9-CM" codeSystem="2.16.840.1.113883.6.103" displayName="Adrenal cortical steroids"
+            codeSystemVersion="06/2009"/>
+         <Concept code="190416008" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="steroid-induced diabetes mellitus without complication"
+            codeSystemVersion="07/2009"/>
+         <Concept code="190447002" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96" displayName="steroid-induced diabetes"
+            codeSystemVersion="07/2009"/>
+         <Concept code="53126001" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Poisoning by adrenal cortical steroid" codeSystemVersion="07/2009"/>
+      </ConceptList>
+   </ValueSet>
+</CodeSystems>
