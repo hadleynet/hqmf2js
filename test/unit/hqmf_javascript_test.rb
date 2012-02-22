@@ -173,6 +173,9 @@ class HqmfJavascriptTest < Test::Unit::TestCase
     # We'll test for validity over on the hQuery Gateway side of things.
     assert map_reduce[:map].include? 'map'
     assert map_reduce[:reduce].include? 'reduce'
+    # Check functions to include actual HQMF converted function, HQMF utility function, and OID dictionary
     assert map_reduce[:functions].include? 'IPP'
+    assert map_reduce[:functions].include? 'atLeastOneTrue'
+    assert map_reduce[:functions].include? 'OidDictionary'
   end
 end

@@ -22,10 +22,7 @@ module HQMF2JS
   class Converter
     def self.generate_map_reduce(hqmf_contents)
       # First compile the CoffeeScript that enables our converted HQMF JavaScript
-      ctx = Sprockets::Environment.new(File.expand_path("../../..", __FILE__))
-      Tilt::CoffeeScriptTemplate.default_bare = true 
-      ctx.append_path "app/assets/javascripts"
-      hqmf_utils = ctx.find_asset('hqmf_util').to_s
+      hqmf_utils = Rails.application.assets.find_asset('hqmf_util').to_s
 
       # Parse the code systems that are mapped to the OIDs we support
       codes_file_path = File.expand_path("../../test/fixtures/codes.xml", __FILE__)
