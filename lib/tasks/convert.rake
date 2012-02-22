@@ -1,10 +1,6 @@
-require 'hqmf2js'
-
-ENV["RAILS_ENV"] = "test"
-require File.expand_path('../../../config/environment', __FILE__)
+require_relative '../hqmf2js'
 
 namespace :hqmf do
-
   desc 'Convert a HQMF file to JavaScript'
   task :convert, [:file] do |t, args|
     hqmf_contents = File.open(args.file).read

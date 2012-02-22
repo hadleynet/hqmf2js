@@ -1,4 +1,4 @@
-require 'test_helper'
+require_relative '../test_helper'
 
 class HqmfJavascriptTest < Test::Unit::TestCase
   def setup
@@ -12,7 +12,7 @@ class HqmfJavascriptTest < Test::Unit::TestCase
     ctx = Sprockets::Environment.new(File.expand_path("../../..", __FILE__))
     Tilt::CoffeeScriptTemplate.default_bare = true 
     ctx.append_path "app/assets/javascripts"
-    hqmf_utils = ctx.find_asset('hqmf_util').to_s
+    hqmf_utils = HqmfUtility.hqmf_utility_javascript.to_s
     
     # Parse the code systems that are mapped to the OIDs we support
     codes = Generator::CodesToJson.new(codes_file_path)
@@ -27,7 +27,7 @@ class HqmfJavascriptTest < Test::Unit::TestCase
                       #{converter.js_for('DENEXCEP')}"
     
     # Now we can wrap and compile all of our code as one little JavaScript context for all of the tests below
-    patient_api = Rails.application.assets.find_asset('patient').to_s
+    patient_api = File.open('test/fixtures/patient_api.js').read
     fixture_json = File.read('test/fixtures/patients/larry_vanderman.json')
     initialize_patient = 'var numeratorPatient = new hQuery.Patient(larry);'
     @context = ExecJS.compile("#{hqmf_utils}

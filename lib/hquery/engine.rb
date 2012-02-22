@@ -1,4 +1,4 @@
-module Hqmf2js
+module HQMF2JS
   class Engine < Rails::Engine
   end
 end

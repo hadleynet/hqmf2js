@@ -1,4 +1,4 @@
-require 'hqmf2js'
+require_relative '../hqmf2js'
 
 namespace :codes do
   desc 'Convert code systems from XML to JSON'

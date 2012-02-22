@@ -1,4 +1,4 @@
-require 'hqmf2js'
+require_relative '../hqmf2js'
 
 namespace :coffee do
   desc 'Compile the CoffeeScript library'

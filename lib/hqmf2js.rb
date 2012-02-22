@@ -1,11 +1,14 @@
 # Top level include file that brings in all the necessary code
 require 'bundler/setup'
-
 require 'nokogiri'
 require 'erb'
 require 'ostruct'
 require 'singleton'
 require 'json'
+require 'tilt'
+require 'coffee_script'
+require 'sprockets'
+require 'execjs'
 
 require_relative 'hqmf/utilities'
 require_relative 'hqmf/types'
@@ -18,13 +21,31 @@ require_relative 'hqmf/precondition'
 require_relative 'generator/js'
 require_relative 'generator/codes_to_json'
 
-require_relative 'hquery/engine'
+Tilt::CoffeeScriptTemplate.default_bare = true
+class HqmfUtility
+  @@ctx = nil
+  
+  def self.ctx
+    unless @@ctx
+      @@ctx = Sprockets::Environment.new(File.expand_path("../../", __FILE__))
+      @@ctx.append_path "app/assets/javascripts"
+    end
+    @@ctx
+  end
+
+  def self.hqmf_utility_javascript
+    self.ctx.find_asset('hqmf_util')
+  end
+end
 
 module HQMF2JS
   class Converter
     def self.generate_map_reduce(hqmf_contents)
       # First compile the CoffeeScript that enables our converted HQMF JavaScript
-      hqmf_utils = Rails.application.assets.find_asset('hqmf_util').to_s
+      ctx = Sprockets::Environment.new(File.expand_path("../../..", __FILE__))
+      Tilt::CoffeeScriptTemplate.default_bare = true 
+      ctx.append_path "app/assets/javascripts"
+      hqmf_utils = HqmfUtility.hqmf_utility_javascript.to_s
 
       # Parse the code systems that are mapped to the OIDs we support
       codes_file_path = File.expand_path("../../test/fixtures/codes.xml", __FILE__)
