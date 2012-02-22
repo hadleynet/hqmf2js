@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
   
   s.add_development_dependency "awesome_print", "~> 0.3"
 
-  s.files = `git ls-files`.split("\n")
+  s.files = Dir.glob('lib/**/*.rb') + Dir.glob('lib/**/*.rake') +
+            Dir.glob('js/**/*.js*') + ["Gemfile", "README.md", "Rakefile", "VERSION"]
 end
 
