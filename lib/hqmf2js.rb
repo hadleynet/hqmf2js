@@ -18,6 +18,8 @@ require_relative 'hqmf/precondition'
 require_relative 'generator/js'
 require_relative 'generator/codes_to_json'
 
+require_relative 'hquery/engine'
+
 module HQMF2JS
   class Converter
     def self.generate_map_reduce(hqmf_contents)
