@@ -3,9 +3,8 @@ require 'test_helper'
 class HqmfJavascriptTest < Test::Unit::TestCase
   def setup
     # Open a path to all of our fixtures
-    hqmf_file_path = File.expand_path("../../fixtures/NQF59New.xml", __FILE__)
+    hqmf_contents = File.open("test/fixtures/NQF59New.xml").read
     codes_file_path = File.expand_path("../../fixtures/codes.xml", __FILE__)
-    doc = HQMF::Document.new(hqmf_file_path)
     # This patient is identified from Cypress as in the denominator and numerator for NQF59
     numerator_patient_json = File.read('test/fixtures/patients/larry_vanderman.json')
     
@@ -20,7 +19,7 @@ class HqmfJavascriptTest < Test::Unit::TestCase
     codes_json = codes.json
     
     # Convert the HQMF document included as a fixture into JavaScript
-    converter = Generator::JS.new(hqmf_file_path)
+    converter = Generator::JS.new(hqmf_contents)
     converted_hqmf = "#{converter.js_for_data_criteria}
                       #{converter.js_for('IPP')}
                       #{converter.js_for('DENOM')}
@@ -164,5 +163,16 @@ class HqmfJavascriptTest < Test::Unit::TestCase
     # getCode
     assert_equal 1, @context.eval('getCodes("2.16.840.1.113883.3.464.1.14")').size
     assert_equal "00110", @context.eval('getCodes("2.16.840.1.113883.3.464.1.14")["HL7"]').first
+  end
+  
+  def test_map_reduce_generation
+    hqmf_contents = File.open("test/fixtures/NQF59New.xml").read
+    map_reduce = HQMF2JS::Converter.generate_map_reduce(hqmf_contents)
+    
+    # Extremely loose testing here. Just want to be sure for now that we're getting results of some kind.
+    # We'll test for validity over on the hQuery Gateway side of things.
+    assert map_reduce[:map].include? 'map'
+    assert map_reduce[:reduce].include? 'reduce'
+    assert map_reduce[:functions].include? 'IPP'
   end
 end

@@ -20,20 +20,55 @@ require_relative 'generator/codes_to_json'
 
 module HQMF2JS
   class Converter
-    # This method does it all. Given an HQMF file and the OIDs that we expect to use, this will use all of the other
-    # helper functions below to create one MapReduce job.
-    def generate_map_reduce(hqmf_doc, codes_doc)
-      codes_to_json = Generator::CodesToJson.new(f)      
+    def self.generate_map_reduce(hqmf_contents)
+      # First compile the CoffeeScript that enables our converted HQMF JavaScript
+      ctx = Sprockets::Environment.new(File.expand_path("../../..", __FILE__))
+      Tilt::CoffeeScriptTemplate.default_bare = true 
+      ctx.append_path "app/assets/javascripts"
+      hqmf_utils = ctx.find_asset('hqmf_util').to_s
+
+      # Parse the code systems that are mapped to the OIDs we support
+      codes_file_path = File.expand_path("../../test/fixtures/codes.xml", __FILE__)
+      codes = Generator::CodesToJson.new(codes_file_path)
+      codes_json = codes.json
+
+      # Convert the HQMF document included as a fixture into JavaScript
+      converter = Generator::JS.new(hqmf_contents)
+      converted_hqmf = "#{converter.js_for_data_criteria}
+                        #{converter.js_for('IPP')}
+                        #{converter.js_for('DENOM')}
+                        #{converter.js_for('NUMER')}
+                        #{converter.js_for('DENEXCEP')}"
       
-      Dir.mkdir('tmp') unless Dir.exists?('tmp')
-      File.open('tmp/codes.js', 'w+') do |js_file|
-        js_file.write codes_to_json.json
-      end
+      # Pretty stock map/reduce functions that call out to our converted HQMF code stored in the functions variable
+      map = "function map(patient) {
+              if (IPP(patient)) {
+                emit('ipp', 1);
+                if (DENOM(patient)) {
+                  if (NUMER(patient)) {
+                    emit('denom', 1);
+                    emit('numer', 1);
+                  } else if (DENEXCEP(patient)) {
+                    emit('denexcep', 1);
+                  } else {
+                    emit('denom', 1);
+                    emit('antinum', 1);
+                  }
+                }
+              }
+            };"
+      reduce = "function reduce(bucket, counts) {
+                  var sum = 0;
+                  while(counts.hasNext()){
+                    sum += counts.next();
+                  }
+                  return sum;
+                };"
+      functions = "#{hqmf_utils}
+                   var OidDictionary = #{codes_json};
+                   #{converted_hqmf}"
+
+      return { :map => map, :reduce => reduce, :functions => functions }
     end
-  end
-  
-  def self.patient_api_javascript
-    Tilt::CoffeeScriptTemplate.default_bare=true
-    Rails.application.assets.find_asset("patient").to_s
   end
 end

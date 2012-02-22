@@ -2,12 +2,12 @@ require 'test_helper'
 
 class DocumentTest < Test::Unit::TestCase
   def setup
-    @hqmf_file_path = File.expand_path("../../fixtures/NQF59New.xml", __FILE__)
-    @doc = HQMF::Document.new(@hqmf_file_path)
+    @hqmf_contents = File.open("test/fixtures/NQF59New.xml").read
+    @doc = HQMF::Document.new(@hqmf_contents)
   end
   
   def test_parse
-    doc = HQMF::Document.parse(@hqmf_file_path)
+    doc = HQMF::Document.parse(@hqmf_contents)
     assert_equal 'QualityMeasureDocument', doc.root.name
     assert_equal 'urn:hl7-org:v3', doc.root.namespace.href 
   end

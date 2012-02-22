@@ -7,8 +7,8 @@ namespace :hqmf do
 
   desc 'Convert a HQMF file to JavaScript'
   task :convert, [:file] do |t, args|
-    f = args.file
-    gen = Generator::JS.new(f)
+    hqmf_contents = File.open(args.file).read
+    gen = Generator::JS.new(hqmf_contents)
 
     codes = Generator::CodesToJson.new(File.expand_path("../../../test/fixtures/codes.xml", __FILE__))
     codes_json = codes.json

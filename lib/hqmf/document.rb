@@ -3,8 +3,8 @@ module HQMF
   class Document
     # Create a new HQMF::Document instance by parsing at file at the supplied path
     # @param [String] path the path to the HQMF document
-    def initialize(path)
-      @doc = Document.parse(path)
+    def initialize(hqmf_contents)
+      @doc = Document.parse(hqmf_contents)
       @attributes = @doc.xpath('cda:QualityMeasureDocument/cda:component/cda:measureDescriptionSection/cda:entry').collect do |attr|
         Attribute.new(attr)
       end
@@ -70,8 +70,8 @@ module HQMF
     
     # Parse an XML document at the supplied path
     # @return [Nokogiri::XML::Document]
-    def self.parse(path)
-      doc = Nokogiri::XML(File.new(path))
+    def self.parse(hqmf_contents)
+      doc = Nokogiri::XML(hqmf_contents)
       doc.root.add_namespace_definition('cda', 'urn:hl7-org:v3')
       doc.root.add_namespace_definition('xsi', 'http://www.w3.org/2001/XMLSchema-instance')
       doc
