@@ -19,5 +19,6 @@ gem 'pry'
 group :test do
   gem 'minitest'
   gem 'turn', :require => false
+  gem 'cover_me', '>= 1.0.0.rc6', :platforms => :ruby
   gem 'awesome_print', :require => 'ap'
 end
