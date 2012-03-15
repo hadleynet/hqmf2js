@@ -1,4 +1,6 @@
 Gemfile.lock
+coverage
+coverage.data
 vendor
 .bundle
 tmp
