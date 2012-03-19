@@ -9,7 +9,6 @@ Dir['lib/tasks/*.rake'].sort.each do |ext|
   load ext
 end
 
-task :default => [:test_units]
 $LOAD_PATH << File.expand_path("../test",__FILE__)
 desc "Run basic tests"
 Rake::TestTask.new("test_units") { |t|
@@ -17,3 +16,5 @@ Rake::TestTask.new("test_units") { |t|
   t.verbose = true
   t.warning = true
 }
+
+task :default => [:test_units,'cover_me:report']
