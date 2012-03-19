@@ -3,3 +3,5 @@ vendor
 .bundle
 tmp
 log/*.log
+*/.DS_Store
+.DS_Store
