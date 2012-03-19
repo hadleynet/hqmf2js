@@ -1,5 +1,4 @@
-This project is a library that will convert the declarative HQMF measure descriptions produced by the NQF Measure Authoring Tool into executable JavaScript suitable for use
-within the popHealth Quality Measure Engine.
+This project is a library that will convert a declarative HQMF measure description into executable JavaScript suitable for use within the hQuery Gateway.
 
 
 Project Practices
