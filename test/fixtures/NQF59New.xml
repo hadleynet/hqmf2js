@@ -54,7 +54,7 @@
             displayName="Age"/>
           <value xsi:type="IVL_PQ">
             <low value="17" unit="a"/>
-            <high value="64" unit="a"/>
+            <high value="64" unit="a" inclusive="true"/>
           </value>
           <definition>
             <observationReference moodCode="DEF">
@@ -234,6 +234,19 @@
             </observationReference>
           </definition>
         </encounterCriteria>
+      </entry>
+      <entry>
+        <localVariableName>DummyProcedure</localVariableName>
+        <observationCriteria>
+          <id root="0" extension="DummyProcedure"/>
+          <statusCode code="completed"/>
+          <code valueSet="1.2.3.4"/>
+          <definition>
+            <observationReference moodCode="DEF">
+              <id root="0" extension="Procedure"/>
+            </observationReference>
+          </definition>
+        </observationCriteria>
       </entry>
       <entry>
         <localVariableName>HasDiabetes</localVariableName>

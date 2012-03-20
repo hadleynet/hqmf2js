@@ -94,10 +94,6 @@ module Generator
     def new_id
       @count+=1
     end
-    
-    def reset
-      @count = 0
-    end
   end
     
   # Singleton to keep a count of function identifiers

@@ -57,9 +57,10 @@ class DocumentTest < Test::Unit::TestCase
   
   def test_data_criteria
     data_criteria = @doc.all_data_criteria
-    assert_equal 22, data_criteria.length
+    assert_equal 23, data_criteria.length
     
     criteria = @doc.data_criteria('EndDate')
+    assert criteria.to_xml.include?('extension="EndDate"')
     assert_equal :variable, criteria.type
     assert_equal 'EndDate', criteria.title
     assert_equal HQMF::Value, criteria.value.class
@@ -75,9 +76,11 @@ class DocumentTest < Test::Unit::TestCase
     assert_equal '17', criteria.value.low.value
     assert_equal 'a', criteria.value.low.unit
     assert_equal false, criteria.value.low.derived?
+    assert_equal false, criteria.value.low.inclusive?
     assert_equal '64', criteria.value.high.value
     assert_equal 'a', criteria.value.high.unit
     assert_equal false, criteria.value.high.derived?
+    assert_equal true, criteria.value.high.inclusive?
 
     criteria = @doc.data_criteria('genderMale')
     assert_equal :characteristic, criteria.type
@@ -87,6 +90,11 @@ class DocumentTest < Test::Unit::TestCase
     assert_equal 'CD', criteria.value.type
     assert_equal 'M', criteria.value.code
     assert_equal '2.16.840.1.113883.5.1', criteria.value.system
+
+    criteria = @doc.data_criteria('DummyProcedure')
+    assert_equal :procedure, criteria.type
+    assert_equal '1.2.3.4', criteria.code_list_id
+    assert_equal 'completed', criteria.status
 
     criteria = @doc.data_criteria('EDorInpatientEncounter')
     assert_equal :encounter, criteria.type
