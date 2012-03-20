@@ -1,11 +1,11 @@
 // Measure variables
 <%- all_criteria.select {|c| c.type == :variable}.each do |criteria| -%>
-var <%= criteria.id %> = <%= js_for_value(criteria.value) %>;
+var <%= criteria.js_name %> = <%= js_for_value(criteria.value) %>;
 <%- end -%>
 
 // Data critera
 <%- all_criteria.select {|c| c.type != :variable}.each do |criteria| -%>
-var <%= criteria.id %> = function(patient) {
+var <%= criteria.js_name %> = function(patient) {
   <%- if criteria.type == :characteristic -%>
   var value = patient.<%= criteria.property %>(<%= 'EndDate.asDate()' if criteria.property == :age %>);
   return matchingValue(value, <%= js_for_bounds(criteria.value) %>);

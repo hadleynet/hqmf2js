@@ -15,5 +15,9 @@ module HQMF
     def to_xml
       @entry.to_xml
     end
+    
+    def js_name
+      id.gsub(/\W/, '_')
+    end
   end
 end  

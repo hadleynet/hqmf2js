@@ -45,7 +45,6 @@ module HQMF
         @entry.at_xpath('./cda:expression').inner_text
       end
     end
-    
   end
   
   # Represents a HQMF pauseQuantity which can have low and high bounds
@@ -129,7 +128,7 @@ module HQMF
       @entry = entry
     end
     
-    def data_criteria_id
+    def id
       attr_val('./@extension')
     end
   end
