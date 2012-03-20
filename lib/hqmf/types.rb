@@ -4,12 +4,11 @@ module HQMF
   class Value
     include HQMF::Utilities
     
-    def initialize(entry)
-      @entry = entry
-    end
+    attr_reader :type
     
-    def type
-      attr_val('./@xsi:type') || 'PQ'
+    def initialize(entry, default_type='PQ')
+      @entry = entry
+      @type = attr_val('./@xsi:type') || default_type
     end
     
     def value
@@ -47,7 +46,7 @@ module HQMF
     end
   end
   
-  # Represents a HQMF pauseQuantity which can have low and high bounds
+  # Represents a HQMF physical quantity which can have low and high bounds
   class Range
     include HQMF::Utilities
     attr_reader :low, :high
@@ -69,9 +68,18 @@ module HQMF
     def optional_value(xpath)
       value_def = @entry.at_xpath(xpath)
       if value_def
-        Value.new(value_def)
+        Value.new(value_def, default_bounds_type)
       else
         nil
+      end
+    end
+    
+    def default_bounds_type
+      case type
+      when 'IVL_TS'
+        'TS'
+      else
+        'PQ'
       end
     end 
   end
@@ -83,7 +91,7 @@ module HQMF
     end
     
     def type
-      'IVL_PQ'
+      'IVL_TS'
     end
   end
   

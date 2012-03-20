@@ -23,12 +23,14 @@ namespace :hqmf do
     puts gen.js_for('NUMER')
     puts gen.js_for('DENEXCEP')
     
-    puts Rails.application.assets.find_asset('patient').to_s
+    if defined? Rails
+      puts Rails.application.assets.find_asset('patient').to_s
     
-    fixture_json = File.read('test/fixtures/patients/larry_vanderman.json')
-    initialize_patient = 'var numeratorPatient = new hQuery.Patient(larry);'
-    puts "var larry = #{fixture_json};"
-    puts "#{initialize_patient}"
+      fixture_json = File.read('test/fixtures/patients/larry_vanderman.json')
+      initialize_patient = 'var numeratorPatient = new hQuery.Patient(larry);'
+      puts "var larry = #{fixture_json};"
+      puts "#{initialize_patient}"
+    end
   end
 end
     
