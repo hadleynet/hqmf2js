@@ -16,7 +16,6 @@ namespace :hqmf do
     hqmf_utils = ctx.find_asset('hqmf_util').to_s
     puts hqmf_utils
 
-    puts gen.js_for_attributes()
     puts gen.js_for_data_criteria()
     puts gen.js_for('IPP')
     puts gen.js_for('DENOM')

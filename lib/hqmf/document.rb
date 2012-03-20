@@ -5,9 +5,6 @@ module HQMF
     # @param [String] path the path to the HQMF document
     def initialize(hqmf_contents)
       @doc = Document.parse(hqmf_contents)
-      @attributes = @doc.xpath('cda:QualityMeasureDocument/cda:component/cda:measureDescriptionSection/cda:entry').collect do |attr|
-        Attribute.new(attr)
-      end
       @data_criteria = @doc.xpath('cda:QualityMeasureDocument/cda:component/cda:dataCriteriaSection/cda:entry').collect do |entry|
         DataCriteria.new(entry)
       end
@@ -29,19 +26,6 @@ module HQMF
       description==nil ? '' : description.inner_text
     end
   
-    # Get all the attributes defined by the measure
-    # @return [Array] an array of HQMF::Attribute
-    def all_attributes
-      @attributes
-    end
-    
-    # Get a specific attribute by id.
-    # @param [String] id the attribute identifier
-    # @return [HQMF::Attribute] the matching attribute, raises an Exception if not found
-    def attribute(id)
-      find(@attributes, :id, id)
-    end
-    
     # Get all the population criteria defined by the measure
     # @return [Array] an array of HQMF::PopulationCriteria
     def all_population_criteria

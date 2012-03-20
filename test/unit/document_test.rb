@@ -17,26 +17,6 @@ class DocumentTest < Test::Unit::TestCase
     assert_equal "This is the measure description.", @doc.description
   end
   
-  def test_attributes
-    attr_list = @doc.all_attributes
-    assert_equal 0, attr_list.length
-
-#     attr = @doc.attribute_for_code('MSRTP')
-#     assert_equal 'F8D5AD22-F49E-4181-B886-E5B12BEA8966', attr.id
-#     assert_equal '12', attr.value
-#     assert_equal 'm', attr.unit
-#     assert_equal 'Measurement period', attr.name
-# 
-#     attr = @doc.attribute('F8D5AD22-F49E-4181-B886-E5B12BEA8966e')
-#     assert_equal 'MSRED', attr.code
-#     assert_equal '00001231', attr.value
-#     assert_equal nil, attr.unit
-#     assert_equal 'Measurement end date', attr.name
-# 
-#     attr = @doc.attribute_for_code('MSRTP')
-#     assert_equal 'Measurement period', attr.name
-  end
-  
   def test_population_criteria
     all_population_criteria = @doc.all_population_criteria
     assert_equal 6, all_population_criteria.length
