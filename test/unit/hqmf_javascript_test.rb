@@ -137,10 +137,12 @@ class HqmfJavascriptTest < Test::Unit::TestCase
     assert !@context.eval("new IVL(new PQ(1, 'mo'), null).match(0)")
     
     # atLeastOneTrue
+    assert !@context.eval("atLeastOneTrue()")
     assert !@context.eval("atLeastOneTrue(false, false, false)")
     assert @context.eval("atLeastOneTrue(false, true, false)")
     
     # All true
+    assert !@context.eval("allTrue()")
     assert !@context.eval("allTrue(true, true, false)")
     assert @context.eval("allTrue(true, true, true)")
     

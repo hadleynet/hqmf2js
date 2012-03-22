@@ -50,7 +50,7 @@ atLeastOneTrue = (values...) ->
   
 allTrue = (values...) ->
   trueValues = (value for value in values when value && (value==true || value.length!=0))
-  trueValues.length==values.length
+  trueValues.length>0 && trueValues.length==values.length
   
 matchingValue = (value, compareTo) ->
   compareTo.match(value)
