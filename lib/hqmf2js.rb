@@ -61,13 +61,13 @@ module HQMF2JS
       
       # Pretty stock map/reduce functions that call out to our converted HQMF code stored in the functions variable
       map = "function map(patient) {
-              if (IPP(patient)) {
+              if (typeof(IPP)==='function' && IPP(patient)) {
                 emit('ipp', 1);
-                if (DENOM(patient)) {
-                  if (NUMER(patient)) {
+                if (typeof(DENOM)==='function' && DENOM(patient)) {
+                  if (typeof(NUMER)==='function' && NUMER(patient)) {
                     emit('denom', 1);
                     emit('numer', 1);
-                  } else if (DENEXCEP(patient)) {
+                  } else if (typeof(DENEXCEP)==='function' && DENEXCEP(patient)) {
                     emit('denexcep', 1);
                   } else {
                     emit('denom', 1);
