@@ -166,6 +166,47 @@
         </observationCriteria>
       </entry>
       <entry>
+        <localVariableName>dummyAge1</localVariableName>
+        <observationCriteria>
+          <id root="0" extension="ageBetween60and64"/>
+          <code code="424144002" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Age"/>
+          <effectiveTime>
+            <low value="20100101"/>
+            <high value="20111231"/>
+          </effectiveTime>
+          <value xsi:type="IVL_PQ">
+            <low value="60" unit="a"/>
+            <high value="64" unit="a"/>
+          </value>
+          <definition>
+            <observationReference moodCode="DEF">
+              <id root="0" extension="Demographics"/>
+            </observationReference>
+          </definition>
+        </observationCriteria>
+      </entry>
+      <entry>
+        <localVariableName>dummyAge2</localVariableName>
+        <observationCriteria>
+          <id root="0" extension="ageBetween60and64"/>
+          <code code="424144002" codeSystem="2.16.840.1.113883.6.96"
+            displayName="Age"/>
+          <effectiveTime>
+            <low value="20100101"/>
+          </effectiveTime>
+          <value xsi:type="IVL_PQ">
+            <low value="60" unit="a"/>
+            <high value="64" unit="a"/>
+          </value>
+          <definition>
+            <observationReference moodCode="DEF">
+              <id root="0" extension="Demographics"/>
+            </observationReference>
+          </definition>
+        </observationCriteria>
+      </entry>
+      <entry>
         <localVariableName>genderMale</localVariableName>
         <observationCriteria>
           <id root="0" extension="genderMale"/>
@@ -240,7 +281,12 @@
         <observationCriteria>
           <id root="0" extension="DummyProcedure"/>
           <statusCode code="completed"/>
-          <code valueSet="1.2.3.4"/>
+          <code codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.1"
+           displayName="" code="127355002"/>
+          <effectiveTime>
+            <low value="20100101"/>
+            <high value="20111231"/>
+          </effectiveTime>
           <definition>
             <observationReference moodCode="DEF">
               <id root="0" extension="Procedure"/>

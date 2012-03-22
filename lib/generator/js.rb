@@ -43,6 +43,31 @@ module Generator
       end
     end
     
+    def js_for_date_bound(criteria)
+      bound = nil
+      if criteria.effective_time
+        if criteria.effective_time.high
+          bound = criteria.effective_time.high
+        elsif criteria.effective_time.low
+          bound = criteria.effective_time.low
+        end
+      end
+      
+      if bound
+        "#{js_for_value(bound)}.asDate()"
+      else
+        'EndDate.asDate()'
+      end
+    end
+    
+    def js_for_code_list(criteria)
+      if criteria.inline_code_list
+        criteria.inline_code_list.to_json
+      else
+        "getCodes(\"#{criteria.code_list_id}\")"
+      end
+    end
+    
     # Returns the JavaScript generated for a HQMF::Precondition
     def js_for_precondition(precondition, indent)
       template_str = File.read(File.expand_path("../precondition.js.erb", __FILE__))

@@ -57,7 +57,7 @@ class DocumentTest < Test::Unit::TestCase
   
   def test_data_criteria
     data_criteria = @doc.all_data_criteria
-    assert_equal 23, data_criteria.length
+    assert_equal 25, data_criteria.length
     
     criteria = @doc.data_criteria('EndDate')
     assert criteria.to_xml.include?('extension="EndDate"')
@@ -93,7 +93,11 @@ class DocumentTest < Test::Unit::TestCase
 
     criteria = @doc.data_criteria('DummyProcedure')
     assert_equal :procedure, criteria.type
-    assert_equal '1.2.3.4', criteria.code_list_id
+    assert criteria.inline_code_list
+    assert_equal '127355002', criteria.inline_code_list['SNOMED-CT'][0]
+    assert criteria.effective_time
+    assert_equal '20100101', criteria.effective_time.low.value
+    assert_equal '20111231', criteria.effective_time.high.value
     assert_equal 'completed', criteria.status
 
     criteria = @doc.data_criteria('EDorInpatientEncounter')

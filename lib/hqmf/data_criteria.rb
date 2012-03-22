@@ -12,7 +12,7 @@ module HQMF
       @entry = entry
       @status = attr_val('./cda:observationCriteria/cda:statusCode/@code')
       @id_xpath = './cda:observationCriteria/cda:id/@extension'
-      @code_list_xpath = './cda:observationCriteria/cda:code/@valueSet'
+      @code_list_xpath = './cda:observationCriteria/cda:code'
       @value_xpath = './cda:observationCriteria/cda:value'
       @effective_time_xpath = './*/cda:effectiveTime'
       
@@ -20,13 +20,13 @@ module HQMF
       case entry_type
       when 'Problem', 'Problems'
         @type = :diagnosis
-        @code_list_xpath = './cda:observationCriteria/cda:value/@valueSet'
+        @code_list_xpath = './cda:observationCriteria/cda:value'
         @effective_time = extract_effective_time
         @section = 'conditions'
       when 'Encounter'
         @type = :encounter
         @id_xpath = './cda:encounterCriteria/cda:id/@extension'
-        @code_list_xpath = './cda:encounterCriteria/cda:code/@valueSet'
+        @code_list_xpath = './cda:encounterCriteria/cda:code'
         @effective_time = extract_effective_time
         @section = 'encounters'
       when 'LabResults', 'Results'
@@ -37,21 +37,23 @@ module HQMF
       when 'Procedure'
         @type = :procedure
         @section = 'procedures'
+        @effective_time = extract_effective_time
       when 'Medication'
         @type = :medication
         @id_xpath = './cda:substanceAdministrationCriteria/cda:id/@extension'
-        @code_list_xpath = './cda:substanceAdministrationCriteria/cda:participant/cda:roleParticipant/cda:code/@valueSet'
+        @code_list_xpath = './cda:substanceAdministrationCriteria/cda:participant/cda:roleParticipant/cda:code'
         @effective_time = extract_effective_time
         @section = 'medications'
       when 'RX'
         @type = :medication
         @id_xpath = './cda:supplyCriteria/cda:id/@extension'
-        @code_list_xpath = './cda:supplyCriteria/cda:participant/cda:roleParticipant/cda:code/@valueSet'
+        @code_list_xpath = './cda:supplyCriteria/cda:participant/cda:roleParticipant/cda:code'
         @effective_time = extract_effective_time
         @section = 'medications'
       when 'Demographics'
         @type = :characteristic
         @property = property_for_demographic
+        @effective_time = extract_effective_time
         @value = extract_value
       when nil
         @type = :variable
@@ -82,7 +84,17 @@ module HQMF
     # Get the code list OID of the criteria, used as an index to the code list database
     # @return [String] the code list identifier of this data criteria
     def code_list_id
-      attr_val(@code_list_xpath)
+      attr_val("#{@code_list_xpath}/@valueSet")
+    end
+    
+    def inline_code_list
+      codeSystemName = attr_val("#{@code_list_xpath}/@codeSystemName")
+      codeValue = attr_val("#{@code_list_xpath}/@code")
+      if codeSystemName && codeValue
+        {codeSystemName => [codeValue]}
+      else
+        nil
+      end
     end
     
     private

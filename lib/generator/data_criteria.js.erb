@@ -7,10 +7,10 @@ var <%= criteria.js_name %> = <%= js_for_value(criteria.value) %>;
 <%- all_criteria.select {|c| c.type != :variable}.each do |criteria| -%>
 var <%= criteria.js_name %> = function(patient) {
   <%- if criteria.type == :characteristic -%>
-  var value = patient.<%= criteria.property %>(<%= 'EndDate.asDate()' if criteria.property == :age %>);
+  var value = patient.<%= criteria.property %>(<%= js_for_date_bound(criteria) if criteria.property == :age %>);
   return matchingValue(value, <%= js_for_bounds(criteria.value) %>);
   <%- else -%>
-  var codes = getCodes("<%= criteria.code_list_id %>");
+  var codes = <%= js_for_code_list(criteria) %>;
   <%- if criteria.effective_time -%>
   <%- startExp = js_for_value(criteria.effective_time.low) -%>
   var start = <%= startExp %><%= '.asDate()' if startExp != 'null' %>;
