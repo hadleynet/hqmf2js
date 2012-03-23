@@ -1,5 +1,15 @@
 // Measure variables
-var MeasurePeriod = <%= measure_period.to_hash.to_json %>;
+var MeasurePeriod = {
+  <%- if measure_period.low -%>
+  "low": <%= js_for_value(measure_period.low) %><%= ',' if measure_period.high || measure_period.width %>
+  <%- end -%>
+  <%- if measure_period.high -%>
+  "high": <%= js_for_value(measure_period.high) %><%= ',' if measure_period.width %>
+  <%- end -%>
+  <%- if measure_period.width -%>
+  "width": <%= js_for_value(measure_period.width) %>
+  <%- end -%>
+};
 <%- all_criteria.select {|c| c.type == :variable}.each do |criteria| -%>
 var <%= criteria.js_name %> = <%= js_for_value(criteria.value) %>;
 <%- end -%>

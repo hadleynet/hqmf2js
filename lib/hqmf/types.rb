@@ -13,14 +13,6 @@ module HQMF
       @value = attr_val('./@value')
     end
     
-    def to_hash
-      val = {}
-      val[:type] = @type if @type
-      val[:unit] = @unit if @unit
-      val[:value] = @value if @value
-      val
-    end
-    
     def inclusive?
       case attr_val('./@inclusive')
       when 'true'
@@ -56,9 +48,9 @@ module HQMF
     def initialize(entry)
       @entry = entry
       if @entry
-        @low = optional_value('./cda:low')
-        @high = optional_value('./cda:high')
-        @width = optional_value('./cda:width')
+        @low = optional_value('./cda:low', default_bounds_type)
+        @high = optional_value('./cda:high', default_bounds_type)
+        @width = optional_value('./cda:width', 'PQ')
       end
     end
     
@@ -66,20 +58,12 @@ module HQMF
       attr_val('./@xsi:type')
     end
     
-    def to_hash
-      val = {}
-      val[:low] = @low.to_hash if @low
-      val[:high] = @high.to_hash if @high
-      val[:width] = @width.to_hash if @width
-      val
-    end
-    
     private
     
-    def optional_value(xpath)
+    def optional_value(xpath, type)
       value_def = @entry.at_xpath(xpath)
       if value_def
-        Value.new(value_def, default_bounds_type)
+        Value.new(value_def, type)
       else
         nil
       end

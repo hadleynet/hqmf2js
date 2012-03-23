@@ -54,10 +54,12 @@ class HqmfJavascriptTest < Test::Unit::TestCase
   
   def test_converted_hqmf
     # Measure variables
-    assert @context.eval("MeasurePeriod.low.value=='20110101'")
-    assert @context.eval("MeasurePeriod.high.value=='20111231'")
-    assert @context.eval("MeasurePeriod.width.value=='1'")
-    assert @context.eval("MeasurePeriod.width.unit=='a'")
+    assert_equal 2011, @context.eval("MeasurePeriod.low.asDate().getFullYear()")
+    assert_equal 0, @context.eval("MeasurePeriod.low.asDate().getMonth()")
+    assert_equal 2011, @context.eval("MeasurePeriod.high.asDate().getFullYear()")
+    assert_equal 11, @context.eval("MeasurePeriod.high.asDate().getMonth()")
+    assert_equal 1, @context.eval("MeasurePeriod.width.value")
+    assert_equal 'a', @context.eval("MeasurePeriod.width.unit")
   
     # Age functions - Fixture is 37.1
     assert @context.eval("ageBetween17and64(numeratorPatient)")
