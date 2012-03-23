@@ -52,7 +52,13 @@ class HqmfJavascriptTest < Test::Unit::TestCase
     assert_equal 9, @context.eval('OidDictionary["2.16.840.1.113883.3.464.1.72"]["SNOMED-CT"]').size
   end
   
-  def test_converted_hqmf  
+  def test_converted_hqmf
+    # Measure variables
+    assert @context.eval("MeasurePeriod.low.value=='20110101'")
+    assert @context.eval("MeasurePeriod.high.value=='20111231'")
+    assert @context.eval("MeasurePeriod.width.value=='1'")
+    assert @context.eval("MeasurePeriod.width.unit=='a'")
+  
     # Age functions - Fixture is 37.1
     assert @context.eval("ageBetween17and64(numeratorPatient)")
     assert @context.eval("ageBetween30and39(numeratorPatient)")

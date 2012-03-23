@@ -1,10 +1,16 @@
 module HQMF
   # Class representing an HQMF document
   class Document
+    attr_reader :measure_period
+  
     # Create a new HQMF::Document instance by parsing at file at the supplied path
     # @param [String] path the path to the HQMF document
     def initialize(hqmf_contents)
       @doc = Document.parse(hqmf_contents)
+      measure_period_def = @doc.at_xpath('cda:QualityMeasureDocument/cda:controlVariable/cda:measurePeriod/cda:value')
+      if measure_period_def
+        @measure_period = EffectiveTime.new(measure_period_def)
+      end
       @data_criteria = @doc.xpath('cda:QualityMeasureDocument/cda:component/cda:dataCriteriaSection/cda:entry').collect do |entry|
         DataCriteria.new(entry)
       end

@@ -103,7 +103,7 @@ module Generator
     def js_for_data_criteria
       template_str = File.read(File.expand_path("../data_criteria.js.erb", __FILE__))
       template = ERB.new(template_str, nil, '-', "_templ#{TemplateCounter.instance.new_id}")
-      params = {'all_criteria' => @doc.all_data_criteria}
+      params = {'all_criteria' => @doc.all_data_criteria, 'measure_period' => @doc.measure_period}
       context = ErbContext.new(params)
       template.result(context.get_binding)
     end

@@ -4,19 +4,21 @@ module HQMF
   class Value
     include HQMF::Utilities
     
-    attr_reader :type
+    attr_reader :type, :unit, :value
     
     def initialize(entry, default_type='PQ')
       @entry = entry
       @type = attr_val('./@xsi:type') || default_type
+      @unit = attr_val('./@unit')
+      @value = attr_val('./@value')
     end
     
-    def value
-      attr_val('./@value')
-    end
-    
-    def unit
-      attr_val('./@unit')
+    def to_hash
+      val = {}
+      val[:type] = @type if @type
+      val[:unit] = @unit if @unit
+      val[:value] = @value if @value
+      val
     end
     
     def inclusive?
@@ -49,18 +51,27 @@ module HQMF
   # Represents a HQMF physical quantity which can have low and high bounds
   class Range
     include HQMF::Utilities
-    attr_reader :low, :high
+    attr_reader :low, :high, :width
     
     def initialize(entry)
       @entry = entry
       if @entry
         @low = optional_value('./cda:low')
         @high = optional_value('./cda:high')
+        @width = optional_value('./cda:width')
       end
     end
     
     def type
       attr_val('./@xsi:type')
+    end
+    
+    def to_hash
+      val = {}
+      val[:low] = @low.to_hash if @low
+      val[:high] = @high.to_hash if @high
+      val[:width] = @width.to_hash if @width
+      val
     end
     
     private

@@ -1,4 +1,5 @@
 // Measure variables
+var MeasurePeriod = <%= measure_period.to_hash.to_json %>;
 <%- all_criteria.select {|c| c.type == :variable}.each do |criteria| -%>
 var <%= criteria.js_name %> = <%= js_for_value(criteria.value) %>;
 <%- end -%>

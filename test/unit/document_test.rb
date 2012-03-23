@@ -15,6 +15,11 @@ class DocumentTest < Test::Unit::TestCase
   def test_metadata
     assert_equal "Sample Quality Measure Document", @doc.title
     assert_equal "This is the measure description.", @doc.description
+    assert @doc.measure_period
+    assert_equal '20110101', @doc.measure_period.low.value
+    assert_equal '20111231', @doc.measure_period.high.value
+    assert_equal '1', @doc.measure_period.width.value
+    assert_equal 'a', @doc.measure_period.width.unit
   end
   
   def test_population_criteria
