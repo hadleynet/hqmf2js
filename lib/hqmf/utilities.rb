@@ -17,6 +17,9 @@ module HQMF
     end
     
     def js_name
+      if !id
+        raise "No identifier for #{self}"
+      end
       id.gsub(/\W/, '_')
     end
   end

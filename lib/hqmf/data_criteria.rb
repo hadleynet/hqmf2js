@@ -10,7 +10,7 @@ module HQMF
     # @param [Nokogiri::XML::Element] entry the parsed HQMF entry
     def initialize(entry)
       @entry = entry
-      @status = attr_val('./cda:observationCriteria/cda:statusCode/@code')
+      @status = attr_val('./*/cda:statusCode/@code')
       @id_xpath = './cda:observationCriteria/cda:id/@extension'
       @code_list_xpath = './cda:observationCriteria/cda:code'
       @value_xpath = './cda:observationCriteria/cda:value'
@@ -23,7 +23,7 @@ module HQMF
         @code_list_xpath = './cda:observationCriteria/cda:value'
         @effective_time = extract_effective_time
         @section = 'conditions'
-      when 'Encounter'
+      when 'Encounter', 'Encounters'
         @type = :encounter
         @id_xpath = './cda:encounterCriteria/cda:id/@extension'
         @code_list_xpath = './cda:encounterCriteria/cda:code'
@@ -34,11 +34,13 @@ module HQMF
         @value = extract_value
         @effective_time = extract_effective_time
         @section = 'results'
-      when 'Procedure'
+      when 'Procedure', 'Procedures'
+        @id_xpath = './cda:procedureCriteria/cda:id/@extension'
+        @code_list_xpath = './cda:procedureCriteria/cda:value'
         @type = :procedure
         @section = 'procedures'
         @effective_time = extract_effective_time
-      when 'Medication'
+      when 'Medication', 'Medications'
         @type = :medication
         @id_xpath = './cda:substanceAdministrationCriteria/cda:id/@extension'
         @code_list_xpath = './cda:substanceAdministrationCriteria/cda:participant/cda:roleParticipant/cda:code'
@@ -61,6 +63,16 @@ module HQMF
       else
         raise "Unknown data criteria template identifier [#{entry_type}]"
       end
+    end
+    
+    def to_s
+      props = {
+        :property => property,
+        :type => type,
+        :status => status,
+        :section => section
+      }
+      "DataCriteria#{props.to_s}"
     end
     
     # Get the identifier of the criteria, used elsewhere within the document for referencing

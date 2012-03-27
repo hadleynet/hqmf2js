@@ -289,10 +289,10 @@
       </entry>
       <entry>
         <localVariableName>DummyProcedure</localVariableName>
-        <observationCriteria>
+        <procedureCriteria>
           <id root="0" extension="DummyProcedure"/>
           <statusCode code="completed"/>
-          <code codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.1"
+          <value codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.1"
            displayName="" code="127355002"/>
           <effectiveTime>
             <low value="20100101"/>
@@ -303,7 +303,7 @@
               <id root="0" extension="Procedure"/>
             </observationReference>
           </definition>
-        </observationCriteria>
+        </procedureCriteria>
       </entry>
       <entry>
         <localVariableName>HasDiabetes</localVariableName>
