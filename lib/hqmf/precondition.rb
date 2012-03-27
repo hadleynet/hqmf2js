@@ -9,8 +9,8 @@ module HQMF
     def initialize(entry, doc)
       @doc = doc
       @entry = entry
-      @preconditions = @entry.xpath('./*/cda:precondition').collect do |entry|
-        Precondition.new(entry, @doc)
+      @preconditions = @entry.xpath('./*/cda:precondition').collect do |precondition|
+        Precondition.new(precondition, @doc)
       end
       reference_def = @entry.at_xpath('./*/cda:id')
       if reference_def

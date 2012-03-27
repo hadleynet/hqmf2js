@@ -48,11 +48,11 @@ module HQMF2JS
 
       # Parse the code systems that are mapped to the OIDs we support
       codes_file_path = File.expand_path("../../test/fixtures/codes.xml", __FILE__)
-      codes = Generator::CodesToJson.new(codes_file_path)
+      codes = HQMF2JS::Generator::CodesToJson.new(codes_file_path)
       codes_json = codes.json
 
       # Convert the HQMF document included as a fixture into JavaScript
-      converter = Generator::JS.new(hqmf_contents)
+      converter = HQMF2JS::Generator::JS.new(hqmf_contents)
       converted_hqmf = "#{converter.js_for_data_criteria}\n#{converter.js_for('IPP')}\n#{converter.js_for('DENOM')}\n#{converter.js_for('NUMER')}\n#{converter.js_for('DENEXCEP')}"
       
       # Pretty stock map/reduce functions that call out to our converted HQMF code stored in the functions variable

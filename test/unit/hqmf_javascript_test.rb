@@ -15,11 +15,11 @@ class HqmfJavascriptTest < Test::Unit::TestCase
     hqmf_utils = HqmfUtility.hqmf_utility_javascript.to_s
     
     # Parse the code systems that are mapped to the OIDs we support
-    codes = Generator::CodesToJson.new(codes_file_path)
+    codes = HQMF2JS::Generator::CodesToJson.new(codes_file_path)
     codes_json = codes.json
     
     # Convert the HQMF document included as a fixture into JavaScript
-    converter = Generator::JS.new(hqmf_contents)
+    converter = HQMF2JS::Generator::JS.new(hqmf_contents)
     converted_hqmf = "#{converter.js_for_data_criteria}
                       #{converter.js_for('IPP')}
                       #{converter.js_for('DENOM')}

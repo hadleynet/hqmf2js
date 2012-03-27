@@ -4,6 +4,8 @@ require 'sprockets'
 require 'tilt'
 require 'fileutils'
 
+require_relative 'lib/hqmf2js'
+
 # Pull in any rake task defined in lib/tasks
 Dir['lib/tasks/*.rake'].sort.each do |ext|
   load ext

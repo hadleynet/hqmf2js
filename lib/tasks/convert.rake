@@ -1,12 +1,10 @@
-require_relative '../hqmf2js'
-
 namespace :hqmf do
   desc 'Convert a HQMF file to JavaScript'
   task :convert, [:file] do |t, args|
     hqmf_contents = File.open(args.file).read
-    gen = Generator::JS.new(hqmf_contents)
+    gen = HQMF2JS::Generator::JS.new(hqmf_contents)
 
-    codes = Generator::CodesToJson.new(File.expand_path("../../../test/fixtures/codes.xml", __FILE__))
+    codes = HQMF2JS::Generator::CodesToJson.new(File.expand_path("../../../test/fixtures/codes.xml", __FILE__))
     codes_json = codes.json
     puts "var OidDictionary = #{codes_json};"
     
