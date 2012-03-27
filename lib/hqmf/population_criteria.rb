@@ -12,7 +12,7 @@ module HQMF
     def initialize(entry, doc)
       @doc = doc
       @entry = entry
-      @preconditions = @entry.xpath('./*/cda:precondition').collect do |precondition|
+      @preconditions = @entry.xpath('./*/cda:precondition', HQMF::Document::NAMESPACES).collect do |precondition|
         Precondition.new(precondition, @doc)
       end
     end

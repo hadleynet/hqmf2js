@@ -35,7 +35,7 @@ module HQMF
       if !derived?
         nil
       else
-        @entry.at_xpath('./cda:expression').inner_text
+        @entry.at_xpath('./cda:expression', HQMF::Document::NAMESPACES).inner_text
       end
     end
   end
@@ -61,7 +61,7 @@ module HQMF
     private
     
     def optional_value(xpath, type)
-      value_def = @entry.at_xpath(xpath)
+      value_def = @entry.at_xpath(xpath, HQMF::Document::NAMESPACES)
       if value_def
         Value.new(value_def, type)
       else

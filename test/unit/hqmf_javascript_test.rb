@@ -12,7 +12,7 @@ class HqmfJavascriptTest < Test::Unit::TestCase
     ctx = Sprockets::Environment.new(File.expand_path("../../..", __FILE__))
     Tilt::CoffeeScriptTemplate.default_bare = true 
     ctx.append_path "app/assets/javascripts"
-    hqmf_utils = HqmfUtility.hqmf_utility_javascript.to_s
+    hqmf_utils = HQMF2JS::HqmfUtility.hqmf_utility_javascript.to_s
     
     # Parse the code systems that are mapped to the OIDs we support
     codes = HQMF2JS::Generator::CodesToJson.new(codes_file_path)
@@ -120,10 +120,11 @@ class HqmfJavascriptTest < Test::Unit::TestCase
     assert_equal 0, @context.eval("StartDate.asDate().getMonth()")
     assert_equal 1, @context.eval("StartDate.asDate().getDate()")
     assert_equal 2011, @context.eval("StartDate.add(new PQ(1, 'a')).asDate().getFullYear()")
-    assert_equal 11, @context.eval("StartDate.add(new PQ(-1, 'mo')).asDate().getMonth()")
     assert_equal 2, @context.eval("StartDate.add(new PQ(1, 'd')).asDate().getDate()")
     assert_equal 1, @context.eval("StartDate.add(new PQ(1, 'h')).asDate().getHours()")
     assert_equal 5, @context.eval("StartDate.add(new PQ(5, 'min')).asDate().getMinutes()")
+    assert_equal 11, @context.eval("StartDate.add(new PQ(-1, 'mo')).asDate().getMonth()")
+    
     
     # CD - Code
     cd = "new CD('M')"

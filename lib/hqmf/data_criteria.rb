@@ -78,7 +78,7 @@ module HQMF
     # Get the title of the criteria, provides a human readable description
     # @return [String] the title of this data criteria
     def title
-      @entry.at_xpath('./cda:localVariableName').inner_text
+      @entry.at_xpath('./cda:localVariableName', HQMF::Document::NAMESPACES).inner_text
     end
     
     # Get the code list OID of the criteria, used as an index to the code list database
@@ -100,7 +100,7 @@ module HQMF
     private
     
     def extract_effective_time
-      effective_time_def = @entry.at_xpath(@effective_time_xpath)
+      effective_time_def = @entry.at_xpath(@effective_time_xpath, HQMF::Document::NAMESPACES)
       if effective_time_def
         EffectiveTime.new(effective_time_def)
       else
@@ -110,9 +110,9 @@ module HQMF
     
     def extract_value
       value = nil
-      value_def = @entry.at_xpath(@value_xpath)
+      value_def = @entry.at_xpath(@value_xpath, HQMF::Document::NAMESPACES)
       if value_def
-        value_type_def = value_def.at_xpath('@xsi:type')
+        value_type_def = value_def.at_xpath('@xsi:type', HQMF::Document::NAMESPACES)
         if value_type_def
           value_type = value_type_def.value
           case value_type
