@@ -1,5 +1,5 @@
 require 'cover_me'
-#require 'execjs'
+
 if RUBY_PLATFORM=='java'
   require 'rhino'
 else
