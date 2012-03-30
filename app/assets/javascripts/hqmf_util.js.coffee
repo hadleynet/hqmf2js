@@ -68,5 +68,5 @@ PREVSUM = (eventList) ->
 RECENT = (events) ->
   dateSortDescending = (a, b) ->
     b.json.time - a.json.time
-  events.sort(dateSortDescending)[0]
+  [events.sort(dateSortDescending)[0]]
   

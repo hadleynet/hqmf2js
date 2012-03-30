@@ -8,7 +8,6 @@ require 'json'
 require 'tilt'
 require 'coffee_script'
 require 'sprockets'
-require 'execjs'
 
 require_relative 'hqmf/utilities'
 require_relative 'hqmf/types'
