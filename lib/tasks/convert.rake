@@ -1,4 +1,4 @@
-require File.join(__FILE__,'../../../hqmf2js')
+require File.expand_path('../../hqmf2js', __FILE__)
 
 namespace :hqmf do
 
