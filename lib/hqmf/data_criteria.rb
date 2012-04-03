@@ -36,7 +36,7 @@ module HQMF
         @section = 'results'
       when 'Procedure', 'Procedures'
         @id_xpath = './cda:procedureCriteria/cda:id/@extension'
-        @code_list_xpath = './cda:procedureCriteria/cda:value'
+        @code_list_xpath = './cda:procedureCriteria/cda:code'
         @type = :procedure
         @section = 'procedures'
         @effective_time = extract_effective_time
@@ -149,6 +149,12 @@ module HQMF
         :age
       when '263495000'
         :gender
+      when '102902016'
+        :languages
+      when '125680007'
+        :maritalStatus
+      when '103579009'
+        :race
       else
         raise "Unknown demographic identifier [#{demographic_type}]"
       end

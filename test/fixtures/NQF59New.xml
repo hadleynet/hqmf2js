@@ -288,11 +288,50 @@
         </encounterCriteria>
       </entry>
       <entry>
+        <localVariableName>DummyLanguage_Arabic</localVariableName>
+        <observationCriteria>
+          <id extension="DummyLanguage_Arabic" root="2.16.840.1.113883.3.1619.5148.3.20120403.150314222"/>
+          <code displayName="Language" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="102902016"/>
+          <value xsi:type="CD" code="ar" displayName="Arabic" codeSystem="1.0.639.1" codeSystemName="Language"/>
+          <definition>
+            <observationReference moodCode="DEF">
+              <id extension="Demographics" root="2.16.840.1.113883.3.1619.5148.1"/>
+            </observationReference>
+          </definition>
+        </observationCriteria>
+      </entry>
+      <entry>
+        <localVariableName>DummyMaritalStatus_Divorced</localVariableName>
+        <observationCriteria>
+          <id extension="DummyMaritalStatus_Divorced" root="2.16.840.1.113883.3.1619.5148.3.20120403.150314222"/>
+          <code displayName="Marital Status" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="125680007"/>
+          <value xsi:type="CD" code="D" displayName="Divorced" codeSystem="2.16.840.1.113883.5.2" codeSystemName="MaritalStatus"/>
+          <definition>
+            <observationReference moodCode="DEF">
+              <id extension="Demographics" root="2.16.840.1.113883.3.1619.5148.1"/>
+            </observationReference>
+          </definition>
+        </observationCriteria>
+      </entry>
+      <entry>
+        <localVariableName>DummyRace_Latin_American</localVariableName>
+        <observationCriteria>
+          <id extension="DummyRace_Latin_American" root="2.16.840.1.113883.3.1619.5148.3.20120403.150314222"/>
+          <code displayName="Race" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="103579009"/>
+          <value xsi:type="CD" code="2178-2" displayName="Latin American" codeSystem="2.16.840.1.113883.6.238" codeSystemName="Race"/>
+          <definition>
+            <observationReference moodCode="DEF">
+              <id extension="Demographics" root="2.16.840.1.113883.3.1619.5148.1"/>
+            </observationReference>
+          </definition>
+        </observationCriteria>
+      </entry>
+      <entry>
         <localVariableName>DummyProcedure</localVariableName>
         <procedureCriteria>
           <id root="0" extension="DummyProcedure"/>
           <statusCode code="completed"/>
-          <value codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.1"
+          <code codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.1"
            displayName="" code="127355002"/>
           <effectiveTime>
             <low value="20100101"/>
