@@ -11,7 +11,7 @@ Warbler::Config.new do |config|
   # config.features = %w(gemjar)
 
   # Application directories to be included in the webapp.
-  config.dirs = %w(app config lib)
+  config.dirs = %w(app bin config lib)
 
   # Additional files/directories to include, above those in config.dirs
   # config.includes = FileList["db"]
@@ -116,7 +116,7 @@ Warbler::Config.new do |config|
   # config.webxml.booter = :rails
 
   # Set JRuby to run in 1.9 mode.
-  config.webxml.jruby.compat.version = "1.9"
+  # config.webxml.jruby.compat.version = "1.9"
 
   # When using the :rack booter, "Rackup" script to use.
   # - For 'rackup.path', the value points to the location of the rackup
