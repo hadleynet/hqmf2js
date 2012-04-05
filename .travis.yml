@@ -5,6 +5,7 @@ branches:
   only:
     - master
     - develop
+    - query-health-dev
 notifications:
   email:
     recipients:
