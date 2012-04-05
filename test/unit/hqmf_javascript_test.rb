@@ -21,35 +21,40 @@ class HqmfJavascriptTest < Test::Unit::TestCase
     # Convert the HQMF document included as a fixture into JavaScript
     converter = HQMF2JS::Generator::JS.new(hqmf_contents)
     converted_hqmf = "#{converter.js_for_data_criteria}
-                      #{converter.js_for('IPP')}
-                      #{converter.js_for('DENOM')}
-                      #{converter.js_for('NUMER')}
-                      #{converter.js_for('DENEXCEP')}
-                      #{converter.js_for('DUMMY')}"
+      #{converter.js_for('IPP')}
+      #{converter.js_for('DENOM')}
+      #{converter.js_for('NUMER')}
+      #{converter.js_for('DENEXCEP')}
+      #{converter.js_for('DUMMY')}"
     
     # Now we can wrap and compile all of our code as one little JavaScript context for all of the tests below
     patient_api = File.open('test/fixtures/patient_api.js').read
     fixture_json = File.read('test/fixtures/patients/larry_vanderman.json')
     initialize_patient = 'var numeratorPatient = new hQuery.Patient(larry);'
-    @context = ExecJS.compile("#{hqmf_utils}
-                              var OidDictionary = #{codes_json};
-                              #{converted_hqmf}
-                              #{patient_api}
-                              var larry = #{fixture_json};
-                              #{initialize_patient}")
+    if RUBY_PLATFORM=='java'
+      @context = Rhino::Context.new
+    else
+      @context = V8::Context.new
+    end
+    @context.eval("#{hqmf_utils}
+      var OidDictionary = #{codes_json};
+      #{converted_hqmf}
+      #{patient_api}
+      var larry = #{fixture_json};
+      #{initialize_patient}")
   end
   
   def test_codes
     # Make sure we're recalling entries correctly
-    assert_equal 1, @context.eval('OidDictionary["2.16.840.1.113883.3.464.1.14"]').size
-    assert_equal "00110", @context.eval('OidDictionary["2.16.840.1.113883.3.464.1.14"]["HL7"]').first
+    assert_equal 1, @context.eval('OidDictionary["2.16.840.1.113883.3.464.1.14"]').count
+    assert_equal "00110", @context.eval('OidDictionary["2.16.840.1.113883.3.464.1.14"]["HL7"][0]')
     
     # OIDs that are matched to multiple code systems should also work correctly
     # The list of supported OIDs will eventually be long, so this won't be an exhaustive test, just want to be sure the functionality is right
-    assert_equal 3, @context.eval('OidDictionary["2.16.840.1.113883.3.464.1.72"]').size
-    assert_equal 2, @context.eval('OidDictionary["2.16.840.1.113883.3.464.1.72"]["CPT"]').size
-    assert_equal 3, @context.eval('OidDictionary["2.16.840.1.113883.3.464.1.72"]["LOINC"]').size
-    assert_equal 9, @context.eval('OidDictionary["2.16.840.1.113883.3.464.1.72"]["SNOMED-CT"]').size
+    assert_equal 3, @context.eval('OidDictionary["2.16.840.1.113883.3.464.1.72"]').count
+    assert_equal 2, @context.eval('OidDictionary["2.16.840.1.113883.3.464.1.72"]["CPT"]').count
+    assert_equal 3, @context.eval('OidDictionary["2.16.840.1.113883.3.464.1.72"]["LOINC"]').count
+    assert_equal 9, @context.eval('OidDictionary["2.16.840.1.113883.3.464.1.72"]["SNOMED-CT"]').count
   end
   
   def test_converted_hqmf
@@ -76,28 +81,28 @@ class HqmfJavascriptTest < Test::Unit::TestCase
     
     # Be sure the actual mechanic of code lists being returned works correctly - Using HasDiabetes as an example
     results = @context.eval("HasDiabetes(numeratorPatient)").first['json']
-    assert_equal 3, results['codes'].size
+    assert_equal 3, results['codes'].count
     assert_equal '250', results['codes']['ICD-9-CM'].first
     assert_equal 1270094400, results['time']
     
     # Encounters
-    assert @context.eval("EDorInpatientEncounter(numeratorPatient)").empty?
-    assert @context.eval("AmbulatoryEncounter(numeratorPatient)").empty?
+    assert_equal 0, @context.eval("EDorInpatientEncounter(numeratorPatient)").count
+    assert_equal 0, @context.eval("AmbulatoryEncounter(numeratorPatient)").count
     
     # Conditions
-    assert !@context.eval("HasDiabetes(numeratorPatient)").empty?
-    assert @context.eval("HasGestationalDiabetes(numeratorPatient)").empty?
-    assert @context.eval("HasPolycysticOvaries(numeratorPatient)").empty?
-    assert @context.eval("HasSteroidInducedDiabetes(numeratorPatient)").empty?
+    assert_equal 1, @context.eval("HasDiabetes(numeratorPatient)").count
+    assert_equal 0, @context.eval("HasGestationalDiabetes(numeratorPatient)").count
+    assert_equal 0, @context.eval("HasPolycysticOvaries(numeratorPatient)").count
+    assert_equal 0, @context.eval("HasSteroidInducedDiabetes(numeratorPatient)").count
     
     # Results
-    assert !@context.eval("HbA1C(numeratorPatient)").empty?
+    assert_equal 1, @context.eval("HbA1C(numeratorPatient)").count
     
     # Medications
-    assert !@context.eval("DiabetesMedAdministered(numeratorPatient)").empty?
-    assert @context.eval("DiabetesMedIntended(numeratorPatient)").empty?
-    assert @context.eval("DiabetesMedSupplied(numeratorPatient)").empty?
-    assert @context.eval("DiabetesMedOrdered(numeratorPatient)").empty?
+    assert_equal 1, @context.eval("DiabetesMedAdministered(numeratorPatient)").count
+    assert_equal 0, @context.eval("DiabetesMedIntended(numeratorPatient)").count
+    assert_equal 0, @context.eval("DiabetesMedSupplied(numeratorPatient)").count
+    assert_equal 0, @context.eval("DiabetesMedOrdered(numeratorPatient)").count
     
     # Standard population health query buckets
     assert @context.eval("IPP(numeratorPatient)")
@@ -124,7 +129,6 @@ class HqmfJavascriptTest < Test::Unit::TestCase
     assert_equal 1, @context.eval("StartDate.add(new PQ(1, 'h')).asDate().getHours()")
     assert_equal 5, @context.eval("StartDate.add(new PQ(5, 'min')).asDate().getMinutes()")
     assert_equal 11, @context.eval("StartDate.add(new PQ(-1, 'mo')).asDate().getMonth()")
-    
     
     # CD - Code
     cd = "new CD('M')"
@@ -161,20 +165,20 @@ class HqmfJavascriptTest < Test::Unit::TestCase
     
     # Filter events by value - HbA1C as an example
     events = 'numeratorPatient.results().match(getCodes("2.16.840.1.113883.3.464.1.72"))'
-    assert_equal 2, @context.eval("filterEventsByValue(#{events}, new IVL(new PQ(9, '%'), null))").size
-    assert @context.eval("filterEventsByValue(#{events}, new IVL(new PQ(10, '%'), null))").empty?
+    assert_equal 2, @context.eval("filterEventsByValue(#{events}, new IVL(new PQ(9, '%'), null))").count
+    assert_equal 0, @context.eval("filterEventsByValue(#{events}, new IVL(new PQ(10, '%'), null))").count
     
     # PREVSUM
     # TODO - Not sure what this is supposed to do. Currently does nothing.
     
     # RECENT - HbA1C as an example
     events = 'numeratorPatient.results().match(getCodes("2.16.840.1.113883.3.464.1.72"))'
-    assert_equal 1, @context.eval("RECENT(#{events})").size
-    assert_equal 1285992000, @context.eval("RECENT(#{events})").first[1]['time']
+    assert_equal 1, @context.eval("RECENT(#{events})").count
+    assert_equal 1285992000000, @context.eval("RECENT(#{events})[0].date().getTime()")
     
     # getCode
-    assert_equal 1, @context.eval('getCodes("2.16.840.1.113883.3.464.1.14")').size
-    assert_equal "00110", @context.eval('getCodes("2.16.840.1.113883.3.464.1.14")["HL7"]').first
+    assert_equal 1, @context.eval('getCodes("2.16.840.1.113883.3.464.1.14")').count
+    assert_equal "00110", @context.eval('getCodes("2.16.840.1.113883.3.464.1.14")["HL7"][0]')
   end
   
   def test_map_reduce_generation

@@ -1,6 +1,6 @@
 # Top level include file that brings in all the necessary code
 require 'bundler/setup'
-require 'nokogiri'
+require 'rubygems'
 require 'erb'
 require 'ostruct'
 require 'singleton'
@@ -8,7 +8,7 @@ require 'json'
 require 'tilt'
 require 'coffee_script'
 require 'sprockets'
-require 'execjs'
+require 'nokogiri'
 
 require_relative 'hqmf/utilities'
 require_relative 'hqmf/types'

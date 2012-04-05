@@ -62,7 +62,7 @@ class DocumentTest < Test::Unit::TestCase
   
   def test_data_criteria
     data_criteria = @doc.all_data_criteria
-    assert_equal 25, data_criteria.length
+    assert_equal 28, data_criteria.length
     
     criteria = @doc.data_criteria('EndDate')
     assert criteria.to_xml.include?('extension="EndDate"')
@@ -95,6 +95,33 @@ class DocumentTest < Test::Unit::TestCase
     assert_equal 'CD', criteria.value.type
     assert_equal 'M', criteria.value.code
     assert_equal '2.16.840.1.113883.5.1', criteria.value.system
+
+    criteria = @doc.data_criteria('DummyLanguage_Arabic')
+    assert_equal :characteristic, criteria.type
+    assert_equal 'DummyLanguage_Arabic', criteria.title
+    assert_equal :languages, criteria.property
+    assert_equal HQMF::Coded, criteria.value.class
+    assert_equal 'CD', criteria.value.type
+    assert_equal 'ar', criteria.value.code
+    assert_equal '1.0.639.1', criteria.value.system
+
+    criteria = @doc.data_criteria('DummyMaritalStatus_Divorced')
+    assert_equal :characteristic, criteria.type
+    assert_equal 'DummyMaritalStatus_Divorced', criteria.title
+    assert_equal :maritalStatus, criteria.property
+    assert_equal HQMF::Coded, criteria.value.class
+    assert_equal 'CD', criteria.value.type
+    assert_equal 'D', criteria.value.code
+    assert_equal '2.16.840.1.113883.5.2', criteria.value.system
+
+    criteria = @doc.data_criteria('DummyRace_Latin_American')
+    assert_equal :characteristic, criteria.type
+    assert_equal 'DummyRace_Latin_American', criteria.title
+    assert_equal :race, criteria.property
+    assert_equal HQMF::Coded, criteria.value.class
+    assert_equal 'CD', criteria.value.type
+    assert_equal '2178-2', criteria.value.code
+    assert_equal '2.16.840.1.113883.6.238', criteria.value.system
 
     criteria = @doc.data_criteria('DummyProcedure')
     assert_equal :procedure, criteria.type
