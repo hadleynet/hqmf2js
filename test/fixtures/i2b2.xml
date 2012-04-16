@@ -205,9 +205,9 @@
             <high value="20111231"/>
           </effectiveTime>
           <value valueSet="2.16.840.1.113883.3.1619.5148.19.2.103.250"
-            codeSystemName="ICD-9-CM"
+            codeSystemName="SNOMED-CT"
             codeSystem="2.16.840.1.113883.6.103"
-            displayName="Diabetes mellitus" code="250" xsi:type="CD"/>
+            displayName="Diabetes mellitus" code="190416008" xsi:type="CD"/>
           <definition>
             <observationReference moodCode="DEF">
               <id extension="Problems"
@@ -291,13 +291,13 @@
               />
             </observationReference>
           </precondition>
-          <precondition>
+<!--          <precondition>
             <observationReference>
               <id extension="HGB_A1C_LOINC4548-4_GE_9_%_N1014B"
                 root="2.16.840.1.113883.3.1619.5148.3.20120214.191303395"
               />
             </observationReference>
-          </precondition>
+          </precondition>-->
         </patientPopulationCriteria>
       </entry>
     </populationCriteriaSection>
